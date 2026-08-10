@@ -60,7 +60,6 @@
     .back {
       color: var(--azul);
       text-decoration: none;
-
       font-size: 16px;
     }
 
@@ -78,15 +77,14 @@
       justify-content: center;
       align-items: center;
 
-      padding: 85px 28px 45px;
+      padding: 72px 28px 34px;
     }
 
     .architecture-title img {
-      width: clamp(260px, 34vw, 470px);
-      max-width: 80vw;
+      width: clamp(340px, 41vw, 570px);
+      max-width: 84vw;
 
       height: auto;
-
       display: block;
     }
 
@@ -103,7 +101,7 @@
     }
 
 
-    /* CAPA DO PROJETO */
+    /* CAPA */
 
     .project-card {
       position: relative;
@@ -111,11 +109,9 @@
       width: 100%;
 
       display: block;
-
       overflow: hidden;
 
       text-decoration: none;
-
       color: #ffffff;
 
       background: #111111;
@@ -131,14 +127,13 @@
       display: block;
 
       transition:
-        transform 0.7s ease,
-        filter 0.5s ease;
+        transform 0.7s ease;
 
       transform: scale(1);
     }
 
 
-    /* CAMADA ESCURA */
+    /* ESCURECIMENTO */
 
     .project-card::after {
       content: "";
@@ -156,23 +151,30 @@
     }
 
 
-    /* INFORMAÇÕES */
+    /* INFORMAÇÕES CENTRALIZADAS */
 
     .project-info {
       position: absolute;
 
-      left: 38px;
-      bottom: 36px;
+      top: 50%;
+      left: 50%;
 
       z-index: 2;
 
+      transform:
+        translate(-50%, calc(-50% + 14px));
+
+      width: 100%;
+
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
 
       opacity: 0;
-
-      transform: translateY(14px);
 
       transition:
         opacity 0.45s ease,
@@ -185,11 +187,11 @@
     .project-year {
       font-size: 16px;
 
-      margin-bottom: 10px;
+      margin-bottom: 13px;
     }
 
     .project-name {
-      font-size: clamp(42px, 6vw, 88px);
+      font-size: clamp(48px, 6.5vw, 92px);
 
       line-height: 0.95;
 
@@ -199,13 +201,13 @@
     }
 
     .project-type {
-      margin-top: 13px;
+      margin-top: 14px;
 
       font-size: 15px;
     }
 
 
-    /* HOVER NO COMPUTADOR */
+    /* HOVER */
 
     @media (hover: hover) {
 
@@ -219,7 +221,9 @@
 
       .project-card:hover .project-info {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translate(-50%, -50%);
       }
 
     }
@@ -245,7 +249,6 @@
 
     .footer a {
       color: var(--azul);
-
       text-decoration: none;
     }
 
@@ -280,16 +283,16 @@
       /* TÍTULO */
 
       .architecture-title {
-        padding: 75px 18px 35px;
+        padding: 68px 18px 30px;
       }
 
       .architecture-title img {
-        width: 70vw;
-        max-width: 340px;
+        width: 78vw;
+        max-width: 390px;
       }
 
 
-      /* CAPAS */
+      /* CAPA */
 
       .project-card {
         width: 100%;
@@ -301,12 +304,7 @@
       }
 
 
-      /*
-        NO CELULAR NÃO EXISTE HOVER.
-        ENTÃO A CAPA CONTINUA LIMPA.
-        O PRIMEIRO TOQUE REVELA AS INFOS,
-        O SEGUNDO ABRE O PROJETO.
-      */
+      /* PRIMEIRO TOQUE MOSTRA */
 
       .project-card.mobile-active::after {
         opacity: 1;
@@ -315,29 +313,37 @@
       .project-card.mobile-active .project-info {
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+          translate(-50%, -50%);
       }
 
 
+      /* INFO CENTRAL */
+
       .project-info {
-        left: 20px;
-        bottom: 20px;
+        top: 50%;
+        left: 50%;
+
+        width: 100%;
+
+        transform:
+          translate(-50%, calc(-50% + 12px));
       }
 
       .project-year {
-        font-size: 13px;
+        font-size: 14px;
 
-        margin-bottom: 7px;
+        margin-bottom: 9px;
       }
 
       .project-name {
-        font-size: 12vw;
+        font-size: 14vw;
       }
 
       .project-type {
-        margin-top: 8px;
+        margin-top: 10px;
 
-        font-size: 13px;
+        font-size: 14px;
       }
 
 
@@ -438,8 +444,7 @@
 
 
       <!--
-        OS PRÓXIMOS PROJETOS
-        VÃO ENTRAR AQUI
+        PRÓXIMOS PROJETOS ENTRAM AQUI,
         UM EMBAIXO DO OUTRO
       -->
 
@@ -481,9 +486,9 @@
   <script>
 
     /*
-      NO CELULAR:
-      PRIMEIRO TOQUE = MOSTRA AS INFORMAÇÕES
-      SEGUNDO TOQUE = ABRE O PROJETO
+      CELULAR:
+      PRIMEIRO TOQUE = MOSTRA INFORMAÇÕES
+      SEGUNDO TOQUE = ABRE PROJETO
     */
 
     const cards =
