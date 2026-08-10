@@ -39,9 +39,11 @@
       font-family: "Neue Montreal", sans-serif;
     }
 
+
+    /* PÁGINA */
+
     .page {
       width: 100%;
-      padding: 28px 28px 80px;
     }
 
 
@@ -52,7 +54,7 @@
       justify-content: space-between;
       align-items: center;
 
-      margin-bottom: 110px;
+      padding: 28px 28px 0;
     }
 
     .back {
@@ -67,30 +69,41 @@
     }
 
 
-    /* TÍTULO */
+    /* TÍTULO ARQUITETURA */
 
-    .page-title {
-      margin-bottom: 80px;
+    .architecture-title {
+      width: 100%;
 
-      font-size: clamp(42px, 7vw, 100px);
-      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      line-height: 0.95;
-      letter-spacing: -0.05em;
+      padding: 85px 28px 45px;
+    }
+
+    .architecture-title img {
+      width: clamp(260px, 34vw, 470px);
+      max-width: 80vw;
+
+      height: auto;
+
+      display: block;
     }
 
 
     /* PROJETOS */
 
     .projects {
+      width: 100%;
+
       display: flex;
       flex-direction: column;
 
-      gap: 28px;
+      gap: 0;
     }
 
 
-    /* CARD */
+    /* CAPA DO PROJETO */
 
     .project-card {
       position: relative;
@@ -102,6 +115,7 @@
       overflow: hidden;
 
       text-decoration: none;
+
       color: #ffffff;
 
       background: #111111;
@@ -118,13 +132,13 @@
 
       transition:
         transform 0.7s ease,
-        opacity 0.5s ease;
+        filter 0.5s ease;
 
       transform: scale(1);
     }
 
 
-    /* ESCURECIMENTO */
+    /* CAMADA ESCURA */
 
     .project-card::after {
       content: "";
@@ -132,34 +146,33 @@
       position: absolute;
       inset: 0;
 
-      background: rgba(0, 0, 0, 0.48);
+      z-index: 1;
+
+      background: rgba(0, 0, 0, 0.42);
 
       opacity: 0;
 
       transition: opacity 0.45s ease;
-
-      z-index: 1;
     }
 
 
-    /* TEXTOS DO HOVER */
+    /* INFORMAÇÕES */
 
     .project-info {
       position: absolute;
 
-      left: 34px;
-      bottom: 34px;
+      left: 38px;
+      bottom: 36px;
 
       z-index: 2;
 
       display: flex;
       flex-direction: column;
-
       align-items: flex-start;
 
       opacity: 0;
 
-      transform: translateY(16px);
+      transform: translateY(14px);
 
       transition:
         opacity 0.45s ease,
@@ -168,6 +181,7 @@
       pointer-events: none;
     }
 
+
     .project-year {
       font-size: 16px;
 
@@ -175,22 +189,23 @@
     }
 
     .project-name {
-      font-size: clamp(38px, 6vw, 84px);
+      font-size: clamp(42px, 6vw, 88px);
 
       line-height: 0.95;
 
-      letter-spacing: -0.04em;
       font-weight: 400;
+
+      letter-spacing: -0.04em;
     }
 
     .project-type {
-      margin-top: 12px;
+      margin-top: 13px;
 
       font-size: 15px;
     }
 
 
-    /* HOVER */
+    /* HOVER NO COMPUTADOR */
 
     @media (hover: hover) {
 
@@ -212,6 +227,10 @@
 
     /* FINAL */
 
+    .footer-wrap {
+      padding: 0 28px 70px;
+    }
+
     .footer {
       margin-top: 100px;
       padding-top: 24px;
@@ -226,6 +245,7 @@
 
     .footer a {
       color: var(--azul);
+
       text-decoration: none;
     }
 
@@ -244,48 +264,64 @@
 
     @media (max-width: 700px) {
 
-      .page {
-        padding: 22px 18px 50px;
-      }
-
       .top {
-        margin-bottom: 85px;
-      }
-
-      .top-name {
-        font-size: 15px;
+        padding: 22px 18px 0;
       }
 
       .back {
         font-size: 15px;
       }
 
-      .page-title {
-        margin-bottom: 50px;
-
-        font-size: 14vw;
-      }
-
-      .projects {
-        gap: 18px;
+      .top-name {
+        font-size: 15px;
       }
 
 
-      /* NO CELULAR O TEXTO FICA VISÍVEL */
+      /* TÍTULO */
 
-      .project-card::after {
+      .architecture-title {
+        padding: 75px 18px 35px;
+      }
+
+      .architecture-title img {
+        width: 70vw;
+        max-width: 340px;
+      }
+
+
+      /* CAPAS */
+
+      .project-card {
+        width: 100%;
+      }
+
+      .project-card img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      /*
+        NO CELULAR NÃO EXISTE HOVER.
+        ENTÃO A CAPA CONTINUA LIMPA.
+        O PRIMEIRO TOQUE REVELA AS INFOS,
+        O SEGUNDO ABRE O PROJETO.
+      */
+
+      .project-card.mobile-active::after {
+        opacity: 1;
+      }
+
+      .project-card.mobile-active .project-info {
         opacity: 1;
 
-        background: rgba(0, 0, 0, 0.33);
+        transform: translateY(0);
       }
+
 
       .project-info {
-        left: 18px;
-        bottom: 18px;
-
-        opacity: 1;
-
-        transform: none;
+        left: 20px;
+        bottom: 20px;
       }
 
       .project-year {
@@ -302,6 +338,13 @@
         margin-top: 8px;
 
         font-size: 13px;
+      }
+
+
+      /* FINAL */
+
+      .footer-wrap {
+        padding: 0 18px 50px;
       }
 
       .footer {
@@ -322,7 +365,7 @@
 </head>
 
 
-<body>
+<body id="top">
 
   <main class="page">
 
@@ -347,9 +390,14 @@
 
     <!-- TÍTULO -->
 
-    <h1 class="page-title">
-      ARQUITETURA
-    </h1>
+    <div class="architecture-title">
+
+      <img
+        src="3AC01354-BA4C-4201-9719-851DF4A1384B.png"
+        alt="Arquitetura"
+      >
+
+    </div>
 
 
     <!-- PROJETOS -->
@@ -365,9 +413,10 @@
       >
 
         <img
-          src="8558c32f-a82f-48c9-997e-4ee2872f9f82.JPG"
+          src="maquete 2 mooca .PNG"
           alt="Projeto 303"
         >
+
 
         <div class="project-info">
 
@@ -389,8 +438,9 @@
 
 
       <!--
-        OS PRÓXIMOS PROJETOS VÃO ENTRAR AQUI,
-        SEMPRE REPETINDO A MESMA ESTRUTURA.
+        OS PRÓXIMOS PROJETOS
+        VÃO ENTRAR AQUI
+        UM EMBAIXO DO OUTRO
       -->
 
 
@@ -399,28 +449,91 @@
 
     <!-- FINAL -->
 
-    <footer>
+    <div class="footer-wrap">
 
-      <div class="footer">
+      <footer>
 
-        <span>
-          Arquitetura
-        </span>
+        <div class="footer">
 
-        <a href="#top">
-          Back to top ↑
-        </a>
+          <span>
+            Arquitetura
+          </span>
 
-      </div>
+          <a href="#top">
+            Back to top ↑
+          </a>
 
-      <div class="copyright">
-        Ana Luiza Campos © 2026
-      </div>
+        </div>
 
-    </footer>
+
+        <div class="copyright">
+          Ana Luiza Campos © 2026
+        </div>
+
+      </footer>
+
+    </div>
 
 
   </main>
+
+
+  <script>
+
+    /*
+      NO CELULAR:
+      PRIMEIRO TOQUE = MOSTRA AS INFORMAÇÕES
+      SEGUNDO TOQUE = ABRE O PROJETO
+    */
+
+    const cards =
+      document.querySelectorAll(".project-card");
+
+
+    cards.forEach((card) => {
+
+      card.addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            window.matchMedia("(hover: none)").matches
+          ) {
+
+            if (
+              !card.classList.contains("mobile-active")
+            ) {
+
+              event.preventDefault();
+
+
+              cards.forEach((otherCard) => {
+
+                if (otherCard !== card) {
+
+                  otherCard.classList.remove(
+                    "mobile-active"
+                  );
+
+                }
+
+              });
+
+
+              card.classList.add(
+                "mobile-active"
+              );
+
+            }
+
+          }
+
+        }
+      );
+
+    });
+
+  </script>
 
 </body>
 
