@@ -8,9 +8,11 @@
 
   <style>
     :root {
-      --fundo: #F5F3EA;
+      --fundo: #F4F2E8;
       --preto: #111111;
-      --azul: #2447E5;
+      --azul: #2146E0;
+      --relevo-claro: rgba(255,255,255,0.9);
+      --relevo-escuro: rgba(120,115,100,0.18);
     }
 
     * {
@@ -36,16 +38,26 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       position: relative;
-      padding: 70px 28px 45px;
+      padding: 70px 24px 90px;
+      text-align: center;
     }
 
-    /* ESPIRAL */
+    .conteudo {
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ESPIRAL EM RELEVO */
     .spiral {
-      width: 82px;
-      height: 82px;
-      margin-bottom: 38px;
-      color: var(--azul);
+      width: 92px;
+      height: 92px;
+      margin-bottom: 34px;
+      position: relative;
     }
 
     .spiral svg {
@@ -56,64 +68,69 @@
 
     .spiral path {
       fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
+      stroke: var(--fundo);
+      stroke-width: 5;
       stroke-linecap: round;
       stroke-linejoin: round;
+
+      filter:
+        drop-shadow(-1.5px -1.5px 1.5px var(--relevo-claro))
+        drop-shadow(1.7px 1.7px 1.5px var(--relevo-escuro));
     }
 
     /* NOME */
     .nome {
       font-family: "Times New Roman", Times, serif;
-      font-size: clamp(29px, 7.3vw, 50px);
+      font-size: clamp(28px, 6vw, 44px);
       font-weight: 400;
+      letter-spacing: 0.08em;
       line-height: 1;
-      letter-spacing: -1.5px;
       white-space: nowrap;
+      margin-bottom: 56px;
       color: var(--preto);
-      margin-bottom: 65px;
     }
 
-    /* MENU */
+    /* MENU CENTRALIZADO */
     .menu {
-      width: 100%;
-      max-width: 290px;
       display: flex;
       flex-direction: column;
-      gap: 34px;
+      align-items: center;
+      gap: 30px;
     }
 
     .menu a {
-      display: grid;
-      grid-template-columns: 45px 1fr;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 16px;
       text-decoration: none;
       color: var(--preto);
       font-size: 18px;
       font-weight: 400;
-      letter-spacing: -0.2px;
+      min-width: 220px;
     }
 
     .simbolo {
       color: var(--azul);
-      font-size: 22px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 400;
+      font-size: 21px;
+      line-height: 1;
+      min-width: 24px;
+      text-align: center;
     }
 
-    .menu a:hover .texto {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 5px;
+    .texto {
+      text-align: center;
     }
 
     /* REDES */
     .redes {
       position: absolute;
-      left: 28px;
-      bottom: 38px;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       gap: 24px;
+      align-items: center;
     }
 
     .redes a {
@@ -124,27 +141,28 @@
 
     @media (max-width: 480px) {
       .home {
-        padding-top: 80px;
+        padding: 76px 20px 92px;
       }
 
       .spiral {
-        width: 72px;
-        height: 72px;
-        margin-bottom: 34px;
+        width: 82px;
+        height: 82px;
+        margin-bottom: 30px;
       }
 
       .nome {
-        font-size: 8vw;
-        letter-spacing: -1.3px;
-        margin-bottom: 60px;
+        font-size: 7vw;
+        letter-spacing: 0.055em;
+        margin-bottom: 52px;
       }
 
       .menu {
-        max-width: 260px;
+        gap: 28px;
       }
 
       .menu a {
         font-size: 18px;
+        min-width: 210px;
       }
     }
   </style>
@@ -154,54 +172,57 @@
 
   <main class="home">
 
-    <div class="spiral">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <path d="
-          M82 58
-          C77 76, 58 87, 39 82
-          C18 77, 10 54, 20 35
-          C30 15, 58 10, 76 25
-          C94 40, 91 67, 73 79
-          C54 92, 29 84, 23 63
-          C17 43, 31 25, 50 24
-          C69 23, 82 38, 78 55
-          C74 72, 56 79, 42 72
-          C28 65, 26 47, 37 37
-          C48 27, 65 32, 69 45
-          C73 58, 63 68, 52 66
-          C41 64, 36 53, 41 45
-          C46 37, 58 39, 61 47
-          C64 55, 57 60, 51 57
-          C45 54, 46 48, 50 47
-        "/>
-      </svg>
+    <div class="conteudo">
+
+      <div class="spiral">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="
+            M78 62
+            C72 77, 55 85, 39 79
+            C22 72, 16 54, 23 39
+            C30 23, 48 17, 63 23
+            C79 29, 87 45, 82 59
+            C76 75, 60 81, 46 75
+            C33 69, 27 55, 32 43
+            C37 31, 51 26, 62 31
+            C73 36, 78 48, 73 58
+            C68 68, 57 72, 48 67
+            C39 63, 36 53, 40 45
+            C44 37, 53 35, 60 39
+            C67 43, 68 51, 64 57
+            C60 63, 53 64, 49 60
+            C45 56, 46 50, 50 48
+          "/>
+        </svg>
+      </div>
+
+      <h1 class="nome">ANA LUIZA CAMPOS</h1>
+
+      <nav class="menu">
+
+        <a href="#arquitetura">
+          <span class="simbolo">+</span>
+          <span class="texto">arquitetura</span>
+        </a>
+
+        <a href="#social-media">
+          <span class="simbolo">°</span>
+          <span class="texto">social media</span>
+        </a>
+
+        <a href="#curriculo">
+          <span class="simbolo">*</span>
+          <span class="texto">currículo</span>
+        </a>
+
+        <a href="#contato">
+          <span class="simbolo">—</span>
+          <span class="texto">contato</span>
+        </a>
+
+      </nav>
+
     </div>
-
-    <h1 class="nome">ANA LUIZA CAMPOS</h1>
-
-    <nav class="menu">
-
-      <a href="#arquitetura">
-        <span class="simbolo">+</span>
-        <span class="texto">arquitetura</span>
-      </a>
-
-      <a href="#social-media">
-        <span class="simbolo">°</span>
-        <span class="texto">social media</span>
-      </a>
-
-      <a href="#curriculo">
-        <span class="simbolo">*</span>
-        <span class="texto">currículo</span>
-      </a>
-
-      <a href="#contato">
-        <span class="simbolo">—</span>
-        <span class="texto">contato</span>
-      </a>
-
-    </nav>
 
     <div class="redes">
       <a href="#" aria-label="LinkedIn">in</a>
