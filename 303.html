@@ -64,8 +64,41 @@
       font-size: 16px;
     }
 
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
     .top-name {
       font-size: 16px;
+    }
+
+
+    /* ESPIRAL DECORATIVO */
+
+    .spiral-decoration {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--azul);
+      border-radius: 50%;
+
+      flex-shrink: 0;
+    }
+
+    .spiral-decoration img {
+      width: 27px;
+      height: 27px;
+
+      display: block;
+      object-fit: contain;
+
+      pointer-events: none;
     }
 
 
@@ -74,7 +107,9 @@
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 40px;
+
       margin-bottom: 90px;
     }
 
@@ -84,22 +119,33 @@
       align-items: flex-start;
     }
 
-    h1 {
-      font-size: clamp(64px, 11vw, 160px);
-      font-weight: 400;
-      letter-spacing: -0.06em;
-      line-height: 0.85;
+
+    /* IMAGEM DO TÍTULO 303 */
+
+    .project-title-image {
+      width: clamp(210px, 25vw, 350px);
+      max-width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      object-fit: contain;
     }
 
+
     .subtitle {
-      margin-top: 24px;
+      margin-top: 18px;
+
       font-size: 16px;
       line-height: 1.4;
     }
 
     .info {
       align-self: end;
+
       max-width: 480px;
+
       font-size: 16px;
       line-height: 1.4;
     }
@@ -139,6 +185,7 @@
     .project-intro {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 60px;
 
       align-items: stretch;
@@ -253,7 +300,6 @@
 
     .lightbox {
       position: fixed;
-
       inset: 0;
 
       z-index: 9999;
@@ -281,8 +327,6 @@
       visibility: visible;
     }
 
-
-    /* ÁREA DA IMAGEM */
 
     .lightbox-image-wrap {
       width: 100%;
@@ -383,7 +427,6 @@
       font-family: "Neue Montreal", sans-serif;
 
       font-size: 46px;
-      font-weight: 400;
 
       cursor: pointer;
 
@@ -438,7 +481,6 @@
       color: rgba(255, 255, 255, 0.7);
 
       font-size: 12px;
-      line-height: 1;
     }
 
 
@@ -467,7 +509,6 @@
       text-align: center;
 
       font-size: 11px;
-      line-height: 1.4;
 
       color: rgba(17, 17, 17, 0.32);
     }
@@ -485,6 +526,27 @@
         margin-bottom: 70px;
       }
 
+      .top-right {
+        gap: 9px;
+      }
+
+      .top-name {
+        font-size: 15px;
+      }
+
+      .spiral-decoration {
+        width: 31px;
+        height: 31px;
+      }
+
+      .spiral-decoration img {
+        width: 22px;
+        height: 22px;
+      }
+
+
+      /* ABERTURA */
+
       .intro {
         grid-template-columns: 1fr;
 
@@ -493,12 +555,13 @@
         margin-bottom: 70px;
       }
 
-      h1 {
-        font-size: 28vw;
+      .project-title-image {
+        width: 58vw;
+        max-width: 260px;
       }
 
       .subtitle {
-        margin-top: 20px;
+        margin-top: 14px;
 
         font-size: 15px;
       }
@@ -508,7 +571,7 @@
       }
 
 
-      /* NO CELULAR VOLTA A FICAR UM EMBAIXO DO OUTRO */
+      /* MAQUETE + TEXTO */
 
       .project-intro {
         grid-template-columns: 1fr;
@@ -538,6 +601,9 @@
         line-height: 1.4;
       }
 
+
+      /* DESENHOS */
+
       .drawings-section {
         margin-bottom: 90px;
       }
@@ -545,6 +611,9 @@
       .drawings {
         gap: 20px;
       }
+
+
+      /* VISUALIZAÇÕES */
 
       .visualizations-header {
         grid-template-columns: 1fr;
@@ -568,6 +637,9 @@
         grid-column: auto;
       }
 
+
+      /* FINAL */
+
       .next {
         margin-top: 70px;
       }
@@ -579,7 +651,7 @@
       }
 
 
-      /* LIGHTBOX CELULAR */
+      /* LIGHTBOX */
 
       .lightbox {
         padding: 12px;
@@ -638,9 +710,24 @@
         ← voltar
       </a>
 
-      <span class="top-name">
-        Ana Luiza Campos
-      </span>
+
+      <div class="top-right">
+
+        <span class="top-name">
+          Ana Luiza Campos
+        </span>
+
+
+        <div class="spiral-decoration">
+
+          <img
+            src="6A7FAB17-DB11-4FC9-BDB3-A99A1A80E8D7.png"
+            alt=""
+          >
+
+        </div>
+
+      </div>
 
     </header>
 
@@ -651,13 +738,19 @@
 
       <div class="title-block">
 
-        <h1>
-          303
-        </h1>
+        <img
+          class="project-title-image"
+          src="2AFDBAAA-94F2-47BE-BFAE-852A7A429017.png"
+          alt="303"
+        >
+
 
         <div class="subtitle">
+
           Mooca, São Paulo — 2026<br>
+
           Projeto acadêmico
+
         </div>
 
       </div>
@@ -806,9 +899,12 @@
           ✷ visualizações
         </div>
 
+
         <div class="visualizations-note">
+
           Imagens desenvolvidas com auxílio de inteligência artificial
           a partir do projeto arquitetônico autoral.
+
         </div>
 
       </div>
@@ -855,6 +951,7 @@
           303
         </span>
 
+
         <a
           class="back-to-top"
           href="#top"
@@ -866,7 +963,9 @@
 
 
       <div class="copyright">
+
         Ana Luiza Campos © 2026
+
       </div>
 
     </footer>
@@ -882,8 +981,6 @@
   >
 
 
-    <!-- FECHAR -->
-
     <button
       class="lightbox-close"
       id="lightboxClose"
@@ -893,8 +990,6 @@
     </button>
 
 
-    <!-- SETA ESQUERDA -->
-
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -903,8 +998,6 @@
       ‹
     </button>
 
-
-    <!-- IMAGEM -->
 
     <div
       class="lightbox-image-wrap"
@@ -921,8 +1014,6 @@
     </div>
 
 
-    <!-- SETA DIREITA -->
-
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -931,8 +1022,6 @@
       ›
     </button>
 
-
-    <!-- CONTADOR -->
 
     <div
       class="lightbox-counter"
@@ -975,13 +1064,7 @@
 
     let currentIndex = 0;
 
-
-    /* SEGUNDO ZOOM */
-
     let zoomed = false;
-
-
-    /* ARRASTAR QUANDO ESTÁ COM ZOOM */
 
     let isDragging = false;
 
@@ -996,7 +1079,7 @@
     const zoomLevel = 2.4;
 
 
-    /* SWIPE NO CELULAR */
+    /* SWIPE */
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1009,8 +1092,6 @@
     const swipeThreshold = 45;
 
 
-    /* CONTADOR */
-
     function updateCounter() {
 
       lightboxCounter.textContent =
@@ -1018,8 +1099,6 @@
 
     }
 
-
-    /* TRANSFORM DA IMAGEM */
 
     function updateImageTransform() {
 
@@ -1038,8 +1117,6 @@
     }
 
 
-    /* RESETA O SEGUNDO ZOOM */
-
     function resetZoom() {
 
       zoomed = false;
@@ -1056,8 +1133,6 @@
 
     }
 
-
-    /* MOSTRA UMA IMAGEM */
 
     function showImage(index) {
 
@@ -1079,15 +1154,11 @@
     }
 
 
-    /* ABRIR */
-
     function openLightbox(index) {
 
       showImage(index);
 
-      lightbox.classList.add(
-        "active"
-      );
+      lightbox.classList.add("active");
 
       document.body.classList.add(
         "lightbox-open"
@@ -1096,17 +1167,11 @@
     }
 
 
-    /* FECHAR */
-
     function closeLightbox() {
 
-      lightbox.classList.remove(
-        "active"
-      );
+      lightbox.classList.remove("active");
 
-      lightbox.classList.remove(
-        "zoomed"
-      );
+      lightbox.classList.remove("zoomed");
 
       document.body.classList.remove(
         "lightbox-open"
@@ -1123,8 +1188,6 @@
     }
 
 
-    /* PRÓXIMA */
-
     function showNextImage() {
 
       currentIndex =
@@ -1135,8 +1198,6 @@
 
     }
 
-
-    /* ANTERIOR */
 
     function showPreviousImage() {
 
@@ -1152,8 +1213,6 @@
 
     }
 
-
-    /* SEGUNDO ZOOM */
 
     function toggleSecondZoom() {
 
@@ -1172,8 +1231,6 @@
     }
 
 
-    /* ABRIR AO CLICAR */
-
     images.forEach(
       (image, index) => {
 
@@ -1190,8 +1247,6 @@
     );
 
 
-    /* SETA DIREITA */
-
     lightboxNext.addEventListener(
       "click",
       (event) => {
@@ -1203,8 +1258,6 @@
       }
     );
 
-
-    /* SETA ESQUERDA */
 
     lightboxPrev.addEventListener(
       "click",
@@ -1218,16 +1271,11 @@
     );
 
 
-    /* CLIQUE NA IMAGEM = SEGUNDO ZOOM */
-
     lightboxImage.addEventListener(
       "click",
       (event) => {
 
         event.stopPropagation();
-
-
-        /* NÃO DÁ ZOOM DEPOIS DE UM SWIPE */
 
         if (swipedRecently) {
 
@@ -1237,9 +1285,6 @@
 
         }
 
-
-        /* NÃO DÁ ZOOM DEPOIS DE ARRASTAR */
-
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
@@ -1248,14 +1293,11 @@
 
         }
 
-
         toggleSecondZoom();
 
       }
     );
 
-
-    /* BOTÃO FECHAR */
 
     lightboxClose.addEventListener(
       "click",
@@ -1268,8 +1310,6 @@
       }
     );
 
-
-    /* CLICAR FORA */
 
     lightbox.addEventListener(
       "click",
@@ -1304,10 +1344,7 @@
     );
 
 
-    /* ===================================== */
-    /* ARRASTAR A IMAGEM NO SEGUNDO ZOOM    */
-    /* ===================================== */
-
+    /* ARRASTAR NO SEGUNDO ZOOM */
 
     lightboxImage.addEventListener(
       "pointerdown",
@@ -1321,7 +1358,6 @@
 
         movedWhileDragging = false;
 
-
         startX =
           event.clientX
           - translateX;
@@ -1329,7 +1365,6 @@
         startY =
           event.clientY
           - translateY;
-
 
         lightboxImage.setPointerCapture(
           event.pointerId
@@ -1348,11 +1383,8 @@
           ||
           !zoomed
         ) {
-
           return;
-
         }
-
 
         const newX =
           event.clientX
@@ -1361,7 +1393,6 @@
         const newY =
           event.clientY
           - startY;
-
 
         if (
           Math.abs(
@@ -1377,11 +1408,8 @@
 
         }
 
-
         translateX = newX;
-
         translateY = newY;
-
 
         updateImageTransform();
 
@@ -1406,7 +1434,6 @@
 
         }
 
-
         isDragging = false;
 
       }
@@ -1423,33 +1450,24 @@
     );
 
 
-    /* ===================================== */
-    /* SWIPE NO CELULAR                     */
-    /* ===================================== */
-
+    /* SWIPE CELULAR */
 
     lightboxImageWrap.addEventListener(
       "touchstart",
       (event) => {
 
-        /* SE ESTÁ NO SEGUNDO ZOOM,
-           NÃO TROCA DE IMAGEM */
-
         if (zoomed) {
           return;
         }
 
-
         const touch =
           event.changedTouches[0];
-
 
         touchStartX =
           touch.screenX;
 
         touchStartY =
           touch.screenY;
-
 
         touchEndX =
           touchStartX;
@@ -1470,10 +1488,8 @@
           return;
         }
 
-
         const touch =
           event.changedTouches[0];
-
 
         touchEndX =
           touch.screenX;
@@ -1494,7 +1510,6 @@
           return;
         }
 
-
         const differenceX =
           touchEndX
           - touchStartX;
@@ -1502,10 +1517,6 @@
         const differenceY =
           touchEndY
           - touchStartY;
-
-
-        /* PRECISA SER UM MOVIMENTO
-           HORIZONTAL DE VERDADE */
 
         if (
           Math.abs(differenceX)
@@ -1515,27 +1526,17 @@
           > Math.abs(differenceY)
         ) {
 
-
           swipedRecently = true;
-
-
-          /* ARRASTOU PARA ESQUERDA */
 
           if (differenceX < 0) {
 
             showNextImage();
 
-          }
-
-
-          /* ARRASTOU PARA DIREITA */
-
-          else {
+          } else {
 
             showPreviousImage();
 
           }
-
 
           setTimeout(() => {
 
@@ -1549,10 +1550,7 @@
     );
 
 
-    /* ===================================== */
-    /* TECLADO                              */
-    /* ===================================== */
-
+    /* TECLADO */
 
     document.addEventListener(
       "keydown",
@@ -1563,11 +1561,8 @@
             .classList
             .contains("active")
         ) {
-
           return;
-
         }
-
 
         if (
           event.key === "Escape"
@@ -1577,7 +1572,6 @@
 
         }
 
-
         if (
           event.key === "ArrowRight"
         ) {
@@ -1585,7 +1579,6 @@
           showNextImage();
 
         }
-
 
         if (
           event.key === "ArrowLeft"
