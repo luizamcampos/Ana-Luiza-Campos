@@ -76,8 +76,6 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       margin-bottom: 90px;
-
-      position: relative;
     }
 
     .title-block {
@@ -85,13 +83,10 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
-
-      position: relative;
-      z-index: 2;
     }
 
 
-    /* NOVO TÍTULO 303 RECORTADO */
+    /* TÍTULO 303 */
 
     .project-title-image {
       width: clamp(180px, 21vw, 300px);
@@ -121,9 +116,6 @@
 
       font-size: 16px;
       line-height: 1.4;
-
-      position: relative;
-      z-index: 2;
     }
 
     .info p + p {
@@ -132,37 +124,6 @@
 
     .blue {
       color: var(--azul);
-    }
-
-
-    /* ESPIRAL DECORATIVO NA ABERTURA */
-
-    .opening-spiral {
-      position: absolute;
-
-      top: 0;
-      right: 12px;
-
-      width: 170px;
-      height: 170px;
-
-      z-index: 1;
-
-      pointer-events: none;
-    }
-
-    .opening-spiral img {
-      width: 100%;
-      height: 100%;
-
-      display: block;
-      object-fit: contain;
-
-      opacity: 0.48;
-
-      filter:
-        drop-shadow(0 2px 4px rgba(17, 17, 17, 0.12))
-        drop-shadow(0 0 8px rgba(17, 17, 17, 0.05));
     }
 
 
@@ -563,25 +524,6 @@
       }
 
 
-      /* ESPIRAL NO CELULAR */
-
-      .opening-spiral {
-        top: 18px;
-        right: 0;
-
-        width: 92px;
-        height: 92px;
-      }
-
-      .opening-spiral img {
-        opacity: 0.42;
-
-        filter:
-          drop-shadow(0 1px 3px rgba(17, 17, 17, 0.11))
-          drop-shadow(0 0 5px rgba(17, 17, 17, 0.04));
-      }
-
-
       /* MAQUETE + TEXTO */
 
       .project-intro {
@@ -758,18 +700,6 @@
           Escola da Cidade<br>
           São Paulo
         </p>
-
-      </div>
-
-
-      <!-- ESPIRAL DECORATIVO -->
-
-      <div class="opening-spiral">
-
-        <img
-          src="6A7FAB17-DB11-4FC9-BDB3-A99A1A80E8D7.png"
-          alt=""
-        >
 
       </div>
 
@@ -1452,7 +1382,7 @@
     );
 
 
-    /* SWIPE CELULAR */
+    /* SWIPE NO CELULAR */
 
     lightboxImageWrap.addEventListener(
       "touchstart",
