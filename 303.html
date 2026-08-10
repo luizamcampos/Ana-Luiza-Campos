@@ -76,6 +76,8 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       margin-bottom: 90px;
+
+      position: relative;
     }
 
     .title-block {
@@ -83,35 +85,45 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
+
+      position: relative;
+      z-index: 2;
     }
 
 
-    /* IMAGEM DO TÍTULO 303 */
+    /* NOVO TÍTULO 303 RECORTADO */
 
     .project-title-image {
-      width: clamp(210px, 25vw, 350px);
+      width: clamp(180px, 21vw, 300px);
       max-width: 100%;
       height: auto;
 
       display: block;
-      object-fit: contain;
 
-      /* compensação do espaço transparente do PNG */
-      margin-left: -29px;
+      object-fit: contain;
+      object-position: left center;
+
+      margin: 0;
     }
 
 
     .subtitle {
       margin-top: 18px;
+
       font-size: 16px;
       line-height: 1.4;
     }
 
     .info {
       align-self: end;
+
       max-width: 480px;
+
       font-size: 16px;
       line-height: 1.4;
+
+      position: relative;
+      z-index: 2;
     }
 
     .info p + p {
@@ -120,6 +132,37 @@
 
     .blue {
       color: var(--azul);
+    }
+
+
+    /* ESPIRAL DECORATIVO NA ABERTURA */
+
+    .opening-spiral {
+      position: absolute;
+
+      top: 0;
+      right: 12px;
+
+      width: 170px;
+      height: 170px;
+
+      z-index: 1;
+
+      pointer-events: none;
+    }
+
+    .opening-spiral img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+      object-fit: contain;
+
+      opacity: 0.48;
+
+      filter:
+        drop-shadow(0 2px 4px rgba(17, 17, 17, 0.12))
+        drop-shadow(0 0 8px rgba(17, 17, 17, 0.05));
     }
 
 
@@ -149,13 +192,13 @@
     .project-intro {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 60px;
+
       align-items: stretch;
+
       margin-bottom: 120px;
     }
-
-
-    /* MAQUETE */
 
     .maquete-wrap {
       height: 100%;
@@ -172,37 +215,6 @@
       object-fit: cover;
       object-position: center;
     }
-
-
-    /* ESPIRAL SOBRE A MAQUETE */
-
-    .project-spiral {
-      position: absolute;
-
-      right: 18px;
-      bottom: 18px;
-
-      width: 58px;
-      height: 58px;
-
-      z-index: 4;
-
-      opacity: 0.78;
-
-      pointer-events: none;
-    }
-
-    .project-spiral img {
-      width: 100%;
-      height: 100%;
-
-      display: block;
-
-      object-fit: contain;
-    }
-
-
-    /* TEXTO */
 
     .about {
       padding-top: 0;
@@ -323,7 +335,6 @@
       visibility: visible;
     }
 
-
     .lightbox-image-wrap {
       width: 100%;
       height: 100%;
@@ -355,9 +366,6 @@
 
       cursor: zoom-in;
     }
-
-
-    /* SEGUNDO ZOOM */
 
     .lightbox.zoomed .lightbox-image-wrap {
       cursor: grab;
@@ -496,7 +504,6 @@
 
     .back-to-top {
       color: var(--azul);
-
       text-decoration: none;
     }
 
@@ -539,18 +546,10 @@
       }
 
       .project-title-image {
-        width: 58vw;
+        width: 48vw;
+        max-width: 220px;
 
-        max-width: 260px;
-
-        height: auto;
-
-        display: block;
-
-        object-fit: contain;
-
-        /* alinhamento visual no celular */
-        margin-left: -22px;
+        margin: 0;
       }
 
       .subtitle {
@@ -561,6 +560,25 @@
 
       .info {
         font-size: 15px;
+      }
+
+
+      /* ESPIRAL NO CELULAR */
+
+      .opening-spiral {
+        top: 18px;
+        right: 0;
+
+        width: 92px;
+        height: 92px;
+      }
+
+      .opening-spiral img {
+        opacity: 0.42;
+
+        filter:
+          drop-shadow(0 1px 3px rgba(17, 17, 17, 0.11))
+          drop-shadow(0 0 5px rgba(17, 17, 17, 0.04));
       }
 
 
@@ -585,27 +603,12 @@
         object-fit: contain;
       }
 
-
-      /* ESPIRAL NO CELULAR */
-
-      .project-spiral {
-        width: 44px;
-        height: 44px;
-
-        right: 12px;
-        bottom: 12px;
-
-        opacity: 0.78;
-      }
-
-
       .section-title {
         margin-bottom: 24px;
       }
 
       .about-text {
         font-size: 17px;
-
         line-height: 1.4;
       }
 
@@ -733,16 +736,13 @@
 
         <img
           class="project-title-image"
-          src="2AFDBAAA-94F2-47BE-BFAE-852A7A429017.png"
+          src="IMG_0894.PNG"
           alt="303"
         >
 
         <div class="subtitle">
-
           Mooca, São Paulo — 2026<br>
-
           Projeto acadêmico
-
         </div>
 
       </div>
@@ -761,6 +761,18 @@
 
       </div>
 
+
+      <!-- ESPIRAL DECORATIVO -->
+
+      <div class="opening-spiral">
+
+        <img
+          src="6A7FAB17-DB11-4FC9-BDB3-A99A1A80E8D7.png"
+          alt=""
+        >
+
+      </div>
+
     </section>
 
 
@@ -775,18 +787,6 @@
           src="maquete 2 mooca .PNG"
           alt="Maquete do projeto 303"
         >
-
-
-        <!-- ESPIRAL DECORATIVO -->
-
-        <div class="project-spiral">
-
-          <img
-            src="6A7FAB17-DB11-4FC9-BDB3-A99A1A80E8D7.png"
-            alt=""
-          >
-
-        </div>
 
       </div>
 
@@ -905,10 +905,8 @@
 
 
         <div class="visualizations-note">
-
           Imagens desenvolvidas com auxílio de inteligência artificial
           a partir do projeto arquitetônico autoral.
-
         </div>
 
       </div>
@@ -955,7 +953,6 @@
           303
         </span>
 
-
         <a
           class="back-to-top"
           href="#top"
@@ -967,9 +964,7 @@
 
 
       <div class="copyright">
-
         Ana Luiza Campos © 2026
-
       </div>
 
     </footer>
@@ -983,7 +978,6 @@
     class="lightbox"
     id="lightbox"
   >
-
 
     <button
       class="lightbox-close"
@@ -1042,7 +1036,6 @@
       Array.from(
         document.querySelectorAll(".zoomable")
       );
-
 
     const lightbox =
       document.getElementById("lightbox");
@@ -1126,11 +1119,9 @@
       zoomed = false;
 
       isDragging = false;
-
       movedWhileDragging = false;
 
       translateX = 0;
-
       translateY = 0;
 
       lightbox.classList.remove("zoomed");
@@ -1225,7 +1216,6 @@
       zoomed = !zoomed;
 
       translateX = 0;
-
       translateY = 0;
 
       lightbox.classList.toggle(
@@ -1283,7 +1273,6 @@
       (event) => {
 
         event.stopPropagation();
-
 
         if (swipedRecently) {
 
@@ -1398,7 +1387,6 @@
 
         }
 
-
         const newX =
           event.clientX
           - startX;
@@ -1406,7 +1394,6 @@
         const newY =
           event.clientY
           - startY;
-
 
         if (
           Math.abs(
@@ -1422,11 +1409,9 @@
 
         }
 
-
         translateX = newX;
 
         translateY = newY;
-
 
         updateImageTransform();
 
@@ -1450,7 +1435,6 @@
           } catch (error) {}
 
         }
-
 
         isDragging = false;
 
@@ -1478,10 +1462,8 @@
           return;
         }
 
-
         const touch =
           event.changedTouches[0];
-
 
         touchStartX =
           touch.screenX;
@@ -1508,10 +1490,8 @@
           return;
         }
 
-
         const touch =
           event.changedTouches[0];
-
 
         touchEndX =
           touch.screenX;
@@ -1532,7 +1512,6 @@
           return;
         }
 
-
         const differenceX =
           touchEndX
           - touchStartX;
@@ -1540,7 +1519,6 @@
         const differenceY =
           touchEndY
           - touchStartY;
-
 
         if (
           Math.abs(differenceX)
@@ -1551,7 +1529,6 @@
         ) {
 
           swipedRecently = true;
-
 
           if (differenceX < 0) {
 
@@ -1564,7 +1541,6 @@
             showPreviousImage();
 
           }
-
 
           setTimeout(() => {
 
@@ -1594,7 +1570,6 @@
 
         }
 
-
         if (
           event.key === "Escape"
         ) {
@@ -1603,7 +1578,6 @@
 
         }
 
-
         if (
           event.key === "ArrowRight"
         ) {
@@ -1611,7 +1585,6 @@
           showNextImage();
 
         }
-
 
         if (
           event.key === "ArrowLeft"
