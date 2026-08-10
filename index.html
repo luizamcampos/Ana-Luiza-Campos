@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Portfólio de Ana Luiza Campos — Arquitetura e Social Media"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ana Luiza Campos</title>
 
   <style>
+
     :root {
-      --fundo: #F3F2EA;
+      --fundo: #f3f2ed;
       --preto: #111111;
-      --azul: #1647FF;
+      --azul: #2455ff;
     }
 
     * {
@@ -32,251 +25,288 @@
     body {
       width: 100%;
       min-height: 100%;
-      background: var(--fundo);
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
       color: var(--preto);
     }
 
+
+    /* HOME */
+
     .home {
-      min-height: 100vh;
       min-height: 100svh;
+      width: 100%;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
       position: relative;
 
-      padding:
-        max(105px, env(safe-area-inset-top))
-        20px
-        max(90px, env(safe-area-inset-bottom));
-
-      overflow: hidden;
+      padding: 60px 24px 90px;
     }
 
-    .conteudo {
-      width: 100%;
-      max-width: 760px;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* ESPIRAL */
 
-      margin-top: 7vh;
-    }
-
-    /* ESPIRAL PNG */
     .spiral {
-      width: 92px;
-      height: auto;
+      width: 105px;
+      height: 105px;
+
+      object-fit: contain;
 
       display: block;
 
-      margin-bottom: 26px;
+      margin-bottom: 34px;
     }
 
-    .nome {
+
+    /* NOME */
+
+    .name {
       font-family: "Times New Roman", Times, serif;
 
-      font-size: clamp(25px, 6vw, 42px);
+      font-size: clamp(32px, 5vw, 54px);
       font-weight: 400;
 
-      letter-spacing: 0.035em;
       line-height: 1;
 
-      color: var(--preto);
+      letter-spacing: -0.04em;
+
+      text-align: center;
 
       white-space: nowrap;
 
-      margin-bottom: 50px;
-
-      text-align: center;
+      margin-bottom: 64px;
     }
+
+
+    /* MENU */
 
     .menu {
-      width: 100%;
-
       display: flex;
       flex-direction: column;
-      align-items: center;
 
-      gap: 31px;
+      align-items: flex-start;
+
+      gap: 38px;
     }
 
-    .menu a {
-      position: relative;
+    .menu-item {
+      display: grid;
 
-      width: 100%;
-      max-width: 330px;
+      grid-template-columns: 45px auto;
+
+      align-items: center;
+
+      text-decoration: none;
+
+      color: var(--preto);
+
+      font-family: "Neue Montreal",
+                   "Helvetica Neue",
+                   Helvetica,
+                   Arial,
+                   sans-serif;
+
+      font-size: 28px;
+      font-weight: 400;
+
+      letter-spacing: -0.03em;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .menu-item:hover {
+      opacity: 0.55;
+    }
+
+
+    /* ESTRELAS */
+
+    .symbol {
+      color: var(--azul);
+
+      font-family: Arial, sans-serif;
+
+      font-size: 24px;
+      font-weight: 400;
+
+      line-height: 1;
 
       display: flex;
       justify-content: center;
       align-items: center;
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-
-      color: var(--preto);
-
-      text-decoration: none;
-
-      transition: opacity .2s ease;
     }
 
-    .menu a:hover {
-      opacity: .55;
-    }
 
-    .simbolo {
-      position: absolute;
-      left: 48px;
+    /* LINKS SOCIAIS */
 
-      width: 26px;
-
-      color: var(--azul);
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 21px;
-      font-weight: 400;
-
-      line-height: 1;
-      text-align: center;
-    }
-
-    .redes {
+    .social {
       position: absolute;
 
-      bottom: max(42px, env(safe-area-inset-bottom));
-
+      bottom: 52px;
       left: 50%;
+
       transform: translateX(-50%);
 
       display: flex;
       align-items: center;
 
-      gap: 27px;
+      gap: 34px;
     }
 
-    .redes a {
+    .social a {
       color: var(--azul);
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      font-weight: 400;
 
       text-decoration: none;
 
-      transition: opacity .2s ease;
+      font-family: "Neue Montreal",
+                   "Helvetica Neue",
+                   Helvetica,
+                   Arial,
+                   sans-serif;
+
+      font-size: 20px;
+      font-weight: 400;
     }
 
-    .redes a:hover {
-      opacity: .55;
-    }
 
-    @media (max-width: 480px) {
-      .conteudo {
-        margin-top: 7vh;
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .home {
+        padding: 50px 22px 100px;
       }
 
       .spiral {
         width: 88px;
-        margin-bottom: 25px;
+        height: 88px;
+
+        margin-bottom: 30px;
       }
 
-      .nome {
-        font-size: 6.2vw;
-        letter-spacing: 0.025em;
-        margin-bottom: 48px;
+      .name {
+        font-size: 34px;
+
+        margin-bottom: 55px;
       }
 
       .menu {
-        gap: 31px;
+        gap: 36px;
       }
 
-      .menu a {
-        max-width: 300px;
+      .menu-item {
+        grid-template-columns: 42px auto;
+
+        font-size: 25px;
+      }
+
+      .symbol {
+        font-size: 22px;
+      }
+
+      .social {
+        bottom: 55px;
+        gap: 30px;
+      }
+
+      .social a {
         font-size: 18px;
       }
-
-      .simbolo {
-        left: 38px;
-      }
     }
 
-    @media (max-width: 350px) {
-      .nome {
-        font-size: 5.9vw;
+
+    @media (max-width: 390px) {
+
+      .name {
+        font-size: 30px;
       }
 
-      .menu a {
-        max-width: 280px;
+      .menu-item {
+        font-size: 23px;
       }
 
-      .simbolo {
-        left: 30px;
-      }
     }
+
   </style>
 </head>
+
 
 <body>
 
   <main class="home">
 
-    <section class="conteudo">
+    <!-- ESPIRAL -->
+    <!-- IMPORTANTE:
+         troque o nome abaixo pelo nome EXATO
+         do PNG que você colocou no GitHub -->
 
-      <img
-        src="E4C92BBE-623D-486D-94FF-2AF7077F6DED.png"
-        alt=""
-        class="spiral"
-      >
+    <img
+      class="spiral"
+      src="E4C92BBE-623D-486D-94FF-2AF7077F6DED.png"
+      alt=""
+    >
 
-      <h1 class="nome">
-        ANA LUIZA CAMPOS
-      </h1>
 
-      <nav class="menu">
+    <!-- NOME -->
 
-        <a href="#arquitetura">
-          <span class="simbolo">+</span>
-          <span>arquitetura</span>
-        </a>
+    <h1 class="name">
+      ANA LUIZA CAMPOS
+    </h1>
 
-        <a href="#social-media">
-          <span class="simbolo">°</span>
-          <span>social media</span>
-        </a>
 
-        <a href="#curriculo">
-          <span class="simbolo">*</span>
-          <span>currículo</span>
-        </a>
+    <!-- MENU -->
 
-        <a href="#contato">
-          <span class="simbolo">—</span>
-          <span>contato</span>
-        </a>
+    <nav class="menu">
 
-      </nav>
+      <a class="menu-item" href="#arquitetura">
+        <span class="symbol">✷</span>
+        <span>arquitetura</span>
+      </a>
 
-    </section>
+      <a class="menu-item" href="#social-media">
+        <span class="symbol">✷</span>
+        <span>social media</span>
+      </a>
 
-    <div class="redes">
+      <a class="menu-item" href="#curriculo">
+        <span class="symbol">✷</span>
+        <span>currículo</span>
+      </a>
 
-      <a href="#" aria-label="LinkedIn">in</a>
+      <a class="menu-item" href="#contato">
+        <span class="symbol">✷</span>
+        <span>contato</span>
+      </a>
 
-      <a href="#" aria-label="Instagram">ig</a>
+    </nav>
 
-      <a href="mailto:seuemail@email.com" aria-label="E-mail">@</a>
+
+    <!-- REDES -->
+
+    <div class="social">
+
+      <a href="#" aria-label="LinkedIn">
+        in
+      </a>
+
+      <a href="#" aria-label="Instagram">
+        ig
+      </a>
+
+      <a href="mailto:seuemail@email.com" aria-label="E-mail">
+        @
+      </a>
 
     </div>
 
   </main>
 
 </body>
+
 </html>
