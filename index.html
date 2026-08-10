@@ -2,17 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Ana Luiza Campos">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfólio de Ana Luiza Campos — Arquitetura e Social Media"
+  >
+
   <title>Ana Luiza Campos</title>
 
   <style>
+
     :root {
-      --fundo: #F4F2E8;
+      --fundo: #F3F2EA;
       --preto: #111111;
-      --azul: #2146E0;
-      --relevo-claro: rgba(255,255,255,0.9);
-      --relevo-escuro: rgba(120,115,100,0.18);
+      --azul: #1647FF;
     }
 
     * {
@@ -33,34 +41,53 @@
       color: var(--preto);
     }
 
+
+    /* HOME */
+
     .home {
+      min-height: 100vh;
       min-height: 100svh;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+
       position: relative;
-      padding: 70px 24px 90px;
-      text-align: center;
+
+      padding:
+        max(105px, env(safe-area-inset-top))
+        20px
+        max(90px, env(safe-area-inset-bottom));
+
+      overflow: hidden;
     }
+
+
+    /* CONTEÚDO CENTRAL */
 
     .conteudo {
       width: 100%;
       max-width: 760px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      margin-top: 8vh;
     }
 
-    /* ESPIRAL EM RELEVO */
+
+    /* ESPIRAL */
+
     .spiral {
       width: 92px;
       height: 92px;
-      margin-bottom: 34px;
-      position: relative;
+
+      margin-bottom: 27px;
     }
 
     .spiral svg {
+      display: block;
       width: 100%;
       height: 100%;
       overflow: visible;
@@ -68,166 +95,332 @@
 
     .spiral path {
       fill: none;
-      stroke: var(--fundo);
-      stroke-width: 5;
+
+      /*
+        Quase da mesma cor do fundo:
+        é isso que cria o efeito de relevo.
+      */
+      stroke: #F1F0E7;
+
+      stroke-width: 5.5;
       stroke-linecap: round;
       stroke-linejoin: round;
 
       filter:
-        drop-shadow(-1.5px -1.5px 1.5px var(--relevo-claro))
-        drop-shadow(1.7px 1.7px 1.5px var(--relevo-escuro));
+        drop-shadow(-2px -2px 1.5px rgba(255,255,255,.95))
+        drop-shadow(2px 2px 1.8px rgba(119,116,104,.32));
     }
+
 
     /* NOME */
+
     .nome {
       font-family: "Times New Roman", Times, serif;
-      font-size: clamp(28px, 6vw, 44px);
+
+      font-size: clamp(25px, 6vw, 42px);
       font-weight: 400;
-      letter-spacing: 0.08em;
+
+      letter-spacing: 0.035em;
       line-height: 1;
-      white-space: nowrap;
-      margin-bottom: 56px;
+
       color: var(--preto);
+
+      white-space: nowrap;
+
+      margin-bottom: 50px;
+
+      text-align: center;
     }
 
-    /* MENU CENTRALIZADO */
+
+    /* MENU */
+
     .menu {
+      width: 100%;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+
+      gap: 31px;
     }
 
     .menu a {
+      position: relative;
+
+      width: 100%;
+      max-width: 330px;
+
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 16px;
-      text-decoration: none;
-      color: var(--preto);
+      align-items: center;
+
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 18px;
       font-weight: 400;
-      min-width: 220px;
+
+      color: var(--preto);
+
+      text-decoration: none;
+
+      transition: opacity .2s ease;
     }
+
+    .menu a:hover {
+      opacity: .55;
+    }
+
+
+    /*
+      O símbolo é absoluto de propósito.
+      Assim ele NÃO interfere no centro da palavra.
+    */
 
     .simbolo {
+      position: absolute;
+
+      left: 48px;
+
+      width: 26px;
+
       color: var(--azul);
+
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 21px;
+      font-weight: 400;
+
       line-height: 1;
-      min-width: 24px;
+
       text-align: center;
     }
 
-    .texto {
-      text-align: center;
-    }
 
-    /* REDES */
+    /* REDES SOCIAIS */
+
     .redes {
       position: absolute;
-      bottom: 36px;
+
+      bottom: max(42px, env(safe-area-inset-bottom));
+
       left: 50%;
       transform: translateX(-50%);
+
       display: flex;
-      gap: 24px;
       align-items: center;
+
+      gap: 27px;
     }
 
     .redes a {
       color: var(--azul);
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+
       text-decoration: none;
-      font-size: 14px;
+
+      transition: opacity .2s ease;
     }
 
+    .redes a:hover {
+      opacity: .55;
+    }
+
+
+    /* CELULAR */
+
     @media (max-width: 480px) {
-      .home {
-        padding: 76px 20px 92px;
+
+      .conteudo {
+        margin-top: 7vh;
       }
 
       .spiral {
-        width: 82px;
-        height: 82px;
-        margin-bottom: 30px;
+        width: 88px;
+        height: 88px;
+
+        margin-bottom: 25px;
       }
 
       .nome {
-        font-size: 7vw;
-        letter-spacing: 0.055em;
-        margin-bottom: 52px;
+        font-size: 6.2vw;
+
+        letter-spacing: 0.025em;
+
+        margin-bottom: 48px;
       }
 
       .menu {
-        gap: 28px;
+        gap: 31px;
       }
 
       .menu a {
+        max-width: 300px;
+
         font-size: 18px;
-        min-width: 210px;
       }
+
+      .simbolo {
+        left: 38px;
+      }
+
     }
+
+
+    /* TELAS MUITO PEQUENAS */
+
+    @media (max-width: 350px) {
+
+      .nome {
+        font-size: 5.9vw;
+      }
+
+      .menu a {
+        max-width: 280px;
+      }
+
+      .simbolo {
+        left: 30px;
+      }
+
+    }
+
   </style>
 </head>
+
 
 <body>
 
   <main class="home">
 
-    <div class="conteudo">
+    <section class="conteudo">
 
-      <div class="spiral">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <path d="
-            M78 62
-            C72 77, 55 85, 39 79
-            C22 72, 16 54, 23 39
-            C30 23, 48 17, 63 23
-            C79 29, 87 45, 82 59
-            C76 75, 60 81, 46 75
-            C33 69, 27 55, 32 43
-            C37 31, 51 26, 62 31
-            C73 36, 78 48, 73 58
-            C68 68, 57 72, 48 67
-            C39 63, 36 53, 40 45
-            C44 37, 53 35, 60 39
-            C67 43, 68 51, 64 57
-            C60 63, 53 64, 49 60
-            C45 56, 46 50, 50 48
-          "/>
+
+      <!-- ESPIRAL ORGÂNICA EM RELEVO -->
+
+      <div class="spiral" aria-hidden="true">
+
+        <svg
+          viewBox="0 0 120 120"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="
+              M 98 68
+
+              C 96 91,
+                75 105,
+                51 101
+
+              C 25 97,
+                13 75,
+                19 51
+
+              C 25 28,
+                48 16,
+                72 22
+
+              C 94 28,
+                105 48,
+                98 68
+
+              C 92 87,
+                72 94,
+                54 88
+
+              C 37 82,
+                30 66,
+                35 51
+
+              C 40 37,
+                55 31,
+                69 36
+
+              C 82 41,
+                88 54,
+                83 66
+
+              C 79 77,
+                67 81,
+                57 76
+
+              C 48 72,
+                45 62,
+                49 54
+
+              C 53 47,
+                61 45,
+                67 49
+
+              C 73 53,
+                74 60,
+                70 65
+
+              C 66 69,
+                60 68,
+                58 64
+            "
+          />
+
         </svg>
+
       </div>
 
-      <h1 class="nome">ANA LUIZA CAMPOS</h1>
+
+      <!-- NOME -->
+
+      <h1 class="nome">
+        ANA LUIZA CAMPOS
+      </h1>
+
+
+      <!-- MENU -->
 
       <nav class="menu">
 
         <a href="#arquitetura">
           <span class="simbolo">+</span>
-          <span class="texto">arquitetura</span>
+          <span>arquitetura</span>
         </a>
 
         <a href="#social-media">
           <span class="simbolo">°</span>
-          <span class="texto">social media</span>
+          <span>social media</span>
         </a>
 
         <a href="#curriculo">
           <span class="simbolo">*</span>
-          <span class="texto">currículo</span>
+          <span>currículo</span>
         </a>
 
         <a href="#contato">
           <span class="simbolo">—</span>
-          <span class="texto">contato</span>
+          <span>contato</span>
         </a>
 
       </nav>
 
-    </div>
+    </section>
+
+
+    <!-- REDES -->
 
     <div class="redes">
-      <a href="#" aria-label="LinkedIn">in</a>
-      <a href="#" aria-label="Instagram">ig</a>
-      <a href="mailto:" aria-label="Email">@</a>
+
+      <a href="#" aria-label="LinkedIn">
+        in
+      </a>
+
+      <a href="#" aria-label="Instagram">
+        ig
+      </a>
+
+      <a href="mailto:seuemail@email.com" aria-label="E-mail">
+        @
+      </a>
+
     </div>
 
   </main>
