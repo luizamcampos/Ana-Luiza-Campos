@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arquitetura — Ana Luiza Campos</title>
+
+  <style>
+
+    @font-face {
+      font-family: "Neue Montreal";
+      src: url("./NeueMontreal-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --fundo: #ffffff;
+      --preto: #111111;
+      --azul: #2455ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fundo);
+      color: var(--preto);
+      font-family: "Neue Montreal", sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      padding: 28px 28px 80px;
+    }
+
+
+    /* TOPO */
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 110px;
+    }
+
+    .back {
+      color: var(--azul);
+      text-decoration: none;
+
+      font-size: 16px;
+    }
+
+    .top-name {
+      font-size: 16px;
+    }
+
+
+    /* TÍTULO */
+
+    .page-title {
+      margin-bottom: 80px;
+
+      font-size: clamp(42px, 7vw, 100px);
+      font-weight: 400;
+
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+
+    /* PROJETOS */
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+
+      gap: 28px;
+    }
+
+
+    /* CARD */
+
+    .project-card {
+      position: relative;
+
+      width: 100%;
+
+      display: block;
+
+      overflow: hidden;
+
+      text-decoration: none;
+      color: #ffffff;
+
+      background: #111111;
+    }
+
+
+    /* IMAGEM */
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+      transition:
+        transform 0.7s ease,
+        opacity 0.5s ease;
+
+      transform: scale(1);
+    }
+
+
+    /* ESCURECIMENTO */
+
+    .project-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.48);
+
+      opacity: 0;
+
+      transition: opacity 0.45s ease;
+
+      z-index: 1;
+    }
+
+
+    /* TEXTOS DO HOVER */
+
+    .project-info {
+      position: absolute;
+
+      left: 34px;
+      bottom: 34px;
+
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      opacity: 0;
+
+      transform: translateY(16px);
+
+      transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+
+      pointer-events: none;
+    }
+
+    .project-year {
+      font-size: 16px;
+
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      font-size: clamp(38px, 6vw, 84px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.04em;
+      font-weight: 400;
+    }
+
+    .project-type {
+      margin-top: 12px;
+
+      font-size: 15px;
+    }
+
+
+    /* HOVER */
+
+    @media (hover: hover) {
+
+      .project-card:hover img {
+        transform: scale(1.025);
+      }
+
+      .project-card:hover::after {
+        opacity: 1;
+      }
+
+      .project-card:hover .project-info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* FINAL */
+
+    .footer {
+      margin-top: 100px;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--preto);
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 16px;
+    }
+
+    .footer a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .copyright {
+      margin-top: 34px;
+
+      text-align: center;
+
+      font-size: 11px;
+
+      color: rgba(17, 17, 17, 0.32);
+    }
+
+
+    /* CELULAR */
+
+    @media (max-width: 700px) {
+
+      .page {
+        padding: 22px 18px 50px;
+      }
+
+      .top {
+        margin-bottom: 85px;
+      }
+
+      .top-name {
+        font-size: 15px;
+      }
+
+      .back {
+        font-size: 15px;
+      }
+
+      .page-title {
+        margin-bottom: 50px;
+
+        font-size: 14vw;
+      }
+
+      .projects {
+        gap: 18px;
+      }
+
+
+      /* NO CELULAR O TEXTO FICA VISÍVEL */
+
+      .project-card::after {
+        opacity: 1;
+
+        background: rgba(0, 0, 0, 0.33);
+      }
+
+      .project-info {
+        left: 18px;
+        bottom: 18px;
+
+        opacity: 1;
+
+        transform: none;
+      }
+
+      .project-year {
+        font-size: 13px;
+
+        margin-bottom: 7px;
+      }
+
+      .project-name {
+        font-size: 12vw;
+      }
+
+      .project-type {
+        margin-top: 8px;
+
+        font-size: 13px;
+      }
+
+      .footer {
+        margin-top: 70px;
+
+        font-size: 15px;
+      }
+
+      .copyright {
+        margin-top: 28px;
+
+        font-size: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <!-- TOPO -->
+
+    <header class="top">
+
+      <a
+        class="back"
+        href="index.html"
+      >
+        ← voltar
+      </a>
+
+      <span class="top-name">
+        Ana Luiza Campos
+      </span>
+
+    </header>
+
+
+    <!-- TÍTULO -->
+
+    <h1 class="page-title">
+      ARQUITETURA
+    </h1>
+
+
+    <!-- PROJETOS -->
+
+    <section class="projects">
+
+
+      <!-- 303 -->
+
+      <a
+        class="project-card"
+        href="303.html"
+      >
+
+        <img
+          src="8558c32f-a82f-48c9-997e-4ee2872f9f82.JPG"
+          alt="Projeto 303"
+        >
+
+        <div class="project-info">
+
+          <span class="project-year">
+            2026
+          </span>
+
+          <span class="project-name">
+            303
+          </span>
+
+          <span class="project-type">
+            Projeto acadêmico
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!--
+        OS PRÓXIMOS PROJETOS VÃO ENTRAR AQUI,
+        SEMPRE REPETINDO A MESMA ESTRUTURA.
+      -->
+
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <footer>
+
+      <div class="footer">
+
+        <span>
+          Arquitetura
+        </span>
+
+        <a href="#top">
+          Back to top ↑
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        Ana Luiza Campos © 2026
+      </div>
+
+    </footer>
+
+
+  </main>
+
+</body>
+
+</html>
