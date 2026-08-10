@@ -63,13 +63,14 @@
       font-size: 16px;
     }
 
-    /* TÍTULO */
+
+    /* ABERTURA */
 
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      margin-bottom: 70px;
+      margin-bottom: 90px;
     }
 
     .title-block {
@@ -106,23 +107,84 @@
       color: var(--azul);
     }
 
-    /* IMAGENS */
 
-    .image-full {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+    /* MAQUETE + TEXTO */
+
+    .project-intro {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 120px;
     }
 
-    .maquete {
-      margin-bottom: 80px;
+    .project-intro img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about {
+      padding-top: 6px;
+    }
+
+    .section-title {
+      color: var(--azul);
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      max-width: 560px;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .about-text p + p {
+      margin-top: 22px;
+    }
+
+
+    /* DESENHOS */
+
+    .drawings-section {
+      margin-top: 40px;
+      margin-bottom: 130px;
+    }
+
+    .drawings {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .drawings img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* VISUALIZAÇÕES */
+
+    .visualizations-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 45px;
+    }
+
+    .visualizations-note {
+      max-width: 520px;
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .renders {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-top: 80px;
     }
 
     .renders img {
@@ -135,26 +197,6 @@
       grid-column: 1 / -1;
     }
 
-    /* TEXTO */
-
-    .description {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin: 100px 0;
-    }
-
-    .description-title {
-      color: var(--azul);
-      font-size: 16px;
-    }
-
-    .description-text {
-      max-width: 620px;
-      font-size: 22px;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-    }
 
     /* FINAL */
 
@@ -190,7 +232,7 @@
       .intro {
         grid-template-columns: 1fr;
         gap: 35px;
-        margin-bottom: 45px;
+        margin-bottom: 70px;
       }
 
       h1 {
@@ -206,24 +248,41 @@
         font-size: 15px;
       }
 
-      .maquete {
-        margin-bottom: 55px;
-      }
-
-      .description {
+      .project-intro {
         grid-template-columns: 1fr;
-        gap: 25px;
-        margin: 60px 0;
+        gap: 45px;
+        margin-bottom: 85px;
       }
 
-      .description-text {
+      .section-title {
+        margin-bottom: 24px;
+      }
+
+      .about-text {
         font-size: 19px;
+      }
+
+      .drawings-section {
+        margin-bottom: 90px;
+      }
+
+      .drawings {
+        gap: 20px;
+      }
+
+      .visualizations-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 35px;
+      }
+
+      .visualizations-note {
+        font-size: 14px;
       }
 
       .renders {
         grid-template-columns: 1fr;
         gap: 12px;
-        margin-top: 55px;
       }
 
       .renders img:first-child {
@@ -251,6 +310,8 @@
 
     </header>
 
+
+    <!-- ABERTURA -->
 
     <section class="intro">
 
@@ -282,62 +343,153 @@
     </section>
 
 
-    <img
-      class="image-full maquete"
-      src="maquete 2 mooca .PNG"
-      alt="Maquete do projeto 303"
-    >
+    <!-- MAQUETE + SOBRE O PROJETO -->
 
+    <section class="project-intro">
 
-    <section class="description">
+      <div>
 
-      <div class="description-title">
-        ✷ sobre o projeto
+        <img
+          src="maquete 2 mooca .PNG"
+          alt="Maquete do projeto 303"
+        >
+
       </div>
 
-      <div class="description-text">
-        <p>
-          Projeto desenvolvido a partir da leitura e transformação
-          de uma preexistência industrial, explorando novas relações
-          entre estrutura, programa e espaço.
-        </p>
+
+      <div class="about">
+
+        <div class="section-title">
+          ✷ sobre o projeto
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            O projeto propõe a transformação do antigo galpão da
+            Casa Vanorden, na Mooca, em um equipamento cultural
+            integrado a um parque público.
+          </p>
+
+          <p>
+            A intervenção preserva os dois primeiros pavimentos
+            existentes e insere sobre eles um novo volume revestido
+            em policarbonato translúcido, criando um contraste entre
+            a materialidade histórica do galpão e a nova intervenção.
+          </p>
+
+          <p>
+            O programa reúne espaços de workshop, exposição, loja
+            e cinema, enquanto a área livre se organiza como um
+            parque aberto à cidade, com praça permeável, jardins
+            de chuva, áreas de permanência e vegetação.
+          </p>
+
+          <p>
+            A proposta articula cultura, produção artística, lazer
+            e infraestrutura ambiental, transformando a antiga
+            estrutura produtiva em um espaço de encontro e
+            convivência urbana.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <section class="renders">
+    <!-- DESENHOS -->
 
-      <img
-        src="8558c32f-a82f-48c9-997e-4ee2872f9f82.JPG"
-        alt="Fachada do projeto 303"
-      >
+    <section class="drawings-section">
 
-      <img
-        src="18b5a1af-77e0-4173-a2e9-276b7a6fa937.JPG"
-        alt="Projeto 303"
-      >
+      <div class="section-title">
+        ✷ desenhos
+      </div>
 
-      <img
-        src="1a07f581-ac2a-40fb-886a-8bfd19d378e1.JPG"
-        alt="Projeto 303"
-      >
+      <div class="drawings">
 
-      <img
-        src="35c0fb24-71bb-442e-87ef-df2ec1978967.JPG"
-        alt="Projeto 303"
-      >
+        <img
+          src="desenhos projeto mooca_page-0002.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+        <img
+          src="desenhos projeto mooca_page-0003.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+        <img
+          src="desenhos projeto mooca_page-0001.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+        <img
+          src="desenhos projeto mooca_page-0004.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+        <img
+          src="desenhos projeto mooca_page-0005.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+        <img
+          src="desenhos projeto mooca_page-0006.jpeg"
+          alt="Desenho técnico do projeto 303"
+        >
+
+      </div>
 
     </section>
 
 
-    <!--
-      AQUI DEPOIS VAMOS COLOCAR:
-      PLANTAS
-      CORTES
-      DIAGRAMAS
-    -->
+    <!-- RENDERS -->
 
+    <section>
+
+      <div class="visualizations-header">
+
+        <div class="section-title">
+          ✷ visualizações
+        </div>
+
+        <div class="visualizations-note">
+          Imagens desenvolvidas com auxílio de inteligência artificial
+          a partir do projeto arquitetônico autoral.
+        </div>
+
+      </div>
+
+
+      <div class="renders">
+
+        <img
+          src="8558c32f-a82f-48c9-997e-4ee2872f9f82.JPG"
+          alt="Fachada do projeto 303"
+        >
+
+        <img
+          src="18b5a1af-77e0-4173-a2e9-276b7a6fa937.JPG"
+          alt="Visualização do projeto 303"
+        >
+
+        <img
+          src="1a07f581-ac2a-40fb-886a-8bfd19d378e1.JPG"
+          alt="Visualização do projeto 303"
+        >
+
+        <img
+          src="35c0fb24-71bb-442e-87ef-df2ec1978967.JPG"
+          alt="Visualização do projeto 303"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL -->
 
     <footer class="next">
 
