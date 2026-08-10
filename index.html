@@ -2,8 +2,17 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Portfólio de Ana Luiza Campos"
+  />
 
   <title>Ana Luiza Campos</title>
 
@@ -12,12 +21,12 @@
     @font-face {
       font-family: "Neue Montreal";
       src: url("NeueMontreal-Regular.otf") format("opentype");
-      font-weight: normal;
+      font-weight: 400;
       font-style: normal;
     }
 
     :root {
-      --fundo: #f4f2e9;
+      --fundo: #f5f3eb;
       --preto: #111111;
       --azul: #2455ff;
     }
@@ -42,52 +51,49 @@
 
     .pagina {
       min-height: 100svh;
+      width: 100%;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
-      padding:
-        max(70px, env(safe-area-inset-top))
-        24px
-        max(35px, env(safe-area-inset-bottom));
+      padding: 40px 24px 34px;
     }
 
 
-    /* CONTEÚDO PRINCIPAL */
+    /* BLOCO PRINCIPAL */
 
-    .conteudo {
+    .principal {
       width: 100%;
-      max-width: 620px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      margin-top: auto;
-      margin-bottom: auto;
+      transform: translateY(-10px);
     }
 
 
     /* ESPIRAL */
 
     .espiral {
-      width: 92px;
+      width: 82px;
       height: auto;
       display: block;
 
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
 
-    /* NOME */
+    /* TÍTULO EM PNG */
 
-    .nome {
-      width: min(520px, 86vw);
+    .titulo {
+      width: min(510px, 78vw);
       height: auto;
       display: block;
 
-      margin-bottom: 48px;
+      margin-bottom: 42px;
     }
 
 
@@ -97,7 +103,7 @@
       display: flex;
       flex-direction: column;
 
-      gap: 29px;
+      gap: 24px;
 
       width: fit-content;
     }
@@ -105,50 +111,56 @@
     .menu a {
       display: grid;
 
-      grid-template-columns: 35px auto;
-      column-gap: 28px;
+      grid-template-columns: 30px auto;
 
       align-items: center;
+      column-gap: 18px;
 
       text-decoration: none;
       color: var(--preto);
 
-      font-size: 29px;
-      line-height: 1;
+      font-family: "Neue Montreal", Arial, sans-serif;
+      font-size: 22px;
       font-weight: 400;
+      line-height: 1;
+
+      white-space: nowrap;
     }
 
     .estrela {
       color: var(--azul);
 
-      font-size: 27px;
+      font-size: 22px;
       line-height: 1;
-
-      text-align: center;
-    }
-
-
-    /* LINKS INFERIORES */
-
-    .social {
-      width: 100%;
 
       display: flex;
       justify-content: center;
       align-items: center;
-
-      gap: 48px;
-
-      margin-top: 55px;
     }
 
-    .social a {
-      color: var(--azul);
 
+    /* REDES */
+
+    .redes {
+      position: absolute;
+
+      bottom: 48px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .redes a {
+      color: var(--azul);
       text-decoration: none;
 
-      font-size: 21px;
-      line-height: 1;
+      font-family: "Neue Montreal", Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
     }
 
 
@@ -157,48 +169,55 @@
     @media (max-width: 600px) {
 
       .pagina {
-        padding-left: 22px;
-        padding-right: 22px;
+        position: relative;
+
+        min-height: 100svh;
+
+        justify-content: center;
+
+        padding: 30px 20px 32px;
       }
 
-      .conteudo {
-        transform: translateY(-10px);
+      .principal {
+        transform: translateY(-25px);
       }
 
       .espiral {
-        width: 76px;
-        margin-bottom: 20px;
+        width: 72px;
+
+        margin-bottom: 22px;
       }
 
-      .nome {
-        width: 78vw;
-        max-width: 430px;
+      .titulo {
+        width: 72vw;
+        max-width: 390px;
 
-        margin-bottom: 42px;
+        margin-bottom: 36px;
       }
 
       .menu {
-        gap: 28px;
+        gap: 22px;
       }
 
       .menu a {
-        grid-template-columns: 30px auto;
-        column-gap: 25px;
+        grid-template-columns: 26px auto;
 
-        font-size: 26px;
+        column-gap: 17px;
+
+        font-size: 19px;
       }
 
       .estrela {
-        font-size: 24px;
-      }
-
-      .social {
-        margin-top: 48px;
-        gap: 46px;
-      }
-
-      .social a {
         font-size: 20px;
+      }
+
+      .redes {
+        bottom: 48px;
+        gap: 36px;
+      }
+
+      .redes a {
+        font-size: 17px;
       }
     }
 
@@ -210,7 +229,7 @@
 
   <main class="pagina">
 
-    <section class="conteudo">
+    <section class="principal">
 
       <!-- ESPIRAL -->
 
@@ -218,16 +237,16 @@
         class="espiral"
         src="E4C92BBE-623D-486D-94FF-2AF7077F6DED.png"
         alt=""
-      >
+      />
 
 
-      <!-- NOME -->
+      <!-- ANA LUIZA CAMPOS -->
 
       <img
-        class="nome"
+        class="titulo"
         src="9DE4427F-D7A4-45B2-A785-B64790E32DC7.png"
         alt="Ana Luiza Campos"
-      >
+      />
 
 
       <!-- MENU -->
@@ -259,9 +278,9 @@
     </section>
 
 
-    <!-- LINKEDIN + EMAIL -->
+    <!-- LINKS INFERIORES -->
 
-    <footer class="social">
+    <div class="redes">
 
       <a
         href="#"
@@ -277,7 +296,7 @@
         @
       </a>
 
-    </footer>
+    </div>
 
   </main>
 
