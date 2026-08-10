@@ -2,34 +2,25 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ana Luiza Campos</title>
 
   <style>
 
-    /* NEUE MONTREAL */
-
     @font-face {
       font-family: "Neue Montreal";
-      src: url("./NeueMontreal-Regular.otf") format("opentype");
+      src: url("NeueMontreal-Regular.otf") format("opentype");
       font-weight: 400;
       font-style: normal;
-      font-display: swap;
     }
-
-
-    /* CORES */
 
     :root {
-      --fundo: #f3f2ed;
+      --fundo: #f4f3ec;
+      --azul: #2450ff;
       --preto: #111111;
-      --azul: #2455ff;
     }
-
-
-    /* RESET */
 
     * {
       box-sizing: border-box;
@@ -41,274 +32,203 @@
     body {
       width: 100%;
       min-height: 100%;
+      background: var(--fundo);
     }
 
     body {
-      background: var(--fundo);
+      font-family: "Neue Montreal", Arial, sans-serif;
       color: var(--preto);
     }
-
-
-    /* HOME */
 
     .home {
       min-height: 100svh;
       width: 100%;
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
       position: relative;
-
-      padding: 60px 24px 90px;
+      padding: 40px 24px;
     }
-
 
     /* ESPIRAL */
 
     .spiral {
-      width: 105px;
-      height: 105px;
-
+      width: 72px;
+      height: 72px;
       object-fit: contain;
       display: block;
-
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
+    /* TÍTULO EM PNG */
 
-    /* NOME */
-
-    .name {
-      font-family: "Times New Roman", Times, serif;
-
-      font-size: clamp(32px, 5vw, 54px);
-      font-weight: 400;
-
-      line-height: 1;
-      letter-spacing: -0.04em;
-
-      text-align: center;
-      white-space: nowrap;
-
-      margin-bottom: 64px;
+    .nome-img {
+      width: min(440px, 82vw);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      margin-bottom: 50px;
     }
-
 
     /* MENU */
 
     .menu {
       display: flex;
       flex-direction: column;
-
-      align-items: flex-start;
-
-      gap: 38px;
+      gap: 27px;
+      width: fit-content;
     }
 
-    .menu-item {
+    .menu a {
       display: grid;
-
-      grid-template-columns: 45px auto;
-
+      grid-template-columns: 30px auto;
+      column-gap: 22px;
       align-items: center;
 
+      color: var(--preto);
       text-decoration: none;
 
-      color: var(--preto);
-
-      font-family: "Neue Montreal", sans-serif;
-
-      font-size: 28px;
+      font-family: "Neue Montreal", Arial, sans-serif;
+      font-size: 21px;
+      line-height: 1;
       font-weight: 400;
-
-      letter-spacing: -0.03em;
 
       transition: opacity 0.2s ease;
     }
 
-    .menu-item:hover {
+    .menu a:hover {
       opacity: 0.55;
     }
 
-
-    /* SÍMBOLOS */
-
-    .symbol {
+    .simbolo {
       color: var(--azul);
-
-      font-family: "Neue Montreal", sans-serif;
-
-      font-size: 24px;
-      font-weight: 400;
-
+      font-size: 20px;
       line-height: 1;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
     }
 
-
-    /* LINKS SOCIAIS */
+    /* REDES SOCIAIS */
 
     .social {
       position: absolute;
-
-      bottom: 52px;
+      bottom: 42px;
       left: 50%;
-
       transform: translateX(-50%);
 
       display: flex;
       align-items: center;
-
-      gap: 34px;
+      gap: 28px;
     }
 
     .social a {
       color: var(--azul);
-
       text-decoration: none;
-
-      font-family: "Neue Montreal", sans-serif;
-
-      font-size: 20px;
+      font-family: "Neue Montreal", Arial, sans-serif;
+      font-size: 16px;
       font-weight: 400;
     }
 
+    .social a:hover {
+      opacity: 0.55;
+    }
 
-    /* MOBILE */
+    /* CELULAR */
 
     @media (max-width: 600px) {
 
       .home {
-        padding: 50px 22px 100px;
+        padding: 35px 20px 100px;
       }
 
       .spiral {
-        width: 88px;
-        height: 88px;
-
-        margin-bottom: 30px;
+        width: 62px;
+        height: 62px;
+        margin-bottom: 26px;
       }
 
-      .name {
-        font-size: 34px;
-
-        margin-bottom: 55px;
+      .nome-img {
+        width: 78vw;
+        max-width: 360px;
+        margin-bottom: 45px;
       }
 
       .menu {
-        gap: 36px;
+        gap: 25px;
       }
 
-      .menu-item {
-        grid-template-columns: 42px auto;
-
-        font-size: 25px;
+      .menu a {
+        grid-template-columns: 28px auto;
+        column-gap: 20px;
+        font-size: 19px;
       }
 
-      .symbol {
-        font-size: 22px;
+      .simbolo {
+        font-size: 18px;
       }
 
       .social {
-        bottom: 55px;
-
-        gap: 30px;
+        bottom: 38px;
+        gap: 26px;
       }
 
       .social a {
-        font-size: 18px;
+        font-size: 15px;
       }
-    }
-
-
-    @media (max-width: 390px) {
-
-      .name {
-        font-size: 30px;
-      }
-
-      .menu-item {
-        font-size: 23px;
-      }
-
     }
 
   </style>
 </head>
 
-
 <body>
 
   <main class="home">
 
-
     <!-- ESPIRAL -->
-
     <img
       class="spiral"
       src="E4C92BBE-623D-486D-94FF-2AF7077F6DED.png"
       alt=""
-    >
+    />
 
-
-    <!-- NOME -->
-
-    <h1 class="name">
-      ANA LUIZA CAMPOS
-    </h1>
-
+    <!-- ANA LUIZA CAMPOS -->
+    <img
+      class="nome-img"
+      src="9DE4427F-D7A4-45B2-A785-B64790E32DC7.png"
+      alt="Ana Luiza Campos"
+    />
 
     <!-- MENU -->
-
     <nav class="menu">
 
-      <a class="menu-item" href="#arquitetura">
-        <span class="symbol">✷</span>
+      <a href="#arquitetura">
+        <span class="simbolo">✷</span>
         <span>arquitetura</span>
       </a>
 
-      <a class="menu-item" href="#social-media">
-        <span class="symbol">✷</span>
+      <a href="#social-media">
+        <span class="simbolo">✷</span>
         <span>social media</span>
       </a>
 
-      <a class="menu-item" href="#curriculo">
-        <span class="symbol">✷</span>
+      <a href="#curriculo">
+        <span class="simbolo">✷</span>
         <span>currículo</span>
       </a>
 
-      <a class="menu-item" href="#contato">
-        <span class="symbol">✷</span>
+      <a href="#contato">
+        <span class="simbolo">✷</span>
         <span>contato</span>
       </a>
 
     </nav>
 
-
     <!-- REDES -->
-
     <div class="social">
-
-      <a href="#" aria-label="LinkedIn">
-        in
-      </a>
-
-      <a href="#" aria-label="Instagram">
-        ig
-      </a>
-
-      <a href="mailto:seuemail@email.com" aria-label="E-mail">
-        @
-      </a>
-
+      <a href="#" aria-label="LinkedIn">in</a>
+      <a href="#" aria-label="Instagram">ig</a>
+      <a href="mailto:" aria-label="E-mail">@</a>
     </div>
-
 
   </main>
 
