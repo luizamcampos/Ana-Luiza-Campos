@@ -94,27 +94,22 @@
       height: auto;
 
       display: block;
-
       object-fit: contain;
-      object-position: left center;
 
-      margin: 0;
-      align-self: flex-start;
+      /* compensação do espaço transparente do PNG */
+      margin-left: -29px;
     }
 
 
     .subtitle {
       margin-top: 18px;
-
       font-size: 16px;
       line-height: 1.4;
     }
 
     .info {
       align-self: end;
-
       max-width: 480px;
-
       font-size: 16px;
       line-height: 1.4;
     }
@@ -153,13 +148,9 @@
 
     .project-intro {
       display: grid;
-
       grid-template-columns: 1.15fr 0.85fr;
-
       gap: 60px;
-
       align-items: stretch;
-
       margin-bottom: 120px;
     }
 
@@ -168,9 +159,7 @@
 
     .maquete-wrap {
       height: 100%;
-
       overflow: hidden;
-
       position: relative;
     }
 
@@ -286,7 +275,6 @@
 
     .renders {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
 
       gap: 20px;
@@ -308,7 +296,6 @@
 
     .lightbox {
       position: fixed;
-
       inset: 0;
 
       z-index: 9999;
@@ -336,8 +323,6 @@
       visibility: visible;
     }
 
-
-    /* ÁREA DA IMAGEM */
 
     .lightbox-image-wrap {
       width: 100%;
@@ -558,11 +543,14 @@
 
         max-width: 260px;
 
-        margin: 0;
+        height: auto;
 
-        object-position: left center;
+        display: block;
 
-        align-self: flex-start;
+        object-fit: contain;
+
+        /* alinhamento visual no celular */
+        margin-left: -22px;
       }
 
       .subtitle {
