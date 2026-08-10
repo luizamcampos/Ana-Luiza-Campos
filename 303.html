@@ -18,7 +18,7 @@
     }
 
     :root {
-      --fundo: #f3f2ed;
+      --fundo: #ffffff;
       --preto: #111111;
       --azul: #2455ff;
     }
@@ -39,10 +39,15 @@
       font-family: "Neue Montreal", sans-serif;
     }
 
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
     .project {
       width: 100%;
       padding: 28px 28px 80px;
     }
+
 
     /* TOPO */
 
@@ -105,6 +110,25 @@
 
     .blue {
       color: var(--azul);
+    }
+
+
+    /* IMAGENS CLICÁVEIS */
+
+    .zoomable {
+      cursor: zoom-in;
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+      transform-origin: center;
+    }
+
+    @media (hover: hover) {
+
+      .zoomable:hover {
+        transform: scale(1.018);
+      }
+
     }
 
 
@@ -195,6 +219,68 @@
 
     .renders img:first-child {
       grid-column: 1 / -1;
+    }
+
+
+    /* ZOOM / LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      background: rgba(0, 0, 0, 0.88);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+
+      width: 45px;
+      height: 45px;
+
+      border: 0;
+      background: transparent;
+
+      color: #ffffff;
+      font-family: "Neue Montreal", sans-serif;
+      font-size: 34px;
+      font-weight: 400;
+
+      cursor: pointer;
     }
 
 
@@ -293,10 +379,25 @@
         margin-top: 70px;
       }
 
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox img {
+        max-width: 96vw;
+        max-height: 85vh;
+      }
+
+      .lightbox-close {
+        top: 15px;
+        right: 15px;
+      }
+
     }
 
   </style>
 </head>
+
 
 <body>
 
@@ -343,13 +444,14 @@
     </section>
 
 
-    <!-- MAQUETE + SOBRE O PROJETO -->
+    <!-- MAQUETE + SOBRE -->
 
     <section class="project-intro">
 
       <div>
 
         <img
+          class="zoomable"
           src="maquete 2 mooca .PNG"
           alt="Maquete do projeto 303"
         >
@@ -410,31 +512,37 @@
       <div class="drawings">
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0002.jpeg"
           alt="Desenho técnico do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0003.jpeg"
           alt="Desenho técnico do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0001.jpeg"
           alt="Desenho técnico do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0004.jpeg"
           alt="Desenho técnico do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0005.jpeg"
           alt="Desenho técnico do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="desenhos projeto mooca_page-0006.jpeg"
           alt="Desenho técnico do projeto 303"
         >
@@ -444,7 +552,7 @@
     </section>
 
 
-    <!-- RENDERS -->
+    <!-- VISUALIZAÇÕES -->
 
     <section>
 
@@ -465,21 +573,25 @@
       <div class="renders">
 
         <img
+          class="zoomable"
           src="8558c32f-a82f-48c9-997e-4ee2872f9f82.JPG"
           alt="Fachada do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="18b5a1af-77e0-4173-a2e9-276b7a6fa937.JPG"
           alt="Visualização do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="1a07f581-ac2a-40fb-886a-8bfd19d378e1.JPG"
           alt="Visualização do projeto 303"
         >
 
         <img
+          class="zoomable"
           src="35c0fb24-71bb-442e-87ef-df2ec1978967.JPG"
           alt="Visualização do projeto 303"
         >
@@ -502,6 +614,90 @@
     </footer>
 
   </main>
+
+
+  <!-- ZOOM DAS IMAGENS -->
+
+  <div class="lightbox" id="lightbox">
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Fechar imagem"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+  <script>
+
+    const images = document.querySelectorAll(".zoomable");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+
+    function openLightbox(image) {
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.add("active");
+      document.body.classList.add("lightbox-open");
+
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("active");
+      document.body.classList.remove("lightbox-open");
+
+      setTimeout(() => {
+        lightboxImage.src = "";
+      }, 250);
+
+    }
+
+
+    images.forEach((image) => {
+
+      image.addEventListener("click", () => {
+        openLightbox(image);
+      });
+
+    });
+
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+
+    lightbox.addEventListener("click", (event) => {
+
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+    });
+
+  </script>
 
 </body>
 
