@@ -53,6 +53,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       padding: 28px 28px 0;
     }
 
@@ -84,6 +85,7 @@
       max-width: 84vw;
 
       height: auto;
+
       display: block;
     }
 
@@ -109,6 +111,7 @@
       height: 500px;
 
       display: block;
+
       overflow: hidden;
 
       text-decoration: none;
@@ -129,7 +132,8 @@
       object-fit: cover;
       object-position: center;
 
-      transition: transform 0.7s ease;
+      transition:
+        transform 0.7s ease;
 
       transform: scale(1);
     }
@@ -139,6 +143,7 @@
 
     .project-card.projeto-303 img {
       object-position: center center;
+
       filter: grayscale(100%);
     }
 
@@ -147,6 +152,13 @@
 
     .project-card.salvador img {
       object-position: center 79%;
+    }
+
+
+    /* CAMINHOS SOBRE A ÁGUA */
+
+    .project-card.caminhos-agua img {
+      object-position: center center;
     }
 
 
@@ -177,7 +189,8 @@
 
       object-fit: cover;
 
-      transition: transform 0.7s ease;
+      transition:
+        transform 0.7s ease;
 
       transform: scale(1);
     }
@@ -193,11 +206,13 @@
 
       z-index: 1;
 
-      background: rgba(0, 0, 0, 0.42);
+      background:
+        rgba(0, 0, 0, 0.42);
 
       opacity: 0;
 
-      transition: opacity 0.45s ease;
+      transition:
+        opacity 0.45s ease;
     }
 
 
@@ -212,7 +227,10 @@
       z-index: 2;
 
       transform:
-        translate(-50%, calc(-50% + 14px));
+        translate(
+          -50%,
+          calc(-50% + 14px)
+        );
 
       width: 100%;
 
@@ -236,11 +254,17 @@
 
     .project-year {
       font-size: 16px;
+
       margin-bottom: 13px;
     }
 
     .project-name {
-      font-size: clamp(48px, 6.5vw, 92px);
+      font-size:
+        clamp(
+          48px,
+          6.5vw,
+          92px
+        );
 
       line-height: 0.95;
 
@@ -251,6 +275,7 @@
 
     .project-type {
       margin-top: 14px;
+
       font-size: 15px;
     }
 
@@ -260,11 +285,13 @@
     @media (hover: hover) {
 
       .project-card:hover img {
-        transform: scale(1.025);
+        transform:
+          scale(1.025);
       }
 
       .project-card.oficina-brestol:hover #oficinaCanvas {
-        transform: scale(1.025);
+        transform:
+          scale(1.025);
       }
 
       .project-card:hover::after {
@@ -275,7 +302,10 @@
         opacity: 1;
 
         transform:
-          translate(-50%, -50%);
+          translate(
+            -50%,
+            -50%
+          );
       }
 
     }
@@ -284,14 +314,21 @@
     /* FINAL */
 
     .footer-wrap {
-      padding: 0 28px 70px;
+      padding:
+        0
+        28px
+        70px;
     }
 
     .footer {
       margin-top: 100px;
+
       padding-top: 24px;
 
-      border-top: 1px solid var(--preto);
+      border-top:
+        1px
+        solid
+        var(--preto);
 
       display: flex;
       justify-content: space-between;
@@ -301,6 +338,7 @@
 
     .footer a {
       color: var(--azul);
+
       text-decoration: none;
     }
 
@@ -311,7 +349,13 @@
 
       font-size: 11px;
 
-      color: rgba(17, 17, 17, 0.32);
+      color:
+        rgba(
+          17,
+          17,
+          17,
+          0.32
+        );
     }
 
 
@@ -320,7 +364,10 @@
     @media (max-width: 700px) {
 
       .top {
-        padding: 22px 18px 0;
+        padding:
+          22px
+          18px
+          0;
       }
 
       .back {
@@ -335,11 +382,15 @@
       /* TÍTULO */
 
       .architecture-title {
-        padding: 68px 18px 30px;
+        padding:
+          68px
+          18px
+          30px;
       }
 
       .architecture-title img {
         width: 78vw;
+
         max-width: 390px;
       }
 
@@ -362,14 +413,27 @@
       /* 303 */
 
       .project-card.projeto-303 img {
-        object-position: center center;
+        object-position:
+          center
+          center;
       }
 
 
       /* SALVADOR */
 
       .project-card.salvador img {
-        object-position: center 79%;
+        object-position:
+          center
+          79%;
+      }
+
+
+      /* CAMINHOS SOBRE A ÁGUA */
+
+      .project-card.caminhos-agua img {
+        object-position:
+          center
+          center;
       }
 
 
@@ -396,7 +460,10 @@
         opacity: 1;
 
         transform:
-          translate(-50%, -50%);
+          translate(
+            -50%,
+            -50%
+          );
       }
 
 
@@ -409,21 +476,27 @@
         width: 92%;
 
         transform:
-          translate(-50%, calc(-50% + 12px));
+          translate(
+            -50%,
+            calc(-50% + 12px)
+          );
       }
 
       .project-year {
         font-size: 14px;
+
         margin-bottom: 9px;
       }
 
       .project-name {
         font-size: 11vw;
+
         line-height: 0.95;
       }
 
       .project-type {
         margin-top: 10px;
+
         font-size: 14px;
       }
 
@@ -431,16 +504,21 @@
       /* FINAL */
 
       .footer-wrap {
-        padding: 0 18px 50px;
+        padding:
+          0
+          18px
+          50px;
       }
 
       .footer {
         margin-top: 70px;
+
         font-size: 15px;
       }
 
       .copyright {
         margin-top: 28px;
+
         font-size: 10px;
       }
 
@@ -502,6 +580,7 @@
           alt="Projeto 303"
         >
 
+
         <div class="project-info">
 
           <span class="project-year">
@@ -533,6 +612,7 @@
           alt="Conjunto em Desnível"
         >
 
+
         <div class="project-info">
 
           <span class="project-year">
@@ -545,6 +625,38 @@
 
           <span class="project-type">
             Projeto acadêmico
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- CAMINHOS SOBRE A ÁGUA -->
+
+      <a
+        class="project-card caminhos-agua"
+        href="caminhos-agua.html"
+      >
+
+        <img
+          src="foto 1.jpg"
+          alt="Caminhos sobre a Água"
+        >
+
+
+        <div class="project-info">
+
+          <span class="project-year">
+            2025
+          </span>
+
+          <span class="project-name">
+            Caminhos sobre a Água
+          </span>
+
+          <span class="project-type">
+            19ª Semana Internacional
           </span>
 
         </div>
@@ -645,35 +757,46 @@
       try {
 
         const pdf =
-          await pdfjsLib.getDocument(
-            encodeURI("ev 1.pdf")
-          ).promise;
+          await pdfjsLib
+            .getDocument(
+              encodeURI(
+                "ev 1.pdf"
+              )
+            )
+            .promise;
 
 
         const page =
-          await pdf.getPage(1);
+          await pdf
+            .getPage(1);
 
 
         const canvas =
-          document.getElementById(
-            "oficinaCanvas"
-          );
+          document
+            .getElementById(
+              "oficinaCanvas"
+            );
 
 
         const context =
-          canvas.getContext("2d");
+          canvas
+            .getContext(
+              "2d"
+            );
 
 
         const baseViewport =
-          page.getViewport({
-            scale: 1
-          });
+          page
+            .getViewport({
+              scale: 1
+            });
 
 
         const card =
-          document.querySelector(
-            ".oficina-brestol"
-          );
+          document
+            .querySelector(
+              ".oficina-brestol"
+            );
 
 
         const cardWidth =
@@ -683,22 +806,22 @@
           card.clientHeight;
 
 
-        /*
-          Escala para preencher o card inteiro,
-          como object-fit: cover
-        */
-
         const scale =
           Math.max(
-            cardWidth / baseViewport.width,
-            cardHeight / baseViewport.height
+            cardWidth /
+              baseViewport.width,
+
+            cardHeight /
+              baseViewport.height
           );
 
 
         const viewport =
-          page.getViewport({
-            scale: scale * 2
-          });
+          page
+            .getViewport({
+              scale:
+                scale * 2
+            });
 
 
         canvas.width =
@@ -710,8 +833,11 @@
 
         await page.render({
 
-          canvasContext: context,
-          viewport: viewport
+          canvasContext:
+            context,
+
+          viewport:
+            viewport
 
         }).promise;
 
@@ -739,65 +865,75 @@
     */
 
     const cards =
-      document.querySelectorAll(
-        ".project-card"
-      );
+      document
+        .querySelectorAll(
+          ".project-card"
+        );
 
 
-    cards.forEach((card) => {
+    cards.forEach(
+      (card) => {
 
-      card.addEventListener(
-        "click",
-        function(event) {
+        card.addEventListener(
+          "click",
 
-          if (
-            window
-              .matchMedia("(hover: none)")
-              .matches
-          ) {
+          function(event) {
 
             if (
-              !card
-                .classList
-                .contains("mobile-active")
+              window
+                .matchMedia(
+                  "(hover: none)"
+                )
+                .matches
             ) {
 
-              event.preventDefault();
+              if (
+                !card
+                  .classList
+                  .contains(
+                    "mobile-active"
+                  )
+              ) {
+
+                event
+                  .preventDefault();
 
 
-              cards.forEach(
-                (otherCard) => {
+                cards.forEach(
+                  (otherCard) => {
 
-                  if (
-                    otherCard !== card
-                  ) {
+                    if (
+                      otherCard !==
+                      card
+                    ) {
 
-                    otherCard
-                      .classList
-                      .remove(
-                        "mobile-active"
-                      );
+                      otherCard
+                        .classList
+                        .remove(
+                          "mobile-active"
+                        );
+
+                    }
 
                   }
-
-                }
-              );
-
-
-              card
-                .classList
-                .add(
-                  "mobile-active"
                 );
+
+
+                card
+                  .classList
+                  .add(
+                    "mobile-active"
+                  );
+
+              }
 
             }
 
           }
+        );
 
-        }
-      );
-
-    });
+      }
+    );
 
 
     /*
