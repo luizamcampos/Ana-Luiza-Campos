@@ -115,6 +115,8 @@
       color: #ffffff;
 
       background: #111111;
+
+      aspect-ratio: 2 / 1;
     }
 
 
@@ -122,9 +124,12 @@
 
     .project-card img {
       width: 100%;
-      height: auto;
+      height: 100%;
 
       display: block;
+
+      object-fit: cover;
+      object-position: center;
 
       transition:
         transform 0.7s ease;
@@ -292,15 +297,19 @@
       }
 
 
-      /* CAPA */
+      /* CAPAS */
 
       .project-card {
         width: 100%;
+        aspect-ratio: 2 / 1;
       }
 
       .project-card img {
         width: 100%;
-        height: auto;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
       }
 
 
@@ -326,6 +335,8 @@
 
         width: 100%;
 
+        padding: 0 20px;
+
         transform:
           translate(-50%, calc(-50% + 12px));
       }
@@ -337,7 +348,9 @@
       }
 
       .project-name {
-        font-size: 14vw;
+        font-size: 12vw;
+
+        line-height: 0.95;
       }
 
       .project-type {
@@ -423,6 +436,7 @@
           alt="Projeto 303"
         >
 
+
         <div class="project-info">
 
           <span class="project-year">
@@ -450,9 +464,10 @@
       >
 
         <img
-          src="foto 1 salvador.png"
+          src="foto 3 salvador.png"
           alt="Conjunto em Desnível"
         >
+
 
         <div class="project-info">
 
@@ -474,7 +489,8 @@
 
 
       <!--
-        PRÓXIMOS PROJETOS ENTRAM AQUI
+        PRÓXIMOS PROJETOS ENTRAM AQUI,
+        UM EMBAIXO DO OUTRO
       -->
 
 
