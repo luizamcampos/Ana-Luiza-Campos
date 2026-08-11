@@ -85,7 +85,6 @@
       max-width: 84vw;
 
       height: auto;
-
       display: block;
     }
 
@@ -111,7 +110,6 @@
       height: 500px;
 
       display: block;
-
       overflow: hidden;
 
       text-decoration: none;
@@ -132,8 +130,7 @@
       object-fit: cover;
       object-position: center;
 
-      transition:
-        transform 0.7s ease;
+      transition: transform 0.7s ease;
 
       transform: scale(1);
     }
@@ -143,7 +140,6 @@
 
     .project-card.projeto-303 img {
       object-position: center center;
-
       filter: grayscale(100%);
     }
 
@@ -164,35 +160,8 @@
 
     /* OFICINA BRESTOL */
 
-    .project-card.oficina-brestol {
-      background: #ffffff;
-    }
-
-    .oficina-pdf-wrap {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      overflow: hidden;
-
-      background: #ffffff;
-    }
-
-    #oficinaCanvas {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition:
-        transform 0.7s ease;
-
-      transform: scale(1);
+    .project-card.oficina-brestol img {
+      object-position: center center;
     }
 
 
@@ -206,13 +175,11 @@
 
       z-index: 1;
 
-      background:
-        rgba(0, 0, 0, 0.42);
+      background: rgba(0, 0, 0, 0.42);
 
       opacity: 0;
 
-      transition:
-        opacity 0.45s ease;
+      transition: opacity 0.45s ease;
     }
 
 
@@ -227,10 +194,7 @@
       z-index: 2;
 
       transform:
-        translate(
-          -50%,
-          calc(-50% + 14px)
-        );
+        translate(-50%, calc(-50% + 14px));
 
       width: 100%;
 
@@ -254,17 +218,11 @@
 
     .project-year {
       font-size: 16px;
-
       margin-bottom: 13px;
     }
 
     .project-name {
-      font-size:
-        clamp(
-          48px,
-          6.5vw,
-          92px
-        );
+      font-size: clamp(48px, 6.5vw, 92px);
 
       line-height: 0.95;
 
@@ -275,7 +233,6 @@
 
     .project-type {
       margin-top: 14px;
-
       font-size: 15px;
     }
 
@@ -285,13 +242,7 @@
     @media (hover: hover) {
 
       .project-card:hover img {
-        transform:
-          scale(1.025);
-      }
-
-      .project-card.oficina-brestol:hover #oficinaCanvas {
-        transform:
-          scale(1.025);
+        transform: scale(1.025);
       }
 
       .project-card:hover::after {
@@ -302,10 +253,7 @@
         opacity: 1;
 
         transform:
-          translate(
-            -50%,
-            -50%
-          );
+          translate(-50%, -50%);
       }
 
     }
@@ -314,21 +262,14 @@
     /* FINAL */
 
     .footer-wrap {
-      padding:
-        0
-        28px
-        70px;
+      padding: 0 28px 70px;
     }
 
     .footer {
       margin-top: 100px;
-
       padding-top: 24px;
 
-      border-top:
-        1px
-        solid
-        var(--preto);
+      border-top: 1px solid var(--preto);
 
       display: flex;
       justify-content: space-between;
@@ -338,7 +279,6 @@
 
     .footer a {
       color: var(--azul);
-
       text-decoration: none;
     }
 
@@ -349,13 +289,7 @@
 
       font-size: 11px;
 
-      color:
-        rgba(
-          17,
-          17,
-          17,
-          0.32
-        );
+      color: rgba(17, 17, 17, 0.32);
     }
 
 
@@ -364,10 +298,7 @@
     @media (max-width: 700px) {
 
       .top {
-        padding:
-          22px
-          18px
-          0;
+        padding: 22px 18px 0;
       }
 
       .back {
@@ -382,15 +313,11 @@
       /* TÍTULO */
 
       .architecture-title {
-        padding:
-          68px
-          18px
-          30px;
+        padding: 68px 18px 30px;
       }
 
       .architecture-title img {
         width: 78vw;
-
         max-width: 390px;
       }
 
@@ -413,40 +340,28 @@
       /* 303 */
 
       .project-card.projeto-303 img {
-        object-position:
-          center
-          center;
+        object-position: center center;
       }
 
 
       /* SALVADOR */
 
       .project-card.salvador img {
-        object-position:
-          center
-          79%;
+        object-position: center 79%;
       }
 
 
       /* CAMINHOS SOBRE A ÁGUA */
 
       .project-card.caminhos-agua img {
-        object-position:
-          center
-          center;
+        object-position: center center;
       }
 
 
-      /* OFICINA */
+      /* OFICINA BRESTOL */
 
-      .oficina-pdf-wrap {
-        width: 100%;
-        height: 100%;
-      }
-
-      #oficinaCanvas {
-        width: 100%;
-        height: 100%;
+      .project-card.oficina-brestol img {
+        object-position: center center;
       }
 
 
@@ -460,10 +375,7 @@
         opacity: 1;
 
         transform:
-          translate(
-            -50%,
-            -50%
-          );
+          translate(-50%, -50%);
       }
 
 
@@ -476,10 +388,7 @@
         width: 92%;
 
         transform:
-          translate(
-            -50%,
-            calc(-50% + 12px)
-          );
+          translate(-50%, calc(-50% + 12px));
       }
 
       .project-year {
@@ -504,10 +413,7 @@
       /* FINAL */
 
       .footer-wrap {
-        padding:
-          0
-          18px
-          50px;
+        padding: 0 18px 50px;
       }
 
       .footer {
@@ -580,7 +486,6 @@
           alt="Projeto 303"
         >
 
-
         <div class="project-info">
 
           <span class="project-year">
@@ -611,7 +516,6 @@
           src="foto 3 salvador.png"
           alt="Conjunto em Desnível"
         >
-
 
         <div class="project-info">
 
@@ -644,7 +548,6 @@
           alt="Caminhos sobre a Água"
         >
 
-
         <div class="project-info">
 
           <span class="project-year">
@@ -671,15 +574,10 @@
         href="oficina-brestol.html"
       >
 
-        <div class="oficina-pdf-wrap">
-
-          <canvas
-            id="oficinaCanvas"
-            aria-label="Projeto Oficina Brestol"
-          ></canvas>
-
-        </div>
-
+        <img
+          src="ev 1_page-0001.jpg"
+          alt="Oficina Brestol"
+        >
 
         <div class="project-info">
 
@@ -734,129 +632,7 @@
   </main>
 
 
-  <!-- PDF.JS -->
-
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
-  </script>
-
-
   <script>
-
-    /*
-      CAPA OFICINA BRESTOL
-      Renderiza a primeira página do ev 1.pdf
-    */
-
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
-
-    async function renderOficinaCover() {
-
-      try {
-
-        const pdf =
-          await pdfjsLib
-            .getDocument(
-              encodeURI(
-                "ev 1.pdf"
-              )
-            )
-            .promise;
-
-
-        const page =
-          await pdf
-            .getPage(1);
-
-
-        const canvas =
-          document
-            .getElementById(
-              "oficinaCanvas"
-            );
-
-
-        const context =
-          canvas
-            .getContext(
-              "2d"
-            );
-
-
-        const baseViewport =
-          page
-            .getViewport({
-              scale: 1
-            });
-
-
-        const card =
-          document
-            .querySelector(
-              ".oficina-brestol"
-            );
-
-
-        const cardWidth =
-          card.clientWidth;
-
-        const cardHeight =
-          card.clientHeight;
-
-
-        const scale =
-          Math.max(
-            cardWidth /
-              baseViewport.width,
-
-            cardHeight /
-              baseViewport.height
-          );
-
-
-        const viewport =
-          page
-            .getViewport({
-              scale:
-                scale * 2
-            });
-
-
-        canvas.width =
-          viewport.width;
-
-        canvas.height =
-          viewport.height;
-
-
-        await page.render({
-
-          canvasContext:
-            context,
-
-          viewport:
-            viewport
-
-        }).promise;
-
-      }
-
-      catch (error) {
-
-        console.error(
-          "Erro ao carregar ev 1.pdf:",
-          error
-        );
-
-      }
-
-    }
-
-
-    renderOficinaCover();
-
 
     /*
       CELULAR:
@@ -865,102 +641,53 @@
     */
 
     const cards =
-      document
-        .querySelectorAll(
-          ".project-card"
-        );
+      document.querySelectorAll(
+        ".project-card"
+      );
 
 
-    cards.forEach(
-      (card) => {
+    cards.forEach((card) => {
 
-        card.addEventListener(
-          "click",
+      card.addEventListener(
+        "click",
+        function(event) {
 
-          function(event) {
+          if (
+            window.matchMedia("(hover: none)").matches
+          ) {
 
             if (
-              window
-                .matchMedia(
-                  "(hover: none)"
-                )
-                .matches
+              !card.classList.contains("mobile-active")
             ) {
 
-              if (
-                !card
-                  .classList
-                  .contains(
-                    "mobile-active"
-                  )
-              ) {
-
-                event
-                  .preventDefault();
+              event.preventDefault();
 
 
-                cards.forEach(
-                  (otherCard) => {
+              cards.forEach((otherCard) => {
 
-                    if (
-                      otherCard !==
-                      card
-                    ) {
+                if (otherCard !== card) {
 
-                      otherCard
-                        .classList
-                        .remove(
-                          "mobile-active"
-                        );
-
-                    }
-
-                  }
-                );
-
-
-                card
-                  .classList
-                  .add(
+                  otherCard.classList.remove(
                     "mobile-active"
                   );
 
-              }
+                }
+
+              });
+
+
+              card.classList.add(
+                "mobile-active"
+              );
 
             }
 
           }
-        );
 
-      }
-    );
+        }
+      );
 
-
-    /*
-      REDESENHA A CAPA DO PDF
-      CASO O TAMANHO DA TELA MUDE
-    */
-
-    let resizeTimer;
-
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        clearTimeout(
-          resizeTimer
-        );
-
-
-        resizeTimer =
-          setTimeout(
-            renderOficinaCover,
-            250
-          );
-
-      }
-    );
+    });
 
   </script>
 
