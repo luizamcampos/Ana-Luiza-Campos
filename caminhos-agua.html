@@ -74,14 +74,25 @@
 
     .intro {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
-      gap: 40px;
+      grid-template-areas:
+        "title architecture"
+        "subtitle school";
+
+      column-gap: 40px;
+      row-gap: 18px;
 
       margin-bottom: 90px;
     }
 
+
+    /* TÍTULO */
+
     .title-block {
+      grid-area: title;
+
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -90,9 +101,6 @@
 
       overflow: visible;
     }
-
-
-    /* TÍTULO */
 
     .project-title-image {
       width: clamp(300px, 34vw, 500px);
@@ -110,19 +118,11 @@
     }
 
 
-    /* SUBTÍTULO */
-
-    .subtitle {
-      margin-top: 18px;
-
-      font-size: 16px;
-      line-height: 1.4;
-    }
-
-
-    /* INFO DIREITA */
+    /* ARQUITETURA */
 
     .info {
+      grid-area: architecture;
+
       align-self: end;
 
       max-width: 480px;
@@ -131,22 +131,32 @@
       line-height: 1.4;
     }
 
-    .info p + p {
-      margin-top: 18px;
-    }
-
     .blue {
       color: var(--azul);
     }
 
 
-    /*
-      ALINHAMENTO:
-      REPRESA BILLINGS COM ESCOLA DA CIDADE
-    */
+    /* SUBTÍTULO ESQUERDA */
 
     .subtitle {
-      transform: translateY(42px);
+      grid-area: subtitle;
+
+      font-size: 16px;
+      line-height: 1.4;
+
+      margin: 0;
+    }
+
+
+    /* ESCOLA DIREITA */
+
+    .school-info {
+      grid-area: school;
+
+      font-size: 16px;
+      line-height: 1.4;
+
+      margin: 0;
     }
 
 
@@ -477,6 +487,9 @@
         padding: 22px 18px 50px;
       }
 
+
+      /* TOPO */
+
       .top {
         margin-bottom: 70px;
       }
@@ -486,10 +499,19 @@
         font-size: 15px;
       }
 
+
+      /* ABERTURA */
+
       .intro {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        grid-template-areas:
+          "title"
+          "subtitle"
+          "architecture"
+          "school";
+
+        gap: 18px;
 
         margin-bottom: 70px;
       }
@@ -501,21 +523,21 @@
         transform: translateX(-12px);
       }
 
-      .subtitle {
-        margin-top: 14px;
-
-        font-size: 15px;
-
-        transform: none;
-      }
-
-      .info {
+      .subtitle,
+      .info,
+      .school-info {
         font-size: 15px;
       }
+
+
+      /* FOTO 1 */
 
       .hero-image {
         margin-bottom: 55px;
       }
+
+
+      /* TEXTO */
 
       .about-section {
         grid-template-columns: 1fr;
@@ -533,6 +555,9 @@
       .about-text p + p {
         margin-top: 18px;
       }
+
+
+      /* GALERIA */
 
       .gallery {
         margin-bottom: 90px;
@@ -554,6 +579,9 @@
         margin-top: 10px;
       }
 
+
+      /* FINAL */
+
       .next {
         margin-top: 70px;
 
@@ -565,6 +593,9 @@
 
         font-size: 10px;
       }
+
+
+      /* LIGHTBOX */
 
       .lightbox {
         padding: 12px;
@@ -634,6 +665,9 @@
 
     <section class="intro">
 
+
+      <!-- TÍTULO -->
+
       <div class="title-block">
 
         <img
@@ -642,13 +676,10 @@
           alt="Caminhos sobre a Água"
         >
 
-        <div class="subtitle">
-          Represa Billings - 2025<br>
-          19ª Semana Internacional
-        </div>
-
       </div>
 
+
+      <!-- ARQUITETURA -->
 
       <div class="info">
 
@@ -656,11 +687,22 @@
           Arquitetura
         </p>
 
-        <p>
-          Escola da Cidade<br>
-          São Paulo
-        </p>
+      </div>
 
+
+      <!-- INFORMAÇÕES ESQUERDA -->
+
+      <div class="subtitle">
+        Represa Billings - 2025<br>
+        19ª Semana Internacional
+      </div>
+
+
+      <!-- INFORMAÇÕES DIREITA -->
+
+      <div class="school-info">
+        Escola da Cidade<br>
+        São Paulo
       </div>
 
     </section>
@@ -744,6 +786,8 @@
       </div>
 
 
+      <!-- FOTO 2 + FOTO 3 -->
+
       <div class="image-pair">
 
         <img
@@ -761,6 +805,8 @@
       </div>
 
 
+      <!-- FOTO 4 + FOTO 5 -->
+
       <div class="image-pair">
 
         <img
@@ -777,6 +823,8 @@
 
       </div>
 
+
+      <!-- FOTO 6 -->
 
       <div class="single-image">
 
@@ -835,6 +883,7 @@
       ×
     </button>
 
+
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -842,6 +891,7 @@
     >
       ‹
     </button>
+
 
     <div
       class="lightbox-image-wrap"
@@ -857,6 +907,7 @@
 
     </div>
 
+
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -864,6 +915,7 @@
     >
       ›
     </button>
+
 
     <div
       class="lightbox-counter"
@@ -879,6 +931,7 @@
       Array.from(
         document.querySelectorAll(".zoomable")
       );
+
 
     const lightbox =
       document.getElementById("lightbox");
@@ -903,8 +956,11 @@
 
 
     let currentIndex = 0;
+
     let zoomed = false;
+
     let isDragging = false;
+
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -915,6 +971,8 @@
 
     const zoomLevel = 2.4;
 
+
+    /* SWIPE */
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -963,7 +1021,9 @@
       translateX = 0;
       translateY = 0;
 
-      lightbox.classList.remove("zoomed");
+      lightbox.classList.remove(
+        "zoomed"
+      );
 
       updateImageTransform();
 
@@ -984,6 +1044,7 @@
         image.alt;
 
       resetZoom();
+
       updateCounter();
 
     }
@@ -993,7 +1054,9 @@
 
       showImage(index);
 
-      lightbox.classList.add("active");
+      lightbox.classList.add(
+        "active"
+      );
 
       document.body.classList.add(
         "lightbox-open"
@@ -1004,8 +1067,13 @@
 
     function closeLightbox() {
 
-      lightbox.classList.remove("active");
-      lightbox.classList.remove("zoomed");
+      lightbox.classList.remove(
+        "active"
+      );
+
+      lightbox.classList.remove(
+        "zoomed"
+      );
 
       document.body.classList.remove(
         "lightbox-open"
@@ -1028,11 +1096,15 @@
     function showNextImage() {
 
       currentIndex =
-        (currentIndex + 1)
+        (
+          currentIndex + 1
+        )
         %
         images.length;
 
-      showImage(currentIndex);
+      showImage(
+        currentIndex
+      );
 
     }
 
@@ -1048,7 +1120,9 @@
         %
         images.length;
 
-      showImage(currentIndex);
+      showImage(
+        currentIndex
+      );
 
     }
 
@@ -1077,7 +1151,9 @@
           "click",
           () => {
 
-            openLightbox(index);
+            openLightbox(
+              index
+            );
 
           }
         );
@@ -1116,7 +1192,9 @@
 
         event.stopPropagation();
 
-        if (swipedRecently) {
+        if (
+          swipedRecently
+        ) {
 
           swipedRecently = false;
 
@@ -1124,13 +1202,17 @@
 
         }
 
-        if (movedWhileDragging) {
+
+        if (
+          movedWhileDragging
+        ) {
 
           movedWhileDragging = false;
 
           return;
 
         }
+
 
         toggleSecondZoom();
 
@@ -1154,7 +1236,9 @@
       "click",
       (event) => {
 
-        if (event.target === lightbox) {
+        if (
+          event.target === lightbox
+        ) {
 
           closeLightbox();
 
@@ -1181,6 +1265,8 @@
     );
 
 
+    /* ARRASTAR NO ZOOM */
+
     lightboxImage.addEventListener(
       "pointerdown",
       (event) => {
@@ -1190,6 +1276,7 @@
         }
 
         isDragging = true;
+
         movedWhileDragging = false;
 
         startX =
@@ -1214,7 +1301,11 @@
       "pointermove",
       (event) => {
 
-        if (!isDragging || !zoomed) {
+        if (
+          !isDragging
+          ||
+          !zoomed
+        ) {
           return;
         }
 
@@ -1228,18 +1319,32 @@
           -
           startY;
 
+
         if (
-          Math.abs(newX - translateX) > 2
+          Math.abs(
+            newX - translateX
+          )
+          >
+          2
           ||
-          Math.abs(newY - translateY) > 2
+          Math.abs(
+            newY - translateY
+          )
+          >
+          2
         ) {
 
-          movedWhileDragging = true;
+          movedWhileDragging =
+            true;
 
         }
 
-        translateX = newX;
-        translateY = newY;
+
+        translateX =
+          newX;
+
+        translateY =
+          newY;
 
         updateImageTransform();
 
@@ -1251,7 +1356,9 @@
       "pointerup",
       (event) => {
 
-        if (isDragging) {
+        if (
+          isDragging
+        ) {
 
           try {
 
@@ -1280,11 +1387,15 @@
     );
 
 
+    /* SWIPE */
+
     lightboxImageWrap.addEventListener(
       "touchstart",
       (event) => {
 
-        if (zoomed) {
+        if (
+          zoomed
+        ) {
           return;
         }
 
@@ -1314,7 +1425,9 @@
       "touchmove",
       (event) => {
 
-        if (zoomed) {
+        if (
+          zoomed
+        ) {
           return;
         }
 
@@ -1338,7 +1451,9 @@
       "touchend",
       () => {
 
-        if (zoomed) {
+        if (
+          zoomed
+        ) {
           return;
         }
 
@@ -1352,19 +1467,30 @@
           -
           touchStartY;
 
+
         if (
-          Math.abs(differenceX)
+          Math.abs(
+            differenceX
+          )
           >
           swipeThreshold
           &&
-          Math.abs(differenceX)
+          Math.abs(
+            differenceX
+          )
           >
-          Math.abs(differenceY)
+          Math.abs(
+            differenceY
+          )
         ) {
 
-          swipedRecently = true;
+          swipedRecently =
+            true;
 
-          if (differenceX < 0) {
+
+          if (
+            differenceX < 0
+          ) {
 
             showNextImage();
 
@@ -1374,10 +1500,12 @@
 
           }
 
+
           setTimeout(
             () => {
 
-              swipedRecently = false;
+              swipedRecently =
+                false;
 
             },
             350
@@ -1389,6 +1517,8 @@
     );
 
 
+    /* TECLADO */
+
     document.addEventListener(
       "keydown",
       (event) => {
@@ -1396,24 +1526,38 @@
         if (
           !lightbox
             .classList
-            .contains("active")
+            .contains(
+              "active"
+            )
         ) {
           return;
         }
 
-        if (event.key === "Escape") {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
 
           closeLightbox();
 
         }
 
-        if (event.key === "ArrowRight") {
+
+        if (
+          event.key ===
+          "ArrowRight"
+        ) {
 
           showNextImage();
 
         }
 
-        if (event.key === "ArrowLeft") {
+
+        if (
+          event.key ===
+          "ArrowLeft"
+        ) {
 
           showPreviousImage();
 
