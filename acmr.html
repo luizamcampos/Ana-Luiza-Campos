@@ -55,7 +55,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       margin-bottom: 90px;
     }
 
@@ -75,49 +74,35 @@
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 40px;
-
-      margin-bottom: 90px;
+      margin-bottom: 100px;
     }
 
     .title-block {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-
       width: 100%;
     }
 
-
-    /* TÍTULO ACMR */
-
     .project-title-image {
-      width: clamp(220px, 27vw, 390px);
+      width: clamp(260px, 30vw, 440px);
       max-width: 100%;
       height: auto;
-
       display: block;
-
       object-fit: contain;
       object-position: left center;
-
-      margin: 0;
     }
 
-
     .subtitle {
-      margin-top: 18px;
-
+      margin-top: 20px;
       font-size: 16px;
       line-height: 1.4;
     }
 
     .info {
       align-self: end;
-
       max-width: 480px;
-
       font-size: 16px;
       line-height: 1.4;
     }
@@ -134,23 +119,19 @@
     /* SOBRE A EXPERIÊNCIA */
 
     .about-section {
-      margin-bottom: 95px;
+      margin-bottom: 100px;
     }
 
-    .section-label {
+    .section-title {
       color: var(--azul);
-
       font-size: 16px;
-
       margin-bottom: 30px;
     }
 
     .about-text {
-      max-width: 1050px;
-
+      max-width: 1000px;
       font-size: 17px;
-      line-height: 1.42;
-
+      line-height: 1.45;
       letter-spacing: -0.015em;
     }
 
@@ -158,37 +139,23 @@
     /* TÍTULOS DAS OBRAS */
 
     .work-title {
-      display: flex;
-      align-items: baseline;
-
-      gap: 10px;
-
-      margin-bottom: 35px;
-
-      font-size: clamp(28px, 3vw, 40px);
-      line-height: 1;
-
+      font-size: 30px;
       font-weight: 400;
-
+      line-height: 1;
       letter-spacing: -0.025em;
+      margin-bottom: 30px;
     }
 
-    .work-star {
-      color: var(--azul);
-
-      font-size: 18px;
+    .work-section {
+      margin-bottom: 110px;
     }
 
 
-    /* IMAGENS CLICÁVEIS */
+    /* IMAGENS */
 
     .zoomable {
       cursor: zoom-in;
-
-      transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
-
+      transition: transform 0.35s ease;
       transform-origin: center;
     }
 
@@ -200,106 +167,83 @@
 
     }
 
-
-    /* JOÃO DE BARRO */
-
-    .joao-section {
-      margin-bottom: 105px;
+    .image-wrap {
+      overflow: hidden;
     }
 
-
-    /* PRIMEIRO BLOCO:
-       IMAGEM + TEXTO */
-
-    .joao-intro {
-      display: grid;
-
-      grid-template-columns: 1.1fr 0.9fr;
-
-      gap: 55px;
-
-      align-items: center;
-
-      margin-bottom: 20px;
-    }
-
-    .joao-intro img {
+    .image-wrap img {
       width: 100%;
       height: auto;
-
       display: block;
     }
 
-    .work-description {
+
+    /* JOÃO DE BARRO - ABERTURA */
+
+    .joao-opening {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .joao-opening-text {
       max-width: 520px;
-
       font-size: 17px;
-      line-height: 1.42;
-
+      line-height: 1.45;
       letter-spacing: -0.015em;
     }
 
-
-    /* DUPLAS JOÃO DE BARRO */
-
-    .joao-pairs {
-      display: flex;
-      flex-direction: column;
-
-      gap: 20px;
-    }
-
-    .image-pair {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 20px;
-
-      align-items: start;
-    }
-
-    .image-pair img {
+    .joao-opening-image img {
       width: 100%;
       height: auto;
+      display: block;
+    }
 
+
+    /* JOÃO DE BARRO - DUPLAS */
+
+    .joao-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .joao-grid + .joao-grid {
+      margin-top: 20px;
+    }
+
+    .joao-grid img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
 
     /* SELENZA */
 
-    .selenza-section {
-      margin-bottom: 130px;
-    }
-
     .selenza-description {
-      max-width: 780px;
-
+      max-width: 760px;
       margin-bottom: 35px;
-
       font-size: 17px;
-      line-height: 1.42;
-
+      line-height: 1.45;
       letter-spacing: -0.015em;
     }
 
-
-    /* 3 IMAGENS POR LINHA */
-
-    .selenza-gallery {
+    .selenza-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
-    .selenza-gallery img {
+    .selenza-grid + .selenza-grid {
+      margin-top: 16px;
+    }
+
+    .selenza-grid img {
       width: 100%;
       height: auto;
-
       display: block;
     }
 
@@ -309,7 +253,6 @@
     .lightbox {
       position: fixed;
       inset: 0;
-
       z-index: 9999;
 
       display: flex;
@@ -384,23 +327,18 @@
 
     .lightbox-close {
       position: absolute;
-
       top: 24px;
       right: 28px;
-
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 34px;
       font-weight: 400;
 
@@ -412,9 +350,7 @@
 
     .lightbox-arrow {
       position: absolute;
-
       top: 50%;
-
       z-index: 30;
 
       transform: translateY(-50%);
@@ -423,17 +359,13 @@
       height: 80px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 46px;
 
       cursor: pointer;
-
       opacity: 0.8;
 
       transition:
@@ -474,16 +406,13 @@
 
     .lightbox-counter {
       position: absolute;
-
       bottom: 22px;
       left: 50%;
-
       z-index: 30;
 
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
-
       font-size: 12px;
     }
 
@@ -509,11 +438,8 @@
 
     .copyright {
       margin-top: 34px;
-
       text-align: center;
-
       font-size: 11px;
-
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -533,7 +459,6 @@
         margin-bottom: 70px;
       }
 
-      .back,
       .top-name {
         font-size: 15px;
       }
@@ -543,20 +468,17 @@
 
       .intro {
         grid-template-columns: 1fr;
-
         gap: 35px;
-
-        margin-bottom: 70px;
+        margin-bottom: 80px;
       }
 
       .project-title-image {
-        width: 52vw;
-        max-width: 240px;
+        width: 68vw;
+        max-width: 300px;
       }
 
       .subtitle {
-        margin-top: 14px;
-
+        margin-top: 16px;
         font-size: 15px;
       }
 
@@ -568,10 +490,10 @@
       /* SOBRE */
 
       .about-section {
-        margin-bottom: 70px;
+        margin-bottom: 75px;
       }
 
-      .section-label {
+      .section-title {
         margin-bottom: 24px;
       }
 
@@ -581,67 +503,58 @@
       }
 
 
-      /* TÍTULOS DAS OBRAS */
+      /* OBRAS */
+
+      .work-section {
+        margin-bottom: 80px;
+      }
 
       .work-title {
-        margin-bottom: 26px;
-
-        font-size: 27px;
-      }
-
-      .work-star {
-        font-size: 16px;
+        font-size: 25px;
+        margin-bottom: 24px;
       }
 
 
-      /* JOÃO DE BARRO */
+      /* JOÃO ABERTURA */
 
-      .joao-section {
-        margin-bottom: 75px;
-      }
-
-      .joao-intro {
-        grid-template-columns: 1fr;
-
-        gap: 28px;
-
+      .joao-opening {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        align-items: center;
         margin-bottom: 12px;
       }
 
-      .work-description {
-        font-size: 16px;
-        line-height: 1.42;
+      .joao-opening-text {
+        font-size: 14px;
+        line-height: 1.4;
       }
 
-      .joao-pairs {
+
+      /* JOÃO DUPLAS */
+
+      .joao-grid {
         gap: 10px;
       }
 
-      .image-pair {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 10px;
+      .joao-grid + .joao-grid {
+        margin-top: 10px;
       }
 
 
       /* SELENZA */
 
-      .selenza-section {
-        margin-bottom: 90px;
-      }
-
       .selenza-description {
-        margin-bottom: 26px;
-
         font-size: 16px;
         line-height: 1.42;
+        margin-bottom: 25px;
       }
 
-      .selenza-gallery {
-        grid-template-columns:
-          repeat(3, 1fr);
-
+      .selenza-grid {
         gap: 7px;
+      }
+
+      .selenza-grid + .selenza-grid {
+        margin-top: 7px;
       }
 
 
@@ -649,13 +562,10 @@
 
       .next {
         margin-top: 70px;
-
-        font-size: 15px;
       }
 
       .copyright {
         margin-top: 28px;
-
         font-size: 10px;
       }
 
@@ -679,7 +589,6 @@
       .lightbox-arrow {
         width: 42px;
         height: 60px;
-
         font-size: 34px;
       }
 
@@ -693,7 +602,6 @@
 
       .lightbox-counter {
         bottom: 14px;
-
         font-size: 11px;
       }
 
@@ -765,18 +673,20 @@
 
     <section class="about-section">
 
-      <div class="section-label">
+      <div class="section-title">
         ✷ sobre a experiência
       </div>
 
       <div class="about-text">
 
-        Durante minha experiência profissional na construtora,
-        acompanhei diretamente duas obras. Minhas atividades incluíram
-        a elaboração de FVS (Fichas de Verificação de Serviços),
-        projetos as built, RDOs (Relatórios Diários de Obra) e medições,
-        acompanhando de perto o andamento dos serviços e contribuindo
-        para o controle de qualidade dos processos.
+        <p>
+          Durante minha experiência profissional na construtora,
+          acompanhei diretamente duas obras. Minhas atividades incluíram
+          a elaboração de FVS (Fichas de Verificação de Serviços),
+          projetos as built, RDOs (Relatórios Diários de Obra) e medições,
+          acompanhando de perto o andamento dos serviços e contribuindo
+          para o controle de qualidade dos processos.
+        </p>
 
       </div>
 
@@ -785,97 +695,120 @@
 
     <!-- JOÃO DE BARRO -->
 
-    <section class="joao-section">
+    <section class="work-section">
 
-      <div class="work-title">
-
-        <span class="work-star">
-          ✷
-        </span>
-
-        <span>
-          João de Barro
-        </span>
-
-      </div>
+      <h2 class="work-title">
+        João de Barro
+      </h2>
 
 
-      <!-- FOTO 1 + TEXTO -->
+      <!-- TEXTO + JOÃO 1 -->
 
-      <div class="joao-intro">
+      <div class="joao-opening">
 
-        <img
-          class="zoomable"
-          src="João de barro 1.jpg"
-          alt="João de Barro"
-        >
+        <div class="joao-opening-text">
 
-        <div class="work-description">
+          <p>
+            Retrofit de um antigo edifício comercial,
+            desenvolvido a partir da adaptação e modernização
+            dos espaços existentes. Durante a obra,
+            acompanhei diferentes etapas da execução e as
+            demandas de atualização e compatibilização
+            dos projetos.
+          </p>
 
-          Retrofit de um antigo edifício comercial,
-          desenvolvido a partir da adaptação e modernização
-          dos espaços existentes. Durante a obra, acompanhei
-          diferentes etapas da execução e as demandas de
-          atualização e compatibilização dos projetos.
+        </div>
+
+
+        <div class="joao-opening-image image-wrap">
+
+          <img
+            class="zoomable"
+            src="Joao1.jpg"
+            alt="João de Barro"
+          >
 
         </div>
 
       </div>
 
 
-      <!-- 3 + 2 -->
+      <!-- JOÃO 3 + JOÃO 2 -->
 
-      <div class="joao-pairs">
+      <div class="joao-grid">
 
-        <div class="image-pair">
-
-          <img
-            class="zoomable"
-            src="João de barro 3.JPG"
-            alt="João de Barro"
-          >
+        <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="João de barro 2.JPG"
+            src="Joao3.JPG"
             alt="João de Barro"
           >
 
         </div>
 
 
-        <!-- 6 + 9 -->
-
-        <div class="image-pair">
+        <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="João de barro 6 .PNG"
+            src="Joao2.JPG"
             alt="João de Barro"
           >
 
+        </div>
+
+      </div>
+
+
+      <!-- JOÃO 6 + JOÃO 9 -->
+
+      <div class="joao-grid">
+
+        <div class="image-wrap">
+
           <img
             class="zoomable"
-            src="João de barro 9 .PNG"
+            src="Joao6.PNG"
             alt="João de Barro"
           >
 
         </div>
 
 
-        <!-- 7 + 8 -->
-
-        <div class="image-pair">
+        <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="João de barro 7.PNG"
+            src="Joao9.PNG"
             alt="João de Barro"
           >
 
+        </div>
+
+      </div>
+
+
+      <!-- JOÃO 7 + JOÃO 8 -->
+
+      <div class="joao-grid">
+
+        <div class="image-wrap">
+
           <img
             class="zoomable"
-            src="João de barro 8.PNG"
+            src="Joao7.PNG"
+            alt="João de Barro"
+          >
+
+        </div>
+
+
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="Joao8.PNG"
             alt="João de Barro"
           >
 
@@ -886,72 +819,101 @@
     </section>
 
 
-    <!-- SELENZA -->
+    <!-- SELENZA ANHANGUERA PARK -->
 
-    <section class="selenza-section">
+    <section class="work-section">
 
-      <div class="work-title">
-
-        <span class="work-star">
-          ✷
-        </span>
-
-        <span>
-          Selenza Anhanguera Park
-        </span>
-
-      </div>
+      <h2 class="work-title">
+        Selenza Anhanguera Park
+      </h2>
 
 
       <div class="selenza-description">
 
-        Empreendimento residencial de 28 pavimentos,
-        acompanhado ao longo do processo de execução,
-        da fundação à entrega. A experiência envolveu
-        o acompanhamento dos serviços em obra e das
-        diferentes etapas necessárias para a conclusão
-        do empreendimento.
+        <p>
+          Empreendimento residencial acompanhado desde as etapas
+          iniciais da obra até a entrega. Durante o processo,
+          participei do acompanhamento dos serviços, verificações
+          de execução, medições e controle de qualidade da obra.
+        </p>
 
       </div>
 
 
-      <div class="selenza-gallery">
+      <!-- SELENZA 1, 2 E 3 -->
 
-        <img
-          class="zoomable"
-          src="selenza 1.jpg"
-          alt="Selenza Anhanguera Park"
-        >
+      <div class="selenza-grid">
 
-        <img
-          class="zoomable"
-          src="selenza 2.jpg"
-          alt="Selenza Anhanguera Park"
-        >
+        <div class="image-wrap">
 
-        <img
-          class="zoomable"
-          src="selenza 3.jpg"
-          alt="Selenza Anhanguera Park"
-        >
+          <img
+            class="zoomable"
+            src="selenza 1.jpg"
+            alt="Selenza Anhanguera Park"
+          >
 
-        <img
-          class="zoomable"
-          src="selenza 4.jpg"
-          alt="Selenza Anhanguera Park"
-        >
+        </div>
 
-        <img
-          class="zoomable"
-          src="selenza 5.jpg"
-          alt="Selenza Anhanguera Park"
-        >
 
-        <img
-          class="zoomable"
-          src="selenza 6.jpg"
-          alt="Selenza Anhanguera Park"
-        >
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="selenza 2.jpg"
+            alt="Selenza Anhanguera Park"
+          >
+
+        </div>
+
+
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="selenza 3.jpg"
+            alt="Selenza Anhanguera Park"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- SELENZA 4, 5 E 6 -->
+
+      <div class="selenza-grid">
+
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="selenza 4.jpg"
+            alt="Selenza Anhanguera Park"
+          >
+
+        </div>
+
+
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="selenza 5.jpg"
+            alt="Selenza Anhanguera Park"
+          >
+
+        </div>
+
+
+        <div class="image-wrap">
+
+          <img
+            class="zoomable"
+            src="selenza 6.jpg"
+            alt="Selenza Anhanguera Park"
+          >
+
+        </div>
 
       </div>
 
@@ -965,7 +927,7 @@
       <div class="next">
 
         <span>
-          Construtora ACMR
+          ACMR
         </span>
 
         <a
@@ -1075,11 +1037,8 @@
 
 
     let currentIndex = 0;
-
     let zoomed = false;
-
     let isDragging = false;
-
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1130,7 +1089,6 @@
     function resetZoom() {
 
       zoomed = false;
-
       isDragging = false;
       movedWhileDragging = false;
 
@@ -1295,7 +1253,6 @@
 
         }
 
-
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
@@ -1303,7 +1260,6 @@
           return;
 
         }
-
 
         toggleSecondZoom();
 
@@ -1355,8 +1311,6 @@
       }
     );
 
-
-    /* ARRASTAR NO ZOOM */
 
     lightboxImage.addEventListener(
       "pointerdown",
@@ -1463,8 +1417,6 @@
     );
 
 
-    /* SWIPE */
-
     lightboxImageWrap.addEventListener(
       "touchstart",
       (event) => {
@@ -1545,9 +1497,7 @@
 
             showNextImage();
 
-          }
-
-          else {
+          } else {
 
             showPreviousImage();
 
@@ -1564,8 +1514,6 @@
       }
     );
 
-
-    /* TECLADO */
 
     document.addEventListener(
       "keydown",
