@@ -53,7 +53,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       padding: 28px 28px 0;
     }
 
@@ -130,8 +129,7 @@
       object-fit: cover;
       object-position: center;
 
-      transition:
-        transform 0.7s ease;
+      transition: transform 0.7s ease;
 
       transform: scale(1);
     }
@@ -154,8 +152,34 @@
 
     /* OFICINA BRESTOL */
 
-    .project-card.oficina-brestol img {
-      object-position: center center;
+    .project-card.oficina-brestol {
+      background: #ffffff;
+    }
+
+    .oficina-pdf-wrap {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+
+      background: #ffffff;
+    }
+
+    #oficinaCanvas {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.7s ease;
+
+      transform: scale(1);
     }
 
 
@@ -212,7 +236,6 @@
 
     .project-year {
       font-size: 16px;
-
       margin-bottom: 13px;
     }
 
@@ -228,7 +251,6 @@
 
     .project-type {
       margin-top: 14px;
-
       font-size: 15px;
     }
 
@@ -238,6 +260,10 @@
     @media (hover: hover) {
 
       .project-card:hover img {
+        transform: scale(1.025);
+      }
+
+      .project-card.oficina-brestol:hover #oficinaCanvas {
         transform: scale(1.025);
       }
 
@@ -347,10 +373,16 @@
       }
 
 
-      /* OFICINA BRESTOL */
+      /* OFICINA */
 
-      .project-card.oficina-brestol img {
-        object-position: center center;
+      .oficina-pdf-wrap {
+        width: 100%;
+        height: 100%;
+      }
+
+      #oficinaCanvas {
+        width: 100%;
+        height: 100%;
       }
 
 
@@ -382,19 +414,16 @@
 
       .project-year {
         font-size: 14px;
-
         margin-bottom: 9px;
       }
 
       .project-name {
         font-size: 11vw;
-
         line-height: 0.95;
       }
 
       .project-type {
         margin-top: 10px;
-
         font-size: 14px;
       }
 
@@ -407,13 +436,11 @@
 
       .footer {
         margin-top: 70px;
-
         font-size: 15px;
       }
 
       .copyright {
         margin-top: 28px;
-
         font-size: 10px;
       }
 
@@ -475,7 +502,6 @@
           alt="Projeto 303"
         >
 
-
         <div class="project-info">
 
           <span class="project-year">
@@ -507,7 +533,6 @@
           alt="Conjunto em Desnível"
         >
 
-
         <div class="project-info">
 
           <span class="project-year">
@@ -534,10 +559,14 @@
         href="oficina-brestol.html"
       >
 
-        <img
-          src="ev 2.jpg"
-          alt="Oficina Brestol"
-        >
+        <div class="oficina-pdf-wrap">
+
+          <canvas
+            id="oficinaCanvas"
+            aria-label="Projeto Oficina Brestol"
+          ></canvas>
+
+        </div>
 
 
         <div class="project-info">
@@ -593,7 +622,115 @@
   </main>
 
 
+  <!-- PDF.JS -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
+  </script>
+
+
   <script>
+
+    /*
+      CAPA OFICINA BRESTOL
+      Renderiza a primeira página do ev 1.pdf
+    */
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+
+    async function renderOficinaCover() {
+
+      try {
+
+        const pdf =
+          await pdfjsLib.getDocument(
+            encodeURI("ev 1.pdf")
+          ).promise;
+
+
+        const page =
+          await pdf.getPage(1);
+
+
+        const canvas =
+          document.getElementById(
+            "oficinaCanvas"
+          );
+
+
+        const context =
+          canvas.getContext("2d");
+
+
+        const baseViewport =
+          page.getViewport({
+            scale: 1
+          });
+
+
+        const card =
+          document.querySelector(
+            ".oficina-brestol"
+          );
+
+
+        const cardWidth =
+          card.clientWidth;
+
+        const cardHeight =
+          card.clientHeight;
+
+
+        /*
+          Escala para preencher o card inteiro,
+          como object-fit: cover
+        */
+
+        const scale =
+          Math.max(
+            cardWidth / baseViewport.width,
+            cardHeight / baseViewport.height
+          );
+
+
+        const viewport =
+          page.getViewport({
+            scale: scale * 2
+          });
+
+
+        canvas.width =
+          viewport.width;
+
+        canvas.height =
+          viewport.height;
+
+
+        await page.render({
+
+          canvasContext: context,
+          viewport: viewport
+
+        }).promise;
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Erro ao carregar ev 1.pdf:",
+          error
+        );
+
+      }
+
+    }
+
+
+    renderOficinaCover();
+
 
     /*
       CELULAR:
@@ -602,7 +739,9 @@
     */
 
     const cards =
-      document.querySelectorAll(".project-card");
+      document.querySelectorAll(
+        ".project-card"
+      );
 
 
     cards.forEach((card) => {
@@ -612,32 +751,44 @@
         function(event) {
 
           if (
-            window.matchMedia("(hover: none)").matches
+            window
+              .matchMedia("(hover: none)")
+              .matches
           ) {
 
             if (
-              !card.classList.contains("mobile-active")
+              !card
+                .classList
+                .contains("mobile-active")
             ) {
 
               event.preventDefault();
 
 
-              cards.forEach((otherCard) => {
+              cards.forEach(
+                (otherCard) => {
 
-                if (otherCard !== card) {
+                  if (
+                    otherCard !== card
+                  ) {
 
-                  otherCard.classList.remove(
-                    "mobile-active"
-                  );
+                    otherCard
+                      .classList
+                      .remove(
+                        "mobile-active"
+                      );
+
+                  }
 
                 }
-
-              });
-
-
-              card.classList.add(
-                "mobile-active"
               );
+
+
+              card
+                .classList
+                .add(
+                  "mobile-active"
+                );
 
             }
 
@@ -647,6 +798,33 @@
       );
 
     });
+
+
+    /*
+      REDESENHA A CAPA DO PDF
+      CASO O TAMANHO DA TELA MUDE
+    */
+
+    let resizeTimer;
+
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        clearTimeout(
+          resizeTimer
+        );
+
+
+        resizeTimer =
+          setTimeout(
+            renderOficinaCover,
+            250
+          );
+
+      }
+    );
 
   </script>
 
