@@ -92,6 +92,8 @@
       display: block;
       object-fit: contain;
       object-position: left center;
+      margin: 0;
+      transform: translateX(-24px);
     }
 
     .subtitle {
@@ -475,6 +477,7 @@
       .project-title-image {
         width: 68vw;
         max-width: 300px;
+        transform: translateX(-18px);
       }
 
       .subtitle {
@@ -642,7 +645,7 @@
 
         <img
           class="project-title-image"
-          src="titulo acmr.PNG"
+          src="./titulo acmr.PNG"
           alt="ACMR"
         >
 
@@ -702,9 +705,20 @@
       </h2>
 
 
-      <!-- TEXTO + JOÃO 1 -->
+      <!-- JOAO 1 + TEXTO -->
 
       <div class="joao-opening">
+
+        <div class="joao-opening-image image-wrap">
+
+          <img
+            class="zoomable"
+            src="./Joao1.jpg"
+            alt="João de Barro"
+          >
+
+        </div>
+
 
         <div class="joao-opening-text">
 
@@ -719,17 +733,6 @@
 
         </div>
 
-
-        <div class="joao-opening-image image-wrap">
-
-          <img
-            class="zoomable"
-            src="Joao1.jpg"
-            alt="João de Barro"
-          >
-
-        </div>
-
       </div>
 
 
@@ -741,7 +744,7 @@
 
           <img
             class="zoomable"
-            src="Joao3.JPG"
+            src="./Joao3.JPG"
             alt="João de Barro"
           >
 
@@ -752,7 +755,7 @@
 
           <img
             class="zoomable"
-            src="Joao2.JPG"
+            src="./Joao2.JPG"
             alt="João de Barro"
           >
 
@@ -769,7 +772,7 @@
 
           <img
             class="zoomable"
-            src="Joao6.PNG"
+            src="./Joao6.PNG"
             alt="João de Barro"
           >
 
@@ -780,7 +783,7 @@
 
           <img
             class="zoomable"
-            src="Joao9.PNG"
+            src="./Joao9.PNG"
             alt="João de Barro"
           >
 
@@ -797,7 +800,7 @@
 
           <img
             class="zoomable"
-            src="Joao7.PNG"
+            src="./Joao7.PNG"
             alt="João de Barro"
           >
 
@@ -808,7 +811,7 @@
 
           <img
             class="zoomable"
-            src="Joao8.PNG"
+            src="./Joao8.PNG"
             alt="João de Barro"
           >
 
@@ -819,7 +822,7 @@
     </section>
 
 
-    <!-- SELENZA ANHANGUERA PARK -->
+    <!-- SELENZA -->
 
     <section class="work-section">
 
@@ -831,16 +834,17 @@
       <div class="selenza-description">
 
         <p>
-          Empreendimento residencial acompanhado desde as etapas
-          iniciais da obra até a entrega. Durante o processo,
-          participei do acompanhamento dos serviços, verificações
-          de execução, medições e controle de qualidade da obra.
+          Empreendimento residencial de 28 pavimentos,
+          acompanhado desde as etapas iniciais da obra até
+          a entrega. Durante o processo, participei do
+          acompanhamento dos serviços, verificações de
+          execução, medições e controle de qualidade.
         </p>
 
       </div>
 
 
-      <!-- SELENZA 1, 2 E 3 -->
+      <!-- 1 + 2 + 3 -->
 
       <div class="selenza-grid">
 
@@ -848,29 +852,27 @@
 
           <img
             class="zoomable"
-            src="selenza 1.jpg"
+            src="./selenza 1.jpg"
             alt="Selenza Anhanguera Park"
           >
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="selenza 2.jpg"
+            src="./selenza 2.jpg"
             alt="Selenza Anhanguera Park"
           >
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="selenza 3.jpg"
+            src="./selenza 3.jpg"
             alt="Selenza Anhanguera Park"
           >
 
@@ -879,7 +881,7 @@
       </div>
 
 
-      <!-- SELENZA 4, 5 E 6 -->
+      <!-- 4 + 5 + 6 -->
 
       <div class="selenza-grid">
 
@@ -887,29 +889,27 @@
 
           <img
             class="zoomable"
-            src="selenza 4.jpg"
+            src="./selenza 4.jpg"
             alt="Selenza Anhanguera Park"
           >
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="selenza 5.jpg"
+            src="./selenza 5.jpg"
             alt="Selenza Anhanguera Park"
           >
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="selenza 6.jpg"
+            src="./selenza 6.jpg"
             alt="Selenza Anhanguera Park"
           >
 
@@ -1001,8 +1001,7 @@
     <div
       class="lightbox-counter"
       id="lightboxCounter"
-    >
-    </div>
+    ></div>
 
   </div>
 
@@ -1138,7 +1137,6 @@
     function closeLightbox() {
 
       lightbox.classList.remove("active");
-
       lightbox.classList.remove("zoomed");
 
       document.body.classList.remove(
@@ -1220,7 +1218,6 @@
       (event) => {
 
         event.stopPropagation();
-
         showNextImage();
 
       }
@@ -1232,7 +1229,6 @@
       (event) => {
 
         event.stopPropagation();
-
         showPreviousImage();
 
       }
@@ -1248,7 +1244,6 @@
         if (swipedRecently) {
 
           swipedRecently = false;
-
           return;
 
         }
@@ -1256,7 +1251,6 @@
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
-
           return;
 
         }
@@ -1272,7 +1266,6 @@
       (event) => {
 
         event.stopPropagation();
-
         closeLightbox();
 
       }
