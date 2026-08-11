@@ -137,18 +137,25 @@
     }
 
 
-    /* ENQUADRAMENTO ESPECÍFICO — 303 */
+    /* 303 */
 
-.project-card.projeto-303 img {
-  object-position: center center;
-  filter: grayscale(100%);
-}
+    .project-card.projeto-303 img {
+      object-position: center center;
+      filter: grayscale(100%);
+    }
 
 
-    /* ENQUADRAMENTO ESPECÍFICO — CONJUNTO EM DESNÍVEL */
+    /* CONJUNTO EM DESNÍVEL */
 
     .project-card.salvador img {
       object-position: center 79%;
+    }
+
+
+    /* OFICINA BRESTOL */
+
+    .project-card.oficina-brestol img {
+      object-position: center center;
     }
 
 
@@ -315,12 +322,6 @@
 
       .project-card {
         width: 100%;
-
-        /*
-          Mantém os projetos mais finos
-          e evita aquela capa enorme no celular
-        */
-
         height: 280px;
       }
 
@@ -332,18 +333,24 @@
       }
 
 
-      /* 303 NO CELULAR */
+      /* 303 */
 
       .project-card.projeto-303 img {
         object-position: center center;
       }
 
 
-      /* SALVADOR NO CELULAR
-         sobe a imagem dentro do card */
+      /* SALVADOR */
 
       .project-card.salvador img {
         object-position: center 79%;
+      }
+
+
+      /* OFICINA BRESTOL */
+
+      .project-card.oficina-brestol img {
+        object-position: center center;
       }
 
 
@@ -509,6 +516,38 @@
 
           <span class="project-name">
             Conjunto em Desnível
+          </span>
+
+          <span class="project-type">
+            Projeto acadêmico
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- OFICINA BRESTOL -->
+
+      <a
+        class="project-card oficina-brestol"
+        href="oficina-brestol.html"
+      >
+
+        <img
+          src="ev 2.jpg"
+          alt="Oficina Brestol"
+        >
+
+
+        <div class="project-info">
+
+          <span class="project-year">
+            2025
+          </span>
+
+          <span class="project-name">
+            Oficina Brestol
           </span>
 
           <span class="project-type">
