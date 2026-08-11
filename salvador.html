@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Conjunto em Desnível — Ana Luiza Campos</title>
+
+  <style>
+
+    @font-face {
+      font-family: "Neue Montreal";
+      src: url("./NeueMontreal-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --fundo: #ffffff;
+      --preto: #111111;
+      --azul: #2455ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      background: var(--fundo);
+      color: var(--preto);
+      font-family: "Neue Montreal", sans-serif;
+    }
+
+
+    /* TOPO */
+
+    .top {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 28px 28px 0;
+    }
+
+    .back {
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .top-name {
+      font-size: 16px;
+    }
+
+
+    /* CABEÇALHO DO PROJETO */
+
+    .project-header {
+      padding: 85px 28px 48px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-title {
+      width: clamp(430px, 48vw, 700px);
+      max-width: 88vw;
+
+      height: auto;
+      display: block;
+    }
+
+    .project-meta {
+      margin-top: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 22px;
+
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .project-meta span:not(:last-child)::after {
+      content: "•";
+      margin-left: 22px;
+      color: var(--azul);
+    }
+
+
+    /* PRIMEIRA IMAGEM — CORTE FULL WIDTH */
+
+    .hero {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* SOBRE O PROJETO */
+
+    .about {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+
+      gap: 70px;
+
+      padding: 110px 7vw;
+    }
+
+    .about-image {
+      width: 100%;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+    .about-text {
+      max-width: 520px;
+    }
+
+    .about-label {
+      color: var(--azul);
+
+      font-size: 15px;
+
+      margin-bottom: 28px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .about-text p + p {
+      margin-top: 22px;
+    }
+
+
+    /* RODAPÉ */
+
+    .footer-wrap {
+      padding: 0 28px 70px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--preto);
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 16px;
+    }
+
+    .footer a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .copyright {
+      margin-top: 34px;
+
+      text-align: center;
+
+      font-size: 11px;
+
+      color: rgba(17, 17, 17, 0.32);
+    }
+
+
+    /* CELULAR */
+
+    @media (max-width: 700px) {
+
+      .top {
+        padding: 22px 18px 0;
+      }
+
+      .back,
+      .top-name {
+        font-size: 15px;
+      }
+
+
+      /* TÍTULO */
+
+      .project-header {
+        padding: 68px 18px 36px;
+      }
+
+      .project-title {
+        width: 86vw;
+        max-width: 440px;
+      }
+
+      .project-meta {
+        margin-top: 22px;
+
+        gap: 10px;
+
+        font-size: 11px;
+      }
+
+      .project-meta span:not(:last-child)::after {
+        margin-left: 10px;
+      }
+
+
+      /* IMAGEM GRANDE */
+
+      .hero {
+        width: 100%;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      /* SOBRE */
+
+      .about {
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 42px;
+
+        padding: 70px 18px 80px;
+      }
+
+      .about-image {
+        width: 100%;
+      }
+
+      .about-text {
+        max-width: none;
+      }
+
+      .about-label {
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+
+      .about-text p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .about-text p + p {
+        margin-top: 18px;
+      }
+
+
+      /* RODAPÉ */
+
+      .footer-wrap {
+        padding: 0 18px 50px;
+      }
+
+      .footer {
+        font-size: 15px;
+      }
+
+      .copyright {
+        margin-top: 28px;
+        font-size: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body id="top">
+
+  <main>
+
+
+    <!-- TOPO -->
+
+    <header class="top">
+
+      <a
+        class="back"
+        href="arquitetura.html"
+      >
+        ← voltar
+      </a>
+
+      <span class="top-name">
+        Ana Luiza Campos
+      </span>
+
+    </header>
+
+
+    <!-- TÍTULO -->
+
+    <section class="project-header">
+
+      <img
+        class="project-title"
+        src="124FF39F-9638-4235-9F1B-019FC8BB68E1.PNG"
+        alt="Conjunto em Desnível"
+      >
+
+      <div class="project-meta">
+
+        <span>2025</span>
+
+        <span>Acadêmico</span>
+
+        <span>Salvador</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRIMEIRA IMAGEM / CORTE -->
+
+    <section class="hero">
+
+      <img
+        src="foto 1 salvador.png"
+        alt="Corte geral do Conjunto em Desnível"
+      >
+
+    </section>
+
+
+    <!-- SOBRE O PROJETO -->
+
+    <section class="about">
+
+
+      <!-- FOTO 2 -->
+
+      <div class="about-image">
+
+        <img
+          src="foto 2 salvador.png"
+          alt="Conjunto em Desnível"
+        >
+
+      </div>
+
+
+      <!-- TEXTO -->
+
+      <div class="about-text">
+
+        <div class="about-label">
+          ✷ sobre o projeto
+        </div>
+
+        <p>
+          Implantado no morro do Beco do Sodré, em Salvador,
+          o projeto reúne um teatro, um mercado popular e um
+          centro comunitário. Os equipamentos ocupam volumes
+          majoritariamente de madeira, distribuídos de acordo
+          com os desníveis e as curvas naturais do terreno.
+        </p>
+
+        <p>
+          A circulação organiza a proposta. Escadas rolantes
+          atravessam o morro, criam cortes na topografia e
+          conectam os diferentes níveis, enquanto rampas
+          garantem o acesso aos edifícios. Assim, o projeto
+          constrói um percurso contínuo entre cultura,
+          comércio e convivência comunitária.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <div class="footer-wrap">
+
+      <footer>
+
+        <div class="footer">
+
+          <span>
+            Conjunto em Desnível
+          </span>
+
+          <a href="#top">
+            Back to top ↑
+          </a>
+
+        </div>
+
+        <div class="copyright">
+          Ana Luiza Campos © 2026
+        </div>
+
+      </footer>
+
+    </div>
+
+
+  </main>
+
+</body>
+
+</html>
