@@ -55,7 +55,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 90px;
+
+      margin-bottom: 70px;
     }
 
     .back {
@@ -69,24 +70,68 @@
     }
 
 
-    /* ABERTURA — MESMO PADRÃO DO 303 */
+    /* IMAGENS CLICÁVEIS */
+
+    .zoomable {
+      cursor: zoom-in;
+
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+
+      transform-origin: center;
+    }
+
+    @media (hover: hover) {
+      .zoomable:hover {
+        transform: scale(1.018);
+      }
+    }
+
+
+    /* FOTO 1 */
+
+    .hero-full {
+      width: calc(100% + 56px);
+
+      margin-left: -28px;
+      margin-right: -28px;
+
+      margin-bottom: 95px;
+
+      overflow: hidden;
+    }
+
+    .hero-full img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* ABERTURA */
 
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 40px;
-      margin-bottom: 90px;
+
+      margin-bottom: 100px;
     }
 
     .title-block {
       display: flex;
       flex-direction: column;
+
       align-items: flex-start;
+
       width: 100%;
     }
 
 
-    /* TÍTULO CONJUNTO EM DESNÍVEL */
+    /* TÍTULO */
 
     .project-title-image {
       width: clamp(330px, 34vw, 490px);
@@ -99,10 +144,12 @@
       object-position: left center;
 
       margin: 0;
+
+      transform: translateX(-10px);
     }
 
 
-    /* MESMO SUBTÍTULO DO 303 */
+    /* SUBTÍTULO */
 
     .subtitle {
       margin-top: 18px;
@@ -112,7 +159,7 @@
     }
 
 
-    /* MESMO BLOCO DIREITO DO 303 */
+    /* INFO DIREITA */
 
     .info {
       align-self: end;
@@ -132,49 +179,7 @@
     }
 
 
-    /* IMAGENS CLICÁVEIS */
-
-    .zoomable {
-      cursor: zoom-in;
-
-      transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
-
-      transform-origin: center;
-    }
-
-    @media (hover: hover) {
-
-      .zoomable:hover {
-        transform: scale(1.018);
-      }
-
-    }
-
-
-    /* FOTO 1 — DE PONTA A PONTA */
-
-    .hero-full {
-      width: calc(100% + 56px);
-
-      margin-left: -28px;
-      margin-right: -28px;
-
-      margin-bottom: 120px;
-
-      overflow: hidden;
-    }
-
-    .hero-full img {
-      width: 100%;
-      height: auto;
-
-      display: block;
-    }
-
-
-    /* FOTO 2 + SOBRE O PROJETO */
+    /* FOTO 3 + TEXTO */
 
     .project-intro {
       display: grid;
@@ -189,11 +194,13 @@
 
     .project-image-wrap {
       height: 100%;
+
       overflow: hidden;
+
       position: relative;
     }
 
-    .project-image-wrap > img.zoomable {
+    .project-image-wrap > img {
       width: 100%;
       height: 100%;
 
@@ -232,21 +239,48 @@
     }
 
 
-    /* DESENVOLVIMENTO */
+    /* GALERIA */
 
-    .drawings-section {
-      margin-top: 40px;
+    .gallery {
+      width: 100%;
+
       margin-bottom: 130px;
     }
 
-    .drawings {
-      display: flex;
-      flex-direction: column;
+    .gallery-title {
+      color: var(--azul);
 
-      gap: 36px;
+      font-size: 16px;
+
+      margin-bottom: 35px;
     }
 
-    .drawings img {
+    .image-pair {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+
+      align-items: start;
+
+      margin-bottom: 20px;
+    }
+
+    .image-pair img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+    .single-image {
+      width: 100%;
+
+      margin-top: 20px;
+    }
+
+    .single-image img {
       width: 100%;
       height: auto;
 
@@ -477,11 +511,23 @@
       }
 
       .top {
-        margin-bottom: 70px;
+        margin-bottom: 50px;
       }
 
       .top-name {
         font-size: 15px;
+      }
+
+
+      /* FOTO 1 */
+
+      .hero-full {
+        width: calc(100% + 36px);
+
+        margin-left: -18px;
+        margin-right: -18px;
+
+        margin-bottom: 70px;
       }
 
 
@@ -492,7 +538,7 @@
 
         gap: 35px;
 
-        margin-bottom: 70px;
+        margin-bottom: 75px;
       }
 
       .project-title-image {
@@ -500,6 +546,8 @@
         max-width: 330px;
 
         margin: 0;
+
+        transform: translateX(-6px);
       }
 
       .subtitle {
@@ -513,19 +561,7 @@
       }
 
 
-      /* FOTO 1 FULL WIDTH */
-
-      .hero-full {
-        width: calc(100% + 36px);
-
-        margin-left: -18px;
-        margin-right: -18px;
-
-        margin-bottom: 85px;
-      }
-
-
-      /* FOTO 2 + TEXTO */
+      /* FOTO 3 + TEXTO */
 
       .project-intro {
         grid-template-columns: 1fr;
@@ -539,7 +575,7 @@
         height: auto;
       }
 
-      .project-image-wrap > img.zoomable {
+      .project-image-wrap > img {
         width: 100%;
         height: auto;
 
@@ -556,14 +592,22 @@
       }
 
 
-      /* DESENVOLVIMENTO */
+      /* GALERIA */
 
-      .drawings-section {
+      .gallery {
         margin-bottom: 90px;
       }
 
-      .drawings {
-        gap: 20px;
+      .image-pair {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 10px;
+      }
+
+      .single-image {
+        margin-top: 10px;
       }
 
 
@@ -646,7 +690,20 @@
     </header>
 
 
-    <!-- ABERTURA — MESMO PADRÃO DO 303 -->
+    <!-- FOTO 1 -->
+
+    <section class="hero-full">
+
+      <img
+        class="zoomable"
+        src="foto 1 salvador.png"
+        alt="Corte geral do Conjunto em Desnível"
+      >
+
+    </section>
+
+
+    <!-- TÍTULO + INFO -->
 
     <section class="intro">
 
@@ -674,7 +731,7 @@
 
         <p>
           Escola da Cidade<br>
-          Salvador
+          São Paulo
         </p>
 
       </div>
@@ -682,20 +739,7 @@
     </section>
 
 
-    <!-- FOTO 1 — CORTE GRANDE DE PONTA A PONTA -->
-
-    <section class="hero-full">
-
-      <img
-        class="zoomable"
-        src="foto 1 salvador.png"
-        alt="Corte geral do Conjunto em Desnível"
-      >
-
-    </section>
-
-
-    <!-- FOTO 2 + SOBRE -->
+    <!-- FOTO 3 + SOBRE -->
 
     <section class="project-intro">
 
@@ -703,7 +747,7 @@
 
         <img
           class="zoomable"
-          src="foto 2 salvador.png"
+          src="foto 3 salvador.png"
           alt="Conjunto em Desnível"
         >
 
@@ -743,22 +787,33 @@
     </section>
 
 
-    <!-- OUTRAS IMAGENS -->
+    <!-- GALERIA -->
 
-    <section class="drawings-section">
+    <section class="gallery">
 
-      <div class="section-title">
-        ✷ desenvolvimento
+      <div class="gallery-title">
+        ✷ desenhos e maquete
       </div>
 
 
-      <div class="drawings">
+      <div class="image-pair">
 
         <img
           class="zoomable"
-          src="foto 3 salvador.png"
+          src="foto 2 salvador.png"
           alt="Desenho do Conjunto em Desnível"
         >
+
+        <img
+          class="zoomable"
+          src="foto 6 salvador.jpeg"
+          alt="Desenho do Conjunto em Desnível"
+        >
+
+      </div>
+
+
+      <div class="image-pair">
 
         <img
           class="zoomable"
@@ -772,11 +827,10 @@
           alt="Maquete do Conjunto em Desnível"
         >
 
-        <img
-          class="zoomable"
-          src="foto 6 salvador.jpeg"
-          alt="Desenho do Conjunto em Desnível"
-        >
+      </div>
+
+
+      <div class="single-image">
 
         <img
           class="zoomable"
@@ -906,11 +960,8 @@
 
 
     let currentIndex = 0;
-
     let zoomed = false;
-
     let isDragging = false;
-
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -920,9 +971,6 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
-
-
-    /* SWIPE */
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1074,20 +1122,18 @@
     }
 
 
-    images.forEach(
-      (image, index) => {
+    images.forEach((image, index) => {
 
-        image.addEventListener(
-          "click",
-          () => {
+      image.addEventListener(
+        "click",
+        () => {
 
-            openLightbox(index);
+          openLightbox(index);
 
-          }
-        );
+        }
+      );
 
-      }
-    );
+    });
 
 
     lightboxNext.addEventListener(
@@ -1128,7 +1174,6 @@
 
         }
 
-
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
@@ -1136,7 +1181,6 @@
           return;
 
         }
-
 
         toggleSecondZoom();
 
@@ -1188,8 +1232,6 @@
       }
     );
 
-
-    /* ARRASTAR NO SEGUNDO ZOOM */
 
     lightboxImage.addEventListener(
       "pointerdown",
@@ -1256,7 +1298,6 @@
         }
 
         translateX = newX;
-
         translateY = newY;
 
         updateImageTransform();
@@ -1273,10 +1314,9 @@
 
           try {
 
-            lightboxImage
-              .releasePointerCapture(
-                event.pointerId
-              );
+            lightboxImage.releasePointerCapture(
+              event.pointerId
+            );
 
           } catch (error) {}
 
@@ -1297,8 +1337,6 @@
       }
     );
 
-
-    /* SWIPE NO CELULAR */
 
     lightboxImageWrap.addEventListener(
       "touchstart",
@@ -1380,9 +1418,7 @@
 
             showNextImage();
 
-          }
-
-          else {
+          } else {
 
             showPreviousImage();
 
@@ -1399,8 +1435,6 @@
       }
     );
 
-
-    /* TECLADO */
 
     document.addEventListener(
       "keydown",
