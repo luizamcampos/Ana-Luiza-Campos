@@ -83,27 +83,47 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
+      overflow: visible;
     }
+
+
+    /* TÍTULO */
 
     .project-title-image {
       width: clamp(220px, 28vw, 400px);
-      max-width: 100%;
+      max-width: none;
       height: auto;
+
       display: block;
+
       object-fit: contain;
       object-position: left center;
+
+      /*
+        O PNG tem uma margem transparente
+        interna maior do lado esquerdo.
+        Esse deslocamento corrige o alinhamento
+        visual com o subtítulo.
+      */
+      transform: translateX(-32px);
+
       margin: 0;
     }
 
+
     .subtitle {
       margin-top: 18px;
+
       font-size: 16px;
       line-height: 1.4;
     }
 
+
     .info {
       align-self: end;
+
       max-width: 480px;
+
       font-size: 16px;
       line-height: 1.4;
     }
@@ -117,20 +137,23 @@
     }
 
 
-    /* TÍTULOS */
+    /* TÍTULOS DE SEÇÃO */
 
     .section-title {
       color: var(--azul);
+
       font-size: 16px;
-      margin-bottom: 30px;
+
+      margin-bottom: 28px;
     }
 
 
-    /* TEXTOS */
+    /* TEXTO PADRÃO */
 
     .text {
       font-size: 17px;
       line-height: 1.4;
+
       letter-spacing: -0.015em;
     }
 
@@ -143,21 +166,26 @@
 
     .zoomable {
       cursor: zoom-in;
+
       transition:
         transform 0.35s ease,
         opacity 0.35s ease;
+
       transform-origin: center;
     }
 
     @media (hover: hover) {
+
       .zoomable:hover {
         transform: scale(1.018);
       }
+
     }
 
     .normal-image {
       width: 100%;
       height: auto;
+
       display: block;
     }
 
@@ -166,14 +194,18 @@
 
     .pdf-page {
       width: 100%;
+
       display: block;
+
       overflow: hidden;
     }
 
     .pdf-page canvas {
       width: 100%;
       height: auto;
+
       display: block;
+
       cursor: zoom-in;
     }
 
@@ -182,9 +214,15 @@
 
     .concept-section {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
+
+      grid-template-columns:
+        1.12fr
+        0.88fr;
+
+      gap: 58px;
+
       align-items: start;
+
       margin-bottom: 120px;
     }
 
@@ -192,20 +230,46 @@
       max-width: 560px;
     }
 
+    /*
+      TEXTO DO CONCEITO MENOR
+      para acompanhar melhor a altura da EV 1
+    */
+
+    .concept-text .text {
+      font-size: 14px;
+      line-height: 1.33;
+      letter-spacing: -0.01em;
+    }
+
+    .concept-text .text p + p {
+      margin-top: 13px;
+    }
+
+    .concept-text .section-title {
+      margin-bottom: 24px;
+    }
+
 
     /* EV 2 */
 
     .building-section {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
       gap: 60px;
+
       align-items: center;
+
       margin-bottom: 120px;
     }
 
     .building-image img {
       width: 100%;
       height: auto;
+
       display: block;
     }
 
@@ -214,8 +278,13 @@
 
     .intervention-section {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
       gap: 60px;
+
       margin-bottom: 120px;
     }
 
@@ -228,15 +297,22 @@
 
     .facade-section {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
       gap: 60px;
+
       align-items: center;
+
       margin-bottom: 120px;
     }
 
     .facade-image img {
       width: 100%;
       height: auto;
+
       display: block;
     }
 
@@ -250,9 +326,15 @@
 
     .drawing-pair {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
       gap: 20px;
+
       align-items: start;
+
       margin-bottom: 20px;
     }
 
@@ -262,9 +344,12 @@
     .next {
       margin-top: 120px;
       padding-top: 25px;
+
       border-top: 1px solid var(--preto);
+
       display: flex;
       justify-content: space-between;
+
       font-size: 16px;
     }
 
@@ -275,8 +360,11 @@
 
     .copyright {
       margin-top: 34px;
+
       text-align: center;
+
       font-size: 11px;
+
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -286,6 +374,7 @@
     .lightbox {
       position: fixed;
       inset: 0;
+
       z-index: 9999;
 
       display: flex;
@@ -320,6 +409,7 @@
       align-items: center;
 
       overflow: hidden;
+
       cursor: zoom-in;
     }
 
@@ -338,6 +428,7 @@
       -webkit-user-drag: none;
 
       touch-action: none;
+
       cursor: zoom-in;
     }
 
@@ -345,29 +436,37 @@
       cursor: grab;
     }
 
+
     .lightbox-close {
       position: absolute;
+
       top: 24px;
       right: 28px;
+
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
+
       background: transparent;
 
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 34px;
 
       cursor: pointer;
     }
 
+
     .lightbox-arrow {
       position: absolute;
+
       top: 50%;
+
       z-index: 30;
 
       transform: translateY(-50%);
@@ -376,14 +475,17 @@
       height: 80px;
 
       border: 0;
+
       background: transparent;
 
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 46px;
 
       cursor: pointer;
+
       opacity: 0.8;
     }
 
@@ -397,11 +499,14 @@
 
     .lightbox-counter {
       position: absolute;
+
       bottom: 22px;
       left: 50%;
+
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
+
       font-size: 12px;
     }
 
@@ -418,23 +523,32 @@
         margin-bottom: 70px;
       }
 
+      .back,
       .top-name {
         font-size: 15px;
       }
 
+
+      /* ABERTURA */
+
       .intro {
         grid-template-columns: 1fr;
+
         gap: 35px;
+
         margin-bottom: 70px;
       }
 
       .project-title-image {
         width: 62vw;
-        max-width: 260px;
+        max-width: 270px;
+
+        transform: translateX(-20px);
       }
 
       .subtitle {
         margin-top: 14px;
+
         font-size: 15px;
       }
 
@@ -442,42 +556,78 @@
         font-size: 15px;
       }
 
-      .concept-section,
+
+      /* CONCEITO */
+
+      .concept-section {
+        grid-template-columns: 1fr;
+
+        gap: 34px;
+
+        margin-bottom: 85px;
+      }
+
+      .concept-text .text {
+        font-size: 15px;
+        line-height: 1.38;
+      }
+
+      .concept-text .text p + p {
+        margin-top: 15px;
+      }
+
+
+      /* DEMAIS BLOCOS */
+
       .building-section,
       .facade-section,
       .intervention-section {
         grid-template-columns: 1fr;
+
         gap: 40px;
+
         margin-bottom: 85px;
       }
+
 
       .text {
         font-size: 16px;
         line-height: 1.4;
       }
 
+
       .section-title {
         margin-bottom: 24px;
       }
 
+
       .drawing-pair {
         grid-template-columns: 1fr;
+
         gap: 20px;
+
         margin-bottom: 20px;
       }
+
 
       .drawings-section {
         margin-bottom: 90px;
       }
 
+
       .next {
         margin-top: 70px;
       }
 
+
       .copyright {
         margin-top: 28px;
+
         font-size: 10px;
       }
+
+
+      /* LIGHTBOX */
 
       .lightbox {
         padding: 12px;
@@ -496,6 +646,7 @@
       .lightbox-arrow {
         width: 42px;
         height: 60px;
+
         font-size: 34px;
       }
 
@@ -522,7 +673,10 @@
 
     <header class="top">
 
-      <a class="back" href="arquitetura.html">
+      <a
+        class="back"
+        href="arquitetura.html"
+      >
         ← voltar
       </a>
 
@@ -539,11 +693,11 @@
 
       <div class="title-block">
 
-       <img
-  class="project-title-image"
-  src="0E6B1C0D-965F-4594-BDBC-F27C38EE7CD2.PNG"
-  alt="Oficina Brestol"
->
+        <img
+          class="project-title-image"
+          src="0E6B1C0D-965F-4594-BDBC-F27C38EE7CD2.PNG"
+          alt="Oficina Brestol"
+        >
 
         <div class="subtitle">
           Campos Elíseos, São Paulo — 2025<br>
@@ -569,7 +723,6 @@
     </section>
 
 
-
     <!-- EV 1 + CONCEITO -->
 
     <section class="concept-section">
@@ -586,6 +739,7 @@
           ✷ conceito
         </div>
 
+
         <div class="text">
 
           <p>
@@ -593,7 +747,7 @@
             sociais fortemente entrelaçadas: a dificuldade de inserção
             de pessoas em situação de vulnerabilidade no mercado de
             trabalho e o descarte de resíduos urbanos na região dos
-            Campos Elísios, que atualmente gera cerca de 365 toneladas
+            Campos Elíseos, que atualmente gera cerca de 365 toneladas
             de resíduos por mês.
           </p>
 
@@ -607,30 +761,22 @@
           <p>
             A oficina se apresenta como um espaço de aprendizado e
             produção, voltado à recuperação e reinvenção de objetos
-            descartados. Em vez de adotar a mentalidade de que
-            “quebrou, vai para o lixo”, buscamos resgatar a ideia de
-            que itens que pararam de funcionar podem ter um novo
-            propósito.
-          </p>
-
-          <p>
-            Mais do que um local de conserto, ela é pensada como um
-            ambiente de reconstrução simbólica, onde as pessoas possam
-            também reconstruir suas trajetórias e desenvolver
-            competências profissionais.
+            descartados. Em vez de adotar a mentalidade de que “quebrou,
+            vai para o lixo”, buscamos resgatar a ideia de que itens que
+            pararam de funcionar podem ter um novo propósito. Mais do que
+            um local de conserto, ela é pensada como um ambiente de
+            reconstrução simbólica, onde as pessoas possam também
+            reconstruir suas trajetórias e desenvolver competências
+            profissionais.
           </p>
 
           <p>
             O projeto também contempla a criação de uma creche integrada
-            ao espaço. Essa estrutura permite que as mães possam
-            participar ativamente das oficinas, ao mesmo tempo em que
-            seus filhos estão em um ambiente seguro e acolhedor.
-          </p>
-
-          <p>
-            Compreendendo que no Brasil existem cerca de 11 milhões de
-            mães solo, muitas delas impedidas de trabalhar por não terem
-            com quem deixar seus filhos.
+            ao espaço. Essa estrutura permite que as mães possam participar
+            ativamente das oficinas, ao mesmo tempo em que seus filhos estão
+            em um ambiente seguro e acolhedor. Compreendendo que no Brasil
+            existem cerca de 11 milhões de mães solo, muitas delas impedidas
+            de trabalhar por não terem com quem deixar seus filhos.
           </p>
 
           <p>
@@ -645,7 +791,6 @@
       </div>
 
     </section>
-
 
 
     <!-- EV 2 -->
@@ -669,6 +814,7 @@
           ✷ escolha do edifício
         </div>
 
+
         <div class="text">
 
           <p>
@@ -684,7 +830,6 @@
       </div>
 
     </section>
-
 
 
     <!-- INTERVENÇÃO + ESTRUTURA -->
@@ -723,6 +868,7 @@
           ✷ proposta de estrutura
         </div>
 
+
         <div class="text">
 
           <p>
@@ -749,7 +895,6 @@
       </div>
 
     </section>
-
 
 
     <!-- EV 3 -->
@@ -790,7 +935,6 @@
       </div>
 
     </section>
-
 
 
     <!-- EV 4, 5, 6 E 7 -->
@@ -839,7 +983,6 @@
     </section>
 
 
-
     <!-- FINAL -->
 
     <footer>
@@ -868,10 +1011,12 @@
   </main>
 
 
-
   <!-- LIGHTBOX -->
 
-  <div class="lightbox" id="lightbox">
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
 
     <button
       class="lightbox-close"
@@ -881,6 +1026,7 @@
       ×
     </button>
 
+
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -888,6 +1034,7 @@
     >
       ‹
     </button>
+
 
     <div
       class="lightbox-image-wrap"
@@ -903,6 +1050,7 @@
 
     </div>
 
+
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -911,13 +1059,13 @@
       ›
     </button>
 
+
     <div
       class="lightbox-counter"
       id="lightboxCounter"
     ></div>
 
   </div>
-
 
 
   <!-- PDF.JS -->
@@ -975,8 +1123,6 @@
         }).promise;
 
 
-        /* cria imagem para o lightbox */
-
         const imageUrl =
           canvas.toDataURL("image/png");
 
@@ -1016,6 +1162,7 @@
   </script>
 
 
+  <!-- LIGHTBOX SCRIPT -->
 
   <script>
 
@@ -1067,7 +1214,8 @@
 
     function updateCounter() {
 
-      const images = getImages();
+      const images =
+        getImages();
 
       lightboxCounter.textContent =
         `${currentIndex + 1} / ${images.length}`;
@@ -1082,9 +1230,7 @@
         lightboxImage.style.transform =
           `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
 
-      }
-
-      else {
+      } else {
 
         lightboxImage.style.transform =
           "translate(0px, 0px) scale(1)";
@@ -1112,13 +1258,21 @@
 
     function showImage(index) {
 
-      const images = getImages();
+      const images =
+        getImages();
 
-      if (!images.length) return;
+      if (!images.length) {
+        return;
+      }
 
       currentIndex =
-        (index + images.length)
-        % images.length;
+        (
+          index
+          +
+          images.length
+        )
+        %
+        images.length;
 
       const image =
         images[currentIndex];
@@ -1131,11 +1285,10 @@
 
         lightboxImage.src =
           image.dataset.fullImage
-          || image.toDataURL("image/png");
+          ||
+          image.toDataURL("image/png");
 
-      }
-
-      else {
+      } else {
 
         lightboxImage.src =
           image.src;
@@ -1192,25 +1345,32 @@
             ".zoomable"
           );
 
-        if (!target) return;
+        if (!target) {
+          return;
+        }
 
         if (
-          target === lightboxImage
+          target ===
+          lightboxImage
         ) {
-
           return;
-
         }
 
         const images =
           getImages();
 
         const index =
-          images.indexOf(target);
+          images.indexOf(
+            target
+          );
 
-        if (index !== -1) {
+        if (
+          index !== -1
+        ) {
 
-          openLightbox(index);
+          openLightbox(
+            index
+          );
 
         }
 
@@ -1264,7 +1424,8 @@
 
         event.stopPropagation();
 
-        zoomed = !zoomed;
+        zoomed =
+          !zoomed;
 
         translateX = 0;
         translateY = 0;
@@ -1301,17 +1462,22 @@
       "pointerdown",
       function(event) {
 
-        if (!zoomed) return;
+        if (!zoomed) {
+          return;
+        }
 
-        isDragging = true;
+        isDragging =
+          true;
 
         startX =
           event.clientX
-          - translateX;
+          -
+          translateX;
 
         startY =
           event.clientY
-          - translateY;
+          -
+          translateY;
 
         lightboxImage.setPointerCapture(
           event.pointerId
@@ -1329,15 +1495,19 @@
           !zoomed
           ||
           !isDragging
-        ) return;
+        ) {
+          return;
+        }
 
         translateX =
           event.clientX
-          - startX;
+          -
+          startX;
 
         translateY =
           event.clientY
-          - startY;
+          -
+          startY;
 
         updateTransform();
 
@@ -1349,7 +1519,8 @@
       "pointerup",
       function() {
 
-        isDragging = false;
+        isDragging =
+          false;
 
       }
     );
@@ -1363,7 +1534,9 @@
           !lightbox.classList.contains(
             "active"
           )
-        ) return;
+        ) {
+          return;
+        }
 
         if (
           event.key === "Escape"
