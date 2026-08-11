@@ -99,8 +99,7 @@
       margin-left: -28px;
       margin-right: -28px;
 
-      /* DIMINUÍ BASTANTE AQUI */
-      margin-bottom: 28px;
+      margin-bottom: 0;
 
       overflow: hidden;
     }
@@ -116,12 +115,20 @@
     /* ABERTURA */
 
     .intro {
+      position: relative;
+      z-index: 2;
+
       display: grid;
       grid-template-columns: 1fr 1fr;
 
       gap: 40px;
 
-      /* mantém o bloco compacto */
+      /*
+        PUXA O TÍTULO PARA DENTRO
+        DA ÁREA BRANCA DA FOTO 1
+      */
+      margin-top: -150px;
+
       margin-bottom: 85px;
     }
 
@@ -149,7 +156,6 @@
 
       margin: 0;
 
-      /* alinha visualmente com Salvador — 2025 */
       transform: translateX(-10px);
     }
 
@@ -157,7 +163,6 @@
     /* SUBTÍTULO */
 
     .subtitle {
-      /* mais perto do título */
       margin-top: 10px;
 
       font-size: 16px;
@@ -261,6 +266,43 @@
       margin-bottom: 35px;
     }
 
+
+    /* FOTO 2 + FOTO 6 */
+
+    .image-pair-first {
+      display: grid;
+
+      /*
+        FOTO 2 BEM MAIOR
+        FOTO 6 BEM MENOR
+      */
+      grid-template-columns: 1.7fr 0.55fr;
+
+      gap: 28px;
+
+      align-items: center;
+
+      margin-bottom: 28px;
+    }
+
+    .image-pair-first img {
+      display: block;
+      height: auto;
+    }
+
+    .image-pair-first img:first-child {
+      width: 100%;
+    }
+
+    .image-pair-first img:last-child {
+      width: 72%;
+
+      justify-self: center;
+    }
+
+
+    /* FOTO 4 + FOTO 5 */
+
     .image-pair {
       display: grid;
 
@@ -279,6 +321,9 @@
 
       display: block;
     }
+
+
+    /* FOTO 7 */
 
     .single-image {
       width: 100%;
@@ -533,8 +578,7 @@
         margin-left: -18px;
         margin-right: -18px;
 
-        /* ANTES ESTAVA 70 */
-        margin-bottom: 18px;
+        margin-bottom: 0;
       }
 
 
@@ -544,6 +588,12 @@
         grid-template-columns: 1fr;
 
         gap: 30px;
+
+        /*
+          TAMBÉM SOBE BASTANTE
+          NO CELULAR
+        */
+        margin-top: -95px;
 
         margin-bottom: 65px;
       }
@@ -558,7 +608,6 @@
       }
 
       .subtitle {
-        /* aproxima do título */
         margin-top: 8px;
 
         font-size: 15px;
@@ -605,6 +654,32 @@
       .gallery {
         margin-bottom: 90px;
       }
+
+
+      /* FOTO 2 GRANDE + FOTO 6 PEQUENA */
+
+      .image-pair-first {
+        grid-template-columns: 1.65fr 0.55fr;
+
+        gap: 10px;
+
+        align-items: center;
+
+        margin-bottom: 12px;
+      }
+
+      .image-pair-first img:first-child {
+        width: 100%;
+      }
+
+      .image-pair-first img:last-child {
+        width: 68%;
+
+        justify-self: center;
+      }
+
+
+      /* FOTO 4 + FOTO 5 */
 
       .image-pair {
         grid-template-columns: 1fr 1fr;
@@ -804,14 +879,14 @@
       </div>
 
 
-      <!-- FOTO 2 + FOTO 6 -->
+      <!-- FOTO 2 MAIOR + FOTO 6 MENOR -->
 
-      <div class="image-pair">
+      <div class="image-pair-first">
 
         <img
           class="zoomable"
           src="foto 2 salvador.png"
-          alt="Desenho do Conjunto em Desnível"
+          alt="Corte do Conjunto em Desnível"
         >
 
         <img
@@ -1471,28 +1546,16 @@
 
         }
 
-        if (
-          event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
           closeLightbox();
-
         }
 
-        if (
-          event.key === "ArrowRight"
-        ) {
-
+        if (event.key === "ArrowRight") {
           showNextImage();
-
         }
 
-        if (
-          event.key === "ArrowLeft"
-        ) {
-
+        if (event.key === "ArrowLeft") {
           showPreviousImage();
-
         }
 
       }
