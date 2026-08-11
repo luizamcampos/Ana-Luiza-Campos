@@ -55,7 +55,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       margin-bottom: 90px;
     }
 
@@ -73,59 +72,54 @@
     /* ABERTURA */
 
     .intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 40px;
-
       margin-bottom: 100px;
     }
 
     .title-block {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 55px;
+    }
+
+    .project-title-image {
+      width: clamp(210px, 22vw, 320px);
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .intro-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .intro-left,
+    .intro-paired {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .intro-left p + p,
+    .intro-paired p + p {
+      margin-top: 0;
+    }
+
+    .intro-right {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-
-      width: 100%;
     }
 
-
-    /* TÍTULO ACMR */
-
-    .project-title-image {
-      width: clamp(210px, 23vw, 330px);
-      max-width: 100%;
-      height: auto;
-
-      display: block;
-
-      object-fit: contain;
-      object-position: left center;
-
-      margin: 0;
-
-      transform: translateX(-34px);
-    }
-
-
-    .subtitle {
-      margin-top: 20px;
-
+    .intro-label {
       font-size: 16px;
       line-height: 1.4;
-    }
-
-    .info {
-      align-self: end;
-
-      max-width: 480px;
-
-      font-size: 16px;
-      line-height: 1.4;
-    }
-
-    .info p + p {
-      margin-top: 18px;
+      margin-bottom: 18px;
     }
 
     .blue {
@@ -141,18 +135,14 @@
 
     .section-title {
       color: var(--azul);
-
       font-size: 16px;
-
       margin-bottom: 30px;
     }
 
     .about-text {
       max-width: 1000px;
-
       font-size: 17px;
       line-height: 1.45;
-
       letter-spacing: -0.015em;
     }
 
@@ -162,16 +152,13 @@
     .work-title {
       font-size: 30px;
       font-weight: 400;
-
       line-height: 1;
-
       letter-spacing: -0.025em;
-
       margin-bottom: 30px;
     }
 
     .work-section {
-      margin-bottom: 100px;
+      margin-bottom: 110px;
     }
 
 
@@ -179,18 +166,14 @@
 
     .zoomable {
       cursor: zoom-in;
-
       transition: transform 0.35s ease;
-
       transform-origin: center;
     }
 
     @media (hover: hover) {
-
       .zoomable:hover {
         transform: scale(1.018);
       }
-
     }
 
     .image-wrap {
@@ -200,7 +183,6 @@
     .image-wrap img {
       width: 100%;
       height: auto;
-
       display: block;
     }
 
@@ -210,27 +192,21 @@
     .joao-opening {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 30px;
-
       align-items: center;
-
       margin-bottom: 30px;
     }
 
     .joao-opening-text {
       max-width: 520px;
-
       font-size: 17px;
       line-height: 1.45;
-
       letter-spacing: -0.015em;
     }
 
     .joao-opening-image img {
       width: 100%;
       height: auto;
-
       display: block;
     }
 
@@ -239,10 +215,9 @@
 
     .joao-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 20px;
+      align-items: start;
     }
 
     .joao-grid + .joao-grid {
@@ -252,28 +227,6 @@
     .joao-grid img {
       width: 100%;
       height: auto;
-
-      display: block;
-    }
-
-
-    /* ANTES E DEPOIS */
-
-    .before-after {
-      align-items: stretch;
-    }
-
-    .before-after .image-wrap {
-      aspect-ratio: 0.78;
-    }
-
-    .before-after img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
       display: block;
     }
 
@@ -282,53 +235,37 @@
 
     .selenza-description {
       max-width: 760px;
-
       margin-bottom: 35px;
-
       font-size: 17px;
       line-height: 1.45;
-
       letter-spacing: -0.015em;
     }
 
     .selenza-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
+      gap: 16px;
+      align-items: center;
     }
 
     .selenza-grid + .selenza-grid {
-      margin-top: 18px;
+      margin-top: 16px;
     }
-
-
-    /* TODAS AS IMAGENS SELENZA
-       FICAM DENTRO DE CAIXAS IGUAIS */
 
     .selenza-grid .image-wrap {
       width: 100%;
-
       aspect-ratio: 4 / 3;
-
       display: flex;
-      align-items: center;
       justify-content: center;
-
+      align-items: center;
       overflow: hidden;
-
-      background: #ffffff;
     }
 
-    .selenza-grid .image-wrap img {
+    .selenza-grid img {
       width: 100%;
       height: 100%;
-
       display: block;
-
       object-fit: contain;
-      object-position: center;
     }
 
 
@@ -337,7 +274,6 @@
     .lightbox {
       position: fixed;
       inset: 0;
-
       z-index: 9999;
 
       display: flex;
@@ -372,7 +308,6 @@
       align-items: center;
 
       overflow: hidden;
-
       cursor: zoom-in;
     }
 
@@ -391,7 +326,6 @@
       -webkit-user-drag: none;
 
       touch-action: none;
-
       cursor: zoom-in;
     }
 
@@ -412,23 +346,18 @@
 
     .lightbox-close {
       position: absolute;
-
       top: 24px;
       right: 28px;
-
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 34px;
       font-weight: 400;
 
@@ -440,9 +369,7 @@
 
     .lightbox-arrow {
       position: absolute;
-
       top: 50%;
-
       z-index: 30;
 
       transform: translateY(-50%);
@@ -451,17 +378,13 @@
       height: 80px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 46px;
 
       cursor: pointer;
-
       opacity: 0.8;
 
       transition:
@@ -502,16 +425,13 @@
 
     .lightbox-counter {
       position: absolute;
-
       bottom: 22px;
       left: 50%;
-
       z-index: 30;
 
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
-
       font-size: 12px;
     }
 
@@ -537,11 +457,8 @@
 
     .copyright {
       margin-top: 34px;
-
       text-align: center;
-
       font-size: 11px;
-
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -561,7 +478,6 @@
         margin-bottom: 70px;
       }
 
-      .back,
       .top-name {
         font-size: 15px;
       }
@@ -570,28 +486,33 @@
       /* ABERTURA */
 
       .intro {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
         margin-bottom: 80px;
       }
 
+      .title-block {
+        margin-bottom: 45px;
+      }
+
       .project-title-image {
-        width: 54vw;
-        max-width: 235px;
-
-        transform: translateX(-29px);
+        width: 48vw;
+        max-width: 210px;
       }
 
-      .subtitle {
-        margin-top: 15px;
-
-        font-size: 15px;
+      .intro-details {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: end;
       }
 
-      .info {
-        font-size: 15px;
+      .intro-left,
+      .intro-paired,
+      .intro-label {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .intro-label {
+        margin-bottom: 16px;
       }
 
 
@@ -614,12 +535,11 @@
       /* OBRAS */
 
       .work-section {
-        margin-bottom: 75px;
+        margin-bottom: 80px;
       }
 
       .work-title {
         font-size: 25px;
-
         margin-bottom: 24px;
       }
 
@@ -628,11 +548,8 @@
 
       .joao-opening {
         grid-template-columns: 1fr 1fr;
-
         gap: 12px;
-
         align-items: center;
-
         margin-bottom: 12px;
       }
 
@@ -645,30 +562,13 @@
       /* JOÃO DUPLAS */
 
       .joao-grid {
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
+        align-items: start;
       }
 
       .joao-grid + .joao-grid {
         margin-top: 10px;
-      }
-
-
-      /* ANTES E DEPOIS */
-
-      .before-after {
-        align-items: stretch;
-      }
-
-      .before-after .image-wrap {
-        aspect-ratio: 0.78;
-      }
-
-      .before-after img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-        object-position: center;
       }
 
 
@@ -677,28 +577,26 @@
       .selenza-description {
         font-size: 16px;
         line-height: 1.42;
-
-        margin-bottom: 24px;
+        margin-bottom: 25px;
       }
 
       .selenza-grid {
         grid-template-columns: repeat(3, 1fr);
-
-        gap: 8px;
+        gap: 7px;
+        align-items: center;
       }
 
       .selenza-grid + .selenza-grid {
-        margin-top: 8px;
+        margin-top: 7px;
       }
 
       .selenza-grid .image-wrap {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 3;
       }
 
-      .selenza-grid .image-wrap img {
+      .selenza-grid img {
         width: 100%;
         height: 100%;
-
         object-fit: contain;
       }
 
@@ -707,13 +605,10 @@
 
       .next {
         margin-top: 70px;
-
-        font-size: 15px;
       }
 
       .copyright {
         margin-top: 28px;
-
         font-size: 10px;
       }
 
@@ -737,7 +632,6 @@
       .lightbox-arrow {
         width: 42px;
         height: 60px;
-
         font-size: 34px;
       }
 
@@ -751,7 +645,6 @@
 
       .lightbox-counter {
         bottom: 14px;
-
         font-size: 11px;
       }
 
@@ -796,30 +689,50 @@
           alt="ACMR"
         >
 
-        <div class="subtitle">
-          Estágio em Arquitetura · ago. 2023 — jan. 2025
-        </div>
-
       </div>
 
 
-      <div class="info">
+      <div class="intro-details">
 
-        <p class="blue">
-          Experiência profissional
-        </p>
+        <div class="intro-left">
 
-        <p>
-          Construtora ACMR<br>
-          São Paulo
-        </p>
+          <p>
+            Estágio em Arquitetura
+          </p>
+
+          <p>
+            ago. 2023 — jan. 2025
+          </p>
+
+        </div>
+
+
+        <div class="intro-right">
+
+          <p class="blue intro-label">
+            Experiência profissional
+          </p>
+
+          <div class="intro-paired">
+
+            <p>
+              Construtora ACMR
+            </p>
+
+            <p>
+              São Paulo
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- SOBRE -->
+    <!-- SOBRE A EXPERIÊNCIA -->
 
     <section class="about-section">
 
@@ -852,20 +765,9 @@
       </h2>
 
 
-      <!-- JOÃO 1 + TEXTO -->
+      <!-- TEXTO + JOÃO 1 -->
 
       <div class="joao-opening">
-
-        <div class="joao-opening-image image-wrap">
-
-          <img
-            class="zoomable"
-            src="Joao1.jpg"
-            alt="João de Barro"
-          >
-
-        </div>
-
 
         <div class="joao-opening-text">
 
@@ -880,32 +782,38 @@
 
         </div>
 
-      </div>
 
-
-      <!-- ANTES + DEPOIS -->
-
-      <div class="joao-grid before-after">
-
-        <div class="image-wrap">
+        <div class="joao-opening-image image-wrap">
 
           <img
             class="zoomable"
-            src="Joao3.JPG"
-            alt="João de Barro — antes"
+            src="Joao1.jpg"
+            alt="João de Barro"
           >
 
         </div>
 
+      </div>
+
+
+      <!-- JOÃO 3 + JOÃO 2 -->
+
+      <div class="joao-grid">
 
         <div class="image-wrap">
+          <img
+            class="zoomable"
+            src="Joao3.JPG"
+            alt="João de Barro"
+          >
+        </div>
 
+        <div class="image-wrap">
           <img
             class="zoomable"
             src="Joao2.JPG"
-            alt="João de Barro — depois"
+            alt="João de Barro"
           >
-
         </div>
 
       </div>
@@ -916,24 +824,19 @@
       <div class="joao-grid">
 
         <div class="image-wrap">
-
           <img
             class="zoomable"
-            src="Joao6.PNG?v=3"
+            src="Joao6.PNG"
             alt="João de Barro"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
-            src="Joao9.PNG?v=3"
+            src="Joao9.PNG"
             alt="João de Barro"
           >
-
         </div>
 
       </div>
@@ -944,24 +847,19 @@
       <div class="joao-grid">
 
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="Joao7.PNG"
             alt="João de Barro"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="Joao8.PNG"
             alt="João de Barro"
           >
-
         </div>
 
       </div>
@@ -969,7 +867,7 @@
     </section>
 
 
-    <!-- SELENZA -->
+    <!-- SELENZA ANHANGUERA PARK -->
 
     <section class="work-section">
 
@@ -982,88 +880,72 @@
 
         <p>
           Empreendimento residencial de 28 pavimentos,
-          acompanhado desde as etapas iniciais da obra até
-          a entrega. Durante o processo, participei do
-          acompanhamento dos serviços, verificações de
-          execução, medições e controle de qualidade.
+          acompanhado desde as etapas iniciais da obra até a
+          entrega. Durante o processo, participei do
+          acompanhamento dos serviços, verificações de execução,
+          medições e controle de qualidade.
         </p>
 
       </div>
 
 
-      <!-- SELENZA 1, 2, 3 -->
+      <!-- SELENZA 1, 2 E 3 -->
 
       <div class="selenza-grid">
 
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 1.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 2.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 3.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
       </div>
 
 
-      <!-- SELENZA 4, 5, 6 -->
+      <!-- SELENZA 4, 5 E 6 -->
 
       <div class="selenza-grid">
 
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 4.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 5.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
-
         <div class="image-wrap">
-
           <img
             class="zoomable"
             src="selenza 6.jpg"
             alt="Selenza Anhanguera Park"
           >
-
         </div>
 
       </div>
@@ -1164,7 +1046,6 @@
         document.querySelectorAll(".zoomable")
       );
 
-
     const lightbox =
       document.getElementById("lightbox");
 
@@ -1188,11 +1069,8 @@
 
 
     let currentIndex = 0;
-
     let zoomed = false;
-
     let isDragging = false;
-
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1202,7 +1080,6 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
-
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1243,7 +1120,6 @@
     function resetZoom() {
 
       zoomed = false;
-
       isDragging = false;
       movedWhileDragging = false;
 
@@ -1293,6 +1169,8 @@
     function closeLightbox() {
 
       lightbox.classList.remove("active");
+
+      lightbox.classList.remove("zoomed");
 
       document.body.classList.remove(
         "lightbox-open"
@@ -1401,20 +1279,16 @@
         if (swipedRecently) {
 
           swipedRecently = false;
-
           return;
 
         }
-
 
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
-
           return;
 
         }
-
 
         toggleSecondZoom();
 
@@ -1438,12 +1312,8 @@
       "click",
       (event) => {
 
-        if (
-          event.target === lightbox
-        ) {
-
+        if (event.target === lightbox) {
           closeLightbox();
-
         }
 
       }
@@ -1476,7 +1346,6 @@
         }
 
         isDragging = true;
-
         movedWhileDragging = false;
 
         startX =
@@ -1504,9 +1373,7 @@
           ||
           !zoomed
         ) {
-
           return;
-
         }
 
         const newX =
@@ -1680,30 +1547,19 @@
             .classList
             .contains("active")
         ) {
-
           return;
-
         }
-
 
         if (event.key === "Escape") {
-
           closeLightbox();
-
         }
-
 
         if (event.key === "ArrowRight") {
-
           showNextImage();
-
         }
 
-
         if (event.key === "ArrowLeft") {
-
           showPreviousImage();
-
         }
 
       }
