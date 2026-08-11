@@ -93,7 +93,7 @@
     /* TÍTULO */
 
     .project-title-image {
-      width: clamp(250px, 42vw, 620px);
+      width: clamp(280px, 36vw, 540px);
       max-width: 100%;
       height: auto;
 
@@ -104,7 +104,9 @@
 
       margin: 0;
 
-      transform: translateX(-28px);
+      /* SEM DESLOCAMENTO:
+         alinha com o subtítulo */
+      transform: none;
     }
 
 
@@ -214,7 +216,7 @@
     }
 
 
-    /* PÁGINAS DO PROJETO */
+    /* PÁGINAS */
 
     .pages-section {
       margin-bottom: 130px;
@@ -497,9 +499,13 @@
         width: 68vw;
         max-width: 340px;
 
+        height: auto;
+
         margin: 0;
 
-        transform: translateX(-18px);
+        /* IMPORTANTE:
+           sem puxar para esquerda */
+        transform: none;
       }
 
       .subtitle {
