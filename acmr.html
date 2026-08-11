@@ -90,6 +90,12 @@
       display: block;
       object-fit: contain;
       object-position: left center;
+
+      /*
+        COMPENSA A MARGEM TRANSPARENTE
+        EXISTENTE DENTRO DO PNG
+      */
+      transform: translateX(-28px);
     }
 
     .intro-details {
@@ -496,6 +502,12 @@
       .project-title-image {
         width: 48vw;
         max-width: 210px;
+
+        /*
+          COMPENSAÇÃO MENOR NO CELULAR
+          PARA O A ALINHAR COM OS TEXTOS
+        */
+        transform: translateX(-13px);
       }
 
       .intro-details {
