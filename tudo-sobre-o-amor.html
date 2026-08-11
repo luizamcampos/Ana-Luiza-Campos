@@ -55,7 +55,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       margin-bottom: 90px;
     }
 
@@ -75,9 +74,7 @@
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 40px;
-
       margin-bottom: 90px;
     }
 
@@ -85,7 +82,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-
       width: 100%;
     }
 
@@ -104,11 +100,8 @@
 
       margin: 0;
 
-      /* SEM DESLOCAMENTO:
-         alinha com o subtítulo */
-      transform: none;
+      transform: translateX(-18px);
     }
-
 
     .subtitle {
       margin-top: 18px;
@@ -158,24 +151,20 @@
 
     /* CAPA + CONTRACAPA */
 
-    .covers-section {
+    .cover-section {
       margin-bottom: 65px;
     }
 
     .covers {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 20px;
-
       align-items: start;
     }
 
     .covers img {
       width: 100%;
       height: auto;
-
       display: block;
     }
 
@@ -205,9 +194,7 @@
 
     .about-columns {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 60px;
     }
 
@@ -216,30 +203,19 @@
     }
 
 
-    /* PÁGINAS */
+    /* PÁGINAS DO PROJETO */
 
     .pages-section {
       margin-bottom: 130px;
     }
 
     .pages {
-      display: flex;
-      flex-direction: column;
-
-      gap: 20px;
-    }
-
-    .page-row {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 20px;
-
-      align-items: start;
     }
 
-    .page-row img {
+    .pages img {
       width: 100%;
       height: auto;
 
@@ -476,10 +452,6 @@
         margin-bottom: 70px;
       }
 
-      .back {
-        font-size: 15px;
-      }
-
       .top-name {
         font-size: 15px;
       }
@@ -498,14 +470,13 @@
       .project-title-image {
         width: 68vw;
         max-width: 340px;
-
         height: auto;
+
+        display: block;
 
         margin: 0;
 
-        /* IMPORTANTE:
-           sem puxar para esquerda */
-        transform: none;
+        transform: translateX(-18px);
       }
 
       .subtitle {
@@ -521,13 +492,12 @@
 
       /* CAPA + CONTRACAPA */
 
-      .covers-section {
+      .cover-section {
         margin-bottom: 50px;
       }
 
       .covers {
         grid-template-columns: 1fr 1fr;
-
         gap: 10px;
       }
 
@@ -535,7 +505,7 @@
       /* SOBRE */
 
       .about-section {
-        margin-bottom: 70px;
+        margin-bottom: 75px;
       }
 
       .section-title {
@@ -544,7 +514,6 @@
 
       .about-columns {
         grid-template-columns: 1fr;
-
         gap: 18px;
       }
 
@@ -561,12 +530,7 @@
       }
 
       .pages {
-        gap: 10px;
-      }
-
-      .page-row {
         grid-template-columns: 1fr 1fr;
-
         gap: 10px;
       }
 
@@ -688,7 +652,7 @@
 
     <!-- CAPA + CONTRACAPA -->
 
-    <section class="covers-section">
+    <section class="cover-section">
 
       <div class="covers">
 
@@ -716,7 +680,6 @@
       <div class="section-title">
         ✷ sobre o projeto
       </div>
-
 
       <div class="about-text">
 
@@ -749,13 +712,6 @@
               e memórias pessoais.
             </p>
 
-            <p>
-              O projeto explora composição, direção visual,
-              diagramação e a relação entre texto e imagem,
-              construindo uma narrativa editorial própria a
-              partir da obra original.
-            </p>
-
           </div>
 
         </div>
@@ -773,97 +729,55 @@
         ✷ páginas
       </div>
 
-
       <div class="pages">
 
+        <img
+          class="zoomable"
+          src="Untitled design - 1.PNG"
+          alt="Tudo Sobre o Amor — página 1"
+        >
 
-        <!-- 1 + 2 -->
+        <img
+          class="zoomable"
+          src="Untitled design - 2.PNG"
+          alt="Tudo Sobre o Amor — página 2"
+        >
 
-        <div class="page-row">
+        <img
+          class="zoomable"
+          src="Untitled design - 4.PNG"
+          alt="Tudo Sobre o Amor — página 3"
+        >
 
-          <img
-            class="zoomable"
-            src="Untitled design - 1.PNG"
-            alt="Tudo Sobre o Amor — página 1"
-          >
+        <img
+          class="zoomable"
+          src="Untitled design - 5.PNG"
+          alt="Tudo Sobre o Amor — página 4"
+        >
 
-          <img
-            class="zoomable"
-            src="Untitled design - 2.PNG"
-            alt="Tudo Sobre o Amor — página 2"
-          >
+        <img
+          class="zoomable"
+          src="Untitled design - 6.PNG"
+          alt="Tudo Sobre o Amor — página 5"
+        >
 
-        </div>
+        <img
+          class="zoomable"
+          src="Untitled design - 7.PNG"
+          alt="Tudo Sobre o Amor — página 6"
+        >
 
+        <img
+          class="zoomable"
+          src="Untitled design - 8.PNG"
+          alt="Tudo Sobre o Amor — página 7"
+        >
 
-        <!-- 3 + 4 -->
-
-        <div class="page-row">
-
-          <img
-            class="zoomable"
-            src="Untitled design - 3.PNG"
-            alt="Tudo Sobre o Amor — página 3"
-          >
-
-          <img
-            class="zoomable"
-            src="Untitled design - 4.PNG"
-            alt="Tudo Sobre o Amor — página 4"
-          >
-
-        </div>
-
-
-        <!-- 5 + 6 -->
-
-        <div class="page-row">
-
-          <img
-            class="zoomable"
-            src="Untitled design - 5.PNG"
-            alt="Tudo Sobre o Amor — página 5"
-          >
-
-          <img
-            class="zoomable"
-            src="Untitled design - 6.PNG"
-            alt="Tudo Sobre o Amor — página 6"
-          >
-
-        </div>
-
-
-        <!-- 7 + 8 -->
-
-        <div class="page-row">
-
-          <img
-            class="zoomable"
-            src="Untitled design - 7.PNG"
-            alt="Tudo Sobre o Amor — página 7"
-          >
-
-          <img
-            class="zoomable"
-            src="Untitled design - 8.PNG"
-            alt="Tudo Sobre o Amor — página 8"
-          >
-
-        </div>
-
-
-        <!-- 9 -->
-
-        <div class="page-row">
-
-          <img
-            class="zoomable"
-            src="Untitled design - 9.PNG"
-            alt="Tudo Sobre o Amor — página 9"
-          >
-
-        </div>
+        <img
+          class="zoomable"
+          src="Untitled design - 9.PNG"
+          alt="Tudo Sobre o Amor — página 8"
+        >
 
       </div>
 
@@ -1263,7 +1177,7 @@
     );
 
 
-    /* ARRASTAR NO ZOOM */
+    /* ARRASTAR NO SEGUNDO ZOOM */
 
     lightboxImage.addEventListener(
       "pointerdown",
