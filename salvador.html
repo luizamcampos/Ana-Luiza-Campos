@@ -56,7 +56,7 @@
       justify-content: space-between;
       align-items: center;
 
-      margin-bottom: 70px;
+      margin-bottom: 55px;
     }
 
     .back {
@@ -83,9 +83,11 @@
     }
 
     @media (hover: hover) {
+
       .zoomable:hover {
         transform: scale(1.018);
       }
+
     }
 
 
@@ -97,7 +99,8 @@
       margin-left: -28px;
       margin-right: -28px;
 
-      margin-bottom: 95px;
+      /* DIMINUÍ BASTANTE AQUI */
+      margin-bottom: 28px;
 
       overflow: hidden;
     }
@@ -118,7 +121,8 @@
 
       gap: 40px;
 
-      margin-bottom: 100px;
+      /* mantém o bloco compacto */
+      margin-bottom: 85px;
     }
 
     .title-block {
@@ -145,6 +149,7 @@
 
       margin: 0;
 
+      /* alinha visualmente com Salvador — 2025 */
       transform: translateX(-10px);
     }
 
@@ -152,7 +157,8 @@
     /* SUBTÍTULO */
 
     .subtitle {
-      margin-top: 18px;
+      /* mais perto do título */
+      margin-top: 10px;
 
       font-size: 16px;
       line-height: 1.4;
@@ -189,7 +195,7 @@
 
       align-items: stretch;
 
-      margin-bottom: 120px;
+      margin-bottom: 110px;
     }
 
     .project-image-wrap {
@@ -511,7 +517,7 @@
       }
 
       .top {
-        margin-bottom: 50px;
+        margin-bottom: 42px;
       }
 
       .top-name {
@@ -527,7 +533,8 @@
         margin-left: -18px;
         margin-right: -18px;
 
-        margin-bottom: 70px;
+        /* ANTES ESTAVA 70 */
+        margin-bottom: 18px;
       }
 
 
@@ -536,9 +543,9 @@
       .intro {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 30px;
 
-        margin-bottom: 75px;
+        margin-bottom: 65px;
       }
 
       .project-title-image {
@@ -551,7 +558,8 @@
       }
 
       .subtitle {
-        margin-top: 14px;
+        /* aproxima do título */
+        margin-top: 8px;
 
         font-size: 15px;
       }
@@ -796,6 +804,8 @@
       </div>
 
 
+      <!-- FOTO 2 + FOTO 6 -->
+
       <div class="image-pair">
 
         <img
@@ -813,6 +823,8 @@
       </div>
 
 
+      <!-- FOTO 4 + FOTO 5 -->
+
       <div class="image-pair">
 
         <img
@@ -829,6 +841,8 @@
 
       </div>
 
+
+      <!-- FOTO 7 -->
 
       <div class="single-image">
 
@@ -971,6 +985,7 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
+
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1233,6 +1248,8 @@
     );
 
 
+    /* ARRASTAR NO ZOOM */
+
     lightboxImage.addEventListener(
       "pointerdown",
       (event) => {
@@ -1338,6 +1355,8 @@
     );
 
 
+    /* SWIPE */
+
     lightboxImageWrap.addEventListener(
       "touchstart",
       (event) => {
@@ -1435,6 +1454,8 @@
       }
     );
 
+
+    /* TECLADO */
 
     document.addEventListener(
       "keydown",
