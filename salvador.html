@@ -73,9 +73,7 @@
 
     .zoomable {
       cursor: zoom-in;
-      transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
+      transition: transform 0.35s ease;
       transform-origin: center;
     }
 
@@ -103,7 +101,7 @@
     }
 
 
-    /* ABERTURA */
+    /* TÍTULO + INFORMAÇÕES */
 
     .intro {
       position: relative;
@@ -113,10 +111,8 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
 
-      /* SOBE BASTANTE O BLOCO */
-      margin-top: -150px;
-
-      margin-bottom: 85px;
+      margin-top: -165px;
+      margin-bottom: 80px;
     }
 
     .title-block {
@@ -125,9 +121,6 @@
       align-items: flex-start;
       width: 100%;
     }
-
-
-    /* TÍTULO */
 
     .project-title-image {
       width: clamp(330px, 34vw, 490px);
@@ -144,18 +137,12 @@
       transform: translateX(-10px);
     }
 
-
-    /* SUBTÍTULO */
-
     .subtitle {
       margin-top: 10px;
 
       font-size: 16px;
       line-height: 1.4;
     }
-
-
-    /* INFO DIREITA */
 
     .info {
       align-self: end;
@@ -205,7 +192,6 @@
     }
 
     .about {
-      padding-top: 0;
       display: flex;
       flex-direction: column;
     }
@@ -244,32 +230,35 @@
     }
 
 
-    /* FOTO 2 + FOTO 6 */
+    /* FOTO 2 GRANDE + FOTO 6 PEQUENA */
 
-    .image-pair-first {
+    .pair-2-6 {
+      width: 100%;
+
       display: grid;
 
-      /* FOTO 2 MAIOR / FOTO 6 MENOR */
-      grid-template-columns: 1.8fr 0.5fr;
+      grid-template-columns: minmax(0, 1.85fr) minmax(160px, 0.45fr);
 
-      gap: 28px;
+      gap: 32px;
 
       align-items: center;
 
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
-    .image-pair-first img {
-      display: block;
-      height: auto;
-    }
-
-    .image-pair-first img:first-child {
+    .foto-2 {
       width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .image-pair-first img:last-child {
-      width: 66%;
+    .foto-6 {
+      width: 68%;
+      max-width: 230px;
+      height: auto;
+
+      display: block;
+
       justify-self: center;
     }
 
@@ -278,6 +267,7 @@
 
     .image-pair {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       gap: 20px;
@@ -398,11 +388,13 @@
       height: 45px;
 
       border: 0;
+
       background: transparent;
 
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 34px;
       font-weight: 400;
 
@@ -425,11 +417,13 @@
       height: 80px;
 
       border: 0;
+
       background: transparent;
 
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 46px;
 
       cursor: pointer;
@@ -547,15 +541,14 @@
       }
 
 
-      /* ABERTURA */
+      /* TÍTULO */
 
       .intro {
         grid-template-columns: 1fr;
 
         gap: 30px;
 
-        /* SOBE O BLOCO NO CELULAR */
-        margin-top: -95px;
+        margin-top: -105px;
 
         margin-bottom: 65px;
       }
@@ -564,14 +557,11 @@
         width: 76vw;
         max-width: 330px;
 
-        margin: 0;
-
         transform: translateX(-6px);
       }
 
       .subtitle {
         margin-top: 8px;
-
         font-size: 15px;
       }
 
@@ -618,25 +608,19 @@
       }
 
 
-      /* FOTO 2 MAIOR + FOTO 6 MENOR */
+      /* FOTO 2 + FOTO 6 */
 
-      .image-pair-first {
-        grid-template-columns: 1.7fr 0.5fr;
+      .pair-2-6 {
+        grid-template-columns: 1.8fr 0.45fr;
 
-        gap: 10px;
+        gap: 12px;
 
-        align-items: center;
-
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
-      .image-pair-first img:first-child {
-        width: 100%;
-      }
-
-      .image-pair-first img:last-child {
-        width: 62%;
-        justify-self: center;
+      .foto-6 {
+        width: 64%;
+        max-width: 120px;
       }
 
 
@@ -649,6 +633,9 @@
 
         margin-bottom: 10px;
       }
+
+
+      /* FOTO 7 */
 
       .single-image {
         margin-top: 10px;
@@ -718,10 +705,7 @@
 
     <header class="top">
 
-      <a
-        class="back"
-        href="arquitetura.html"
-      >
+      <a class="back" href="arquitetura.html">
         ← voltar
       </a>
 
@@ -802,7 +786,6 @@
           ✷ sobre o projeto
         </div>
 
-
         <div class="about-text">
 
           <p>
@@ -814,12 +797,11 @@
           </p>
 
           <p>
-            A circulação organiza a proposta. Escadas rolantes
+            A circulação organiza a proposta. As escadas rolantes
             atravessam o morro, criam cortes na topografia e
-            conectam os diferentes níveis, enquanto rampas
-            garantem o acesso aos edifícios. Assim, o projeto
-            constrói um percurso contínuo entre cultura,
-            comércio e convivência comunitária.
+            conectam os diferentes níveis, enquanto rampas garantem
+            o acesso aos edifícios. Assim, o projeto cria um percurso
+            contínuo entre cultura, comércio e convivência comunitária.
           </p>
 
         </div>
@@ -838,18 +820,18 @@
       </div>
 
 
-      <!-- FOTO 2 MAIOR + FOTO 6 MENOR -->
+      <!-- FOTO 2 GRANDE + FOTO 6 BEM MENOR -->
 
-      <div class="image-pair-first">
+      <div class="pair-2-6">
 
         <img
-          class="zoomable"
+          class="zoomable foto-2"
           src="foto 2 salvador.png"
           alt="Corte do Conjunto em Desnível"
         >
 
         <img
-          class="zoomable"
+          class="zoomable foto-6"
           src="foto 6 salvador.jpeg"
           alt="Desenho do Conjunto em Desnível"
         >
@@ -910,7 +892,6 @@
 
       </div>
 
-
       <div class="copyright">
         Ana Luiza Campos © 2026
       </div>
@@ -922,10 +903,7 @@
 
   <!-- LIGHTBOX -->
 
-  <div
-    class="lightbox"
-    id="lightbox"
-  >
+  <div class="lightbox" id="lightbox">
 
     <button
       class="lightbox-close"
@@ -935,7 +913,6 @@
       ×
     </button>
 
-
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -943,7 +920,6 @@
     >
       ‹
     </button>
-
 
     <div
       class="lightbox-image-wrap"
@@ -959,7 +935,6 @@
 
     </div>
 
-
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -968,12 +943,10 @@
       ›
     </button>
 
-
     <div
       class="lightbox-counter"
       id="lightboxCounter"
-    >
-    </div>
+    ></div>
 
   </div>
 
@@ -1008,8 +981,11 @@
 
 
     let currentIndex = 0;
+
     let zoomed = false;
+
     let isDragging = false;
+
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1062,6 +1038,7 @@
       zoomed = false;
 
       isDragging = false;
+
       movedWhileDragging = false;
 
       translateX = 0;
@@ -1078,14 +1055,10 @@
 
       currentIndex = index;
 
-      const image =
-        images[currentIndex];
+      const image = images[currentIndex];
 
-      lightboxImage.src =
-        image.src;
-
-      lightboxImage.alt =
-        image.alt;
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
 
       resetZoom();
 
@@ -1111,8 +1084,6 @@
 
       lightbox.classList.remove("active");
 
-      lightbox.classList.remove("zoomed");
-
       document.body.classList.remove(
         "lightbox-open"
       );
@@ -1131,8 +1102,7 @@
     function showNextImage() {
 
       currentIndex =
-        (currentIndex + 1)
-        % images.length;
+        (currentIndex + 1) % images.length;
 
       showImage(currentIndex);
 
@@ -1146,8 +1116,7 @@
           currentIndex
           - 1
           + images.length
-        )
-        % images.length;
+        ) % images.length;
 
       showImage(currentIndex);
 
@@ -1218,6 +1187,7 @@
         if (swipedRecently) {
 
           swipedRecently = false;
+
           return;
 
         }
@@ -1225,6 +1195,7 @@
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
+
           return;
 
         }
@@ -1286,15 +1257,14 @@
         }
 
         isDragging = true;
+
         movedWhileDragging = false;
 
         startX =
-          event.clientX
-          - translateX;
+          event.clientX - translateX;
 
         startY =
-          event.clientY
-          - translateY;
+          event.clientY - translateY;
 
         lightboxImage.setPointerCapture(
           event.pointerId
@@ -1313,12 +1283,10 @@
         }
 
         const newX =
-          event.clientX
-          - startX;
+          event.clientX - startX;
 
         const newY =
-          event.clientY
-          - startY;
+          event.clientY - startY;
 
         if (
           Math.abs(newX - translateX) > 2 ||
@@ -1383,17 +1351,11 @@
         const touch =
           event.changedTouches[0];
 
-        touchStartX =
-          touch.screenX;
+        touchStartX = touch.screenX;
+        touchStartY = touch.screenY;
 
-        touchStartY =
-          touch.screenY;
-
-        touchEndX =
-          touchStartX;
-
-        touchEndY =
-          touchStartY;
+        touchEndX = touchStartX;
+        touchEndY = touchStartY;
 
       },
       { passive: true }
@@ -1411,11 +1373,8 @@
         const touch =
           event.changedTouches[0];
 
-        touchEndX =
-          touch.screenX;
-
-        touchEndY =
-          touch.screenY;
+        touchEndX = touch.screenX;
+        touchEndY = touch.screenY;
 
       },
       { passive: true }
@@ -1431,12 +1390,10 @@
         }
 
         const differenceX =
-          touchEndX
-          - touchStartX;
+          touchEndX - touchStartX;
 
         const differenceY =
-          touchEndY
-          - touchStartY;
+          touchEndY - touchStartY;
 
         if (
           Math.abs(differenceX) > swipeThreshold &&
@@ -1474,9 +1431,7 @@
       (event) => {
 
         if (
-          !lightbox
-            .classList
-            .contains("active")
+          !lightbox.classList.contains("active")
         ) {
           return;
         }
