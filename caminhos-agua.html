@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Caminhos sobre a Água — Ana Luiza Campos</title>
+
+  <style>
+
+    @font-face {
+      font-family: "Neue Montreal";
+      src: url("./NeueMontreal-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --fundo: #ffffff;
+      --preto: #111111;
+      --azul: #2455ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fundo);
+      color: var(--preto);
+      font-family: "Neue Montreal", sans-serif;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    .project {
+      width: 100%;
+      padding: 28px 28px 80px;
+    }
+
+
+    /* TOPO */
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 90px;
+    }
+
+    .back {
+      color: var(--azul);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .top-name {
+      font-size: 16px;
+    }
+
+
+    /* ABERTURA */
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 40px;
+
+      margin-bottom: 90px;
+    }
+
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      width: 100%;
+
+      overflow: visible;
+    }
+
+
+    /* TÍTULO */
+
+    .project-title-image {
+      width: clamp(300px, 34vw, 500px);
+      max-width: none;
+      height: auto;
+
+      display: block;
+
+      object-fit: contain;
+      object-position: left center;
+
+      margin: 0;
+
+      /*
+        Ajusta visualmente o PNG
+        para alinhar à esquerda
+        com o subtítulo.
+      */
+
+      transform: translateX(-22px);
+    }
+
+
+    /* SUBTÍTULO */
+
+    .subtitle {
+      margin-top: 18px;
+
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+
+    /* INFO DIREITA */
+
+    .info {
+      align-self: end;
+
+      max-width: 480px;
+
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .info p + p {
+      margin-top: 18px;
+    }
+
+    .blue {
+      color: var(--azul);
+    }
+
+
+    /* IMAGENS CLICÁVEIS */
+
+    .zoomable {
+      cursor: zoom-in;
+
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+
+      transform-origin: center;
+    }
+
+    @media (hover: hover) {
+
+      .zoomable:hover {
+        transform: scale(1.018);
+      }
+
+    }
+
+
+    /* FOTO 1 GRANDE */
+
+    .hero-image {
+      width: 100%;
+
+      margin-bottom: 70px;
+
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* TEXTO SOBRE O PROJETO */
+
+    .about-section {
+      display: grid;
+
+      grid-template-columns:
+        0.32fr
+        0.68fr;
+
+      gap: 60px;
+
+      margin-bottom: 120px;
+    }
+
+    .section-title {
+      color: var(--azul);
+
+      font-size: 16px;
+    }
+
+    .about-text {
+      max-width: 900px;
+
+      font-size: 17px;
+      line-height: 1.42;
+
+      letter-spacing: -0.015em;
+    }
+
+    .about-text p + p {
+      margin-top: 20px;
+    }
+
+
+    /* GALERIA */
+
+    .gallery {
+      width: 100%;
+
+      margin-bottom: 130px;
+    }
+
+    .gallery-title {
+      color: var(--azul);
+
+      font-size: 16px;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* DUAS IMAGENS */
+
+    .image-pair {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 20px;
+
+      align-items: start;
+
+      margin-bottom: 20px;
+    }
+
+    .image-pair img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* FOTO 6 */
+
+    .single-image {
+      width: 100%;
+
+      margin-top: 20px;
+    }
+
+    .single-image img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      background: rgba(0, 0, 0, 0.88);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+      overflow: hidden;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-image-wrap {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+
+      cursor: zoom-in;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+
+      transition: transform 0.3s ease;
+
+      user-select: none;
+      -webkit-user-drag: none;
+
+      touch-action: none;
+
+      cursor: zoom-in;
+    }
+
+    .lightbox.zoomed .lightbox-image-wrap {
+      cursor: grab;
+    }
+
+    .lightbox.zoomed img {
+      cursor: grab;
+    }
+
+    .lightbox.zoomed img:active {
+      cursor: grabbing;
+    }
+
+
+    /* FECHAR */
+
+    .lightbox-close {
+      position: absolute;
+
+      top: 24px;
+      right: 28px;
+
+      z-index: 30;
+
+      width: 45px;
+      height: 45px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #ffffff;
+
+      font-family: "Neue Montreal", sans-serif;
+
+      font-size: 34px;
+
+      cursor: pointer;
+    }
+
+
+    /* SETAS */
+
+    .lightbox-arrow {
+      position: absolute;
+
+      top: 50%;
+
+      z-index: 30;
+
+      transform: translateY(-50%);
+
+      width: 60px;
+      height: 80px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #ffffff;
+
+      font-family: "Neue Montreal", sans-serif;
+
+      font-size: 46px;
+
+      cursor: pointer;
+
+      opacity: 0.8;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+
+    /* CONTADOR */
+
+    .lightbox-counter {
+      position: absolute;
+
+      bottom: 22px;
+      left: 50%;
+
+      z-index: 30;
+
+      transform: translateX(-50%);
+
+      color: rgba(255, 255, 255, 0.7);
+
+      font-size: 12px;
+    }
+
+
+    /* FINAL */
+
+    .next {
+      margin-top: 120px;
+      padding-top: 25px;
+
+      border-top: 1px solid var(--preto);
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 16px;
+    }
+
+    .back-to-top {
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .copyright {
+      margin-top: 34px;
+
+      text-align: center;
+
+      font-size: 11px;
+
+      color: rgba(17, 17, 17, 0.32);
+    }
+
+
+    /* CELULAR */
+
+    @media (max-width: 700px) {
+
+      .project {
+        padding: 22px 18px 50px;
+      }
+
+
+      /* TOPO */
+
+      .top {
+        margin-bottom: 70px;
+      }
+
+      .back,
+      .top-name {
+        font-size: 15px;
+      }
+
+
+      /* ABERTURA */
+
+      .intro {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 70px;
+      }
+
+      .project-title-image {
+        width: 78vw;
+        max-width: 330px;
+
+        transform: translateX(-12px);
+      }
+
+      .subtitle {
+        margin-top: 14px;
+
+        font-size: 15px;
+      }
+
+      .info {
+        font-size: 15px;
+      }
+
+
+      /* FOTO 1 */
+
+      .hero-image {
+        margin-bottom: 55px;
+      }
+
+
+      /* TEXTO */
+
+      .about-section {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        margin-bottom: 85px;
+      }
+
+      .about-text {
+        font-size: 16px;
+        line-height: 1.42;
+      }
+
+      .about-text p + p {
+        margin-top: 18px;
+      }
+
+
+      /* GALERIA */
+
+      .gallery {
+        margin-bottom: 90px;
+      }
+
+      .gallery-title {
+        margin-bottom: 25px;
+      }
+
+      .image-pair {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 10px;
+      }
+
+      .single-image {
+        margin-top: 10px;
+      }
+
+
+      /* FINAL */
+
+      .next {
+        margin-top: 70px;
+
+        font-size: 15px;
+      }
+
+      .copyright {
+        margin-top: 28px;
+
+        font-size: 10px;
+      }
+
+
+      /* LIGHTBOX */
+
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox img {
+        max-width: 92vw;
+        max-height: 82vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+      }
+
+      .lightbox-arrow {
+        width: 42px;
+        height: 60px;
+
+        font-size: 34px;
+      }
+
+      .lightbox-prev {
+        left: 2px;
+      }
+
+      .lightbox-next {
+        right: 2px;
+      }
+
+      .lightbox-counter {
+        bottom: 14px;
+
+        font-size: 11px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body id="top">
+
+  <main class="project">
+
+
+    <!-- TOPO -->
+
+    <header class="top">
+
+      <a
+        class="back"
+        href="arquitetura.html"
+      >
+        ← voltar
+      </a>
+
+      <span class="top-name">
+        Ana Luiza Campos
+      </span>
+
+    </header>
+
+
+    <!-- ABERTURA -->
+
+    <section class="intro">
+
+      <div class="title-block">
+
+        <img
+          class="project-title-image"
+          src="titulo agua.PNG"
+          alt="Caminhos sobre a Água"
+        >
+
+        <div class="subtitle">
+          Represa Billings · 19ª Semana Internacional · 2025
+        </div>
+
+      </div>
+
+
+      <div class="info">
+
+        <p class="blue">
+          Arquitetura
+        </p>
+
+        <p>
+          Escola da Cidade<br>
+          São Paulo
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOTO 1 -->
+
+    <section class="hero-image">
+
+      <img
+        class="zoomable"
+        src="foto 1.jpg"
+        alt="Caminhos sobre a Água"
+      >
+
+    </section>
+
+
+    <!-- SOBRE O PROJETO -->
+
+    <section class="about-section">
+
+      <div class="section-title">
+        ✷ sobre o projeto
+      </div>
+
+
+      <div class="about-text">
+
+        <p>
+          A 19ª Semana Internacional da Escola da Cidade teve como tema
+          “Campo das Águas | Espaços Públicos nas Planícies Fluviais”,
+          trazendo a discussão sobre como pensar a cidade a partir de
+          seus rios, represas e várzeas. O encontro reuniu professores,
+          pesquisadores e estudantes de diferentes países em torno de
+          reflexões sobre paisagem, urbanismo e novas formas de
+          apropriação dos territórios ligados à água.
+        </p>
+
+        <p>
+          Dentro desse contexto, nosso grupo desenvolveu uma proposta
+          situada na Represa Billings, um espaço fundamental para São
+          Paulo, mas historicamente negligenciado em seu potencial de
+          lazer, convívio e cultura. Inspirados no conceito de um SESC
+          aberto, pensamos em criar um percurso que permitisse
+          reaproximar a população da represa e transformá-la em um lugar
+          vivo, coletivo e acessível.
+        </p>
+
+        <p>
+          O projeto partiu da ideia de estabelecer caminhos sobre a água,
+          conectando pontos da represa e possibilitando a experimentação
+          do espaço de forma direta. Esses trajetos não são apenas
+          circulações, mas infraestruturas que abrem espaço para atividades
+          diversas: esportivas, culturais, educativas ou simplesmente de
+          contemplação. Ao longo deles, propusemos equipamentos
+          distribuídos, capazes de ativar diferentes usos e de estimular
+          a permanência.
+        </p>
+
+        <p>
+          Com isso, buscamos tornar a Represa Billings não apenas um
+          reservatório de recursos hídricos, mas também um campo público
+          de convívio. A proposta, ao dialogar com o tema da Semana
+          Internacional, reafirma a importância de reconhecer as águas
+          urbanas como protagonistas na construção de cidades mais
+          inclusivas, resilientes e integradas ao meio ambiente.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALERIA -->
+
+    <section class="gallery">
+
+      <div class="gallery-title">
+        ✷ processo e proposta
+      </div>
+
+
+      <!-- FOTO 2 + FOTO 3 -->
+
+      <div class="image-pair">
+
+        <img
+          class="zoomable"
+          src="foto 2.jpg"
+          alt="Caminhos sobre a Água"
+        >
+
+        <img
+          class="zoomable"
+          src="foto 3.jpg"
+          alt="Caminhos sobre a Água"
+        >
+
+      </div>
+
+
+      <!-- FOTO 4 + FOTO 5 -->
+
+      <div class="image-pair">
+
+        <img
+          class="zoomable"
+          src="foto 4.png"
+          alt="Caminhos sobre a Água"
+        >
+
+        <img
+          class="zoomable"
+          src="foto 5.png"
+          alt="Caminhos sobre a Água"
+        >
+
+      </div>
+
+
+      <!-- FOTO 6 -->
+
+      <div class="single-image">
+
+        <img
+          class="zoomable"
+          src="foto 6.jpg"
+          alt="Caminhos sobre a Água"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <footer>
+
+      <div class="next">
+
+        <span>
+          Caminhos sobre a Água
+        </span>
+
+        <a
+          class="back-to-top"
+          href="#top"
+        >
+          Back to top ↑
+        </a>
+
+      </div>
+
+
+      <div class="copyright">
+        Ana Luiza Campos ©️ 2026
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <!-- LIGHTBOX -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Fechar imagem"
+    >
+      ×
+    </button>
+
+
+    <button
+      class="lightbox-arrow lightbox-prev"
+      id="lightboxPrev"
+      aria-label="Imagem anterior"
+    >
+      ‹
+    </button>
+
+
+    <div
+      class="lightbox-image-wrap"
+      id="lightboxImageWrap"
+    >
+
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        draggable="false"
+      >
+
+    </div>
+
+
+    <button
+      class="lightbox-arrow lightbox-next"
+      id="lightboxNext"
+      aria-label="Próxima imagem"
+    >
+      ›
+    </button>
+
+
+    <div
+      class="lightbox-counter"
+      id="lightboxCounter"
+    ></div>
+
+  </div>
+
+
+  <script>
+
+    const images =
+      Array.from(
+        document.querySelectorAll(".zoomable")
+      );
+
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const lightboxImageWrap =
+      document.getElementById("lightboxImageWrap");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const lightboxPrev =
+      document.getElementById("lightboxPrev");
+
+    const lightboxNext =
+      document.getElementById("lightboxNext");
+
+    const lightboxCounter =
+      document.getElementById("lightboxCounter");
+
+
+    let currentIndex = 0;
+
+    let zoomed = false;
+
+    let isDragging = false;
+
+    let movedWhileDragging = false;
+
+    let startX = 0;
+    let startY = 0;
+
+    let translateX = 0;
+    let translateY = 0;
+
+    const zoomLevel = 2.4;
+
+
+    /* SWIPE */
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    let swipedRecently = false;
+
+    const swipeThreshold = 45;
+
+
+    function updateCounter() {
+
+      lightboxCounter.textContent =
+        `${currentIndex + 1} / ${images.length}`;
+
+    }
+
+
+    function updateImageTransform() {
+
+      if (zoomed) {
+
+        lightboxImage.style.transform =
+          `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+
+      } else {
+
+        lightboxImage.style.transform =
+          "translate(0px, 0px) scale(1)";
+
+      }
+
+    }
+
+
+    function resetZoom() {
+
+      zoomed = false;
+
+      isDragging = false;
+
+      movedWhileDragging = false;
+
+      translateX = 0;
+      translateY = 0;
+
+      lightbox.classList.remove(
+        "zoomed"
+      );
+
+      updateImageTransform();
+
+    }
+
+
+    function showImage(index) {
+
+      currentIndex = index;
+
+      const image =
+        images[currentIndex];
+
+      lightboxImage.src =
+        image.src;
+
+      lightboxImage.alt =
+        image.alt;
+
+      resetZoom();
+
+      updateCounter();
+
+    }
+
+
+    function openLightbox(index) {
+
+      showImage(index);
+
+      lightbox.classList.add(
+        "active"
+      );
+
+      document.body.classList.add(
+        "lightbox-open"
+      );
+
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove(
+        "active"
+      );
+
+      lightbox.classList.remove(
+        "zoomed"
+      );
+
+      document.body.classList.remove(
+        "lightbox-open"
+      );
+
+      resetZoom();
+
+      setTimeout(
+        () => {
+
+          lightboxImage.src = "";
+
+        },
+        250
+      );
+
+    }
+
+
+    function showNextImage() {
+
+      currentIndex =
+        (
+          currentIndex + 1
+        )
+        %
+        images.length;
+
+      showImage(
+        currentIndex
+      );
+
+    }
+
+
+    function showPreviousImage() {
+
+      currentIndex =
+        (
+          currentIndex
+          - 1
+          + images.length
+        )
+        %
+        images.length;
+
+      showImage(
+        currentIndex
+      );
+
+    }
+
+
+    function toggleSecondZoom() {
+
+      zoomed = !zoomed;
+
+      translateX = 0;
+      translateY = 0;
+
+      lightbox.classList.toggle(
+        "zoomed",
+        zoomed
+      );
+
+      updateImageTransform();
+
+    }
+
+
+    images.forEach(
+      (image, index) => {
+
+        image.addEventListener(
+          "click",
+          () => {
+
+            openLightbox(
+              index
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    lightboxNext.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        showNextImage();
+
+      }
+    );
+
+
+    lightboxPrev.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        showPreviousImage();
+
+      }
+    );
+
+
+    lightboxImage.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        if (
+          swipedRecently
+        ) {
+
+          swipedRecently = false;
+
+          return;
+
+        }
+
+
+        if (
+          movedWhileDragging
+        ) {
+
+          movedWhileDragging = false;
+
+          return;
+
+        }
+
+
+        toggleSecondZoom();
+
+      }
+    );
+
+
+    lightboxClose.addEventListener(
+      "click",
+      (event) => {
+
+        event.stopPropagation();
+
+        closeLightbox();
+
+      }
+    );
+
+
+    lightbox.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === lightbox
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    lightboxImageWrap.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target ===
+          lightboxImageWrap
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    /* ARRASTAR NO ZOOM */
+
+    lightboxImage.addEventListener(
+      "pointerdown",
+      (event) => {
+
+        if (!zoomed) {
+          return;
+        }
+
+        isDragging = true;
+
+        movedWhileDragging = false;
+
+        startX =
+          event.clientX
+          -
+          translateX;
+
+        startY =
+          event.clientY
+          -
+          translateY;
+
+        lightboxImage.setPointerCapture(
+          event.pointerId
+        );
+
+      }
+    );
+
+
+    lightboxImage.addEventListener(
+      "pointermove",
+      (event) => {
+
+        if (
+          !isDragging
+          ||
+          !zoomed
+        ) {
+          return;
+        }
+
+        const newX =
+          event.clientX
+          -
+          startX;
+
+        const newY =
+          event.clientY
+          -
+          startY;
+
+
+        if (
+          Math.abs(
+            newX - translateX
+          )
+          >
+          2
+          ||
+          Math.abs(
+            newY - translateY
+          )
+          >
+          2
+        ) {
+
+          movedWhileDragging =
+            true;
+
+        }
+
+
+        translateX =
+          newX;
+
+        translateY =
+          newY;
+
+        updateImageTransform();
+
+      }
+    );
+
+
+    lightboxImage.addEventListener(
+      "pointerup",
+      (event) => {
+
+        if (
+          isDragging
+        ) {
+
+          try {
+
+            lightboxImage
+              .releasePointerCapture(
+                event.pointerId
+              );
+
+          } catch (error) {}
+
+        }
+
+        isDragging = false;
+
+      }
+    );
+
+
+    lightboxImage.addEventListener(
+      "pointercancel",
+      () => {
+
+        isDragging = false;
+
+      }
+    );
+
+
+    /* SWIPE */
+
+    lightboxImageWrap.addEventListener(
+      "touchstart",
+      (event) => {
+
+        if (
+          zoomed
+        ) {
+          return;
+        }
+
+        const touch =
+          event.changedTouches[0];
+
+        touchStartX =
+          touch.screenX;
+
+        touchStartY =
+          touch.screenY;
+
+        touchEndX =
+          touchStartX;
+
+        touchEndY =
+          touchStartY;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    lightboxImageWrap.addEventListener(
+      "touchmove",
+      (event) => {
+
+        if (
+          zoomed
+        ) {
+          return;
+        }
+
+        const touch =
+          event.changedTouches[0];
+
+        touchEndX =
+          touch.screenX;
+
+        touchEndY =
+          touch.screenY;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    lightboxImageWrap.addEventListener(
+      "touchend",
+      () => {
+
+        if (
+          zoomed
+        ) {
+          return;
+        }
+
+        const differenceX =
+          touchEndX
+          -
+          touchStartX;
+
+        const differenceY =
+          touchEndY
+          -
+          touchStartY;
+
+
+        if (
+          Math.abs(
+            differenceX
+          )
+          >
+          swipeThreshold
+          &&
+          Math.abs(
+            differenceX
+          )
+          >
+          Math.abs(
+            differenceY
+          )
+        ) {
+
+          swipedRecently =
+            true;
+
+
+          if (
+            differenceX < 0
+          ) {
+
+            showNextImage();
+
+          } else {
+
+            showPreviousImage();
+
+          }
+
+
+          setTimeout(
+            () => {
+
+              swipedRecently =
+                false;
+
+            },
+            350
+          );
+
+        }
+
+      }
+    );
+
+
+    /* TECLADO */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          !lightbox
+            .classList
+            .contains(
+              "active"
+            )
+        ) {
+          return;
+        }
+
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeLightbox();
+
+        }
+
+
+        if (
+          event.key ===
+          "ArrowRight"
+        ) {
+
+          showNextImage();
+
+        }
+
+
+        if (
+          event.key ===
+          "ArrowLeft"
+        ) {
+
+          showPreviousImage();
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
