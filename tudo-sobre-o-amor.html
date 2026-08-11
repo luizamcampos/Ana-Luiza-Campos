@@ -93,7 +93,7 @@
     /* TÍTULO */
 
     .project-title-image {
-      width: clamp(300px, 36vw, 520px);
+      width: clamp(300px, 42vw, 620px);
       max-width: 100%;
       height: auto;
 
@@ -103,7 +103,10 @@
       object-position: left center;
 
       margin: 0;
+
+      transform: translateX(-28px);
     }
+
 
     .subtitle {
       margin-top: 18px;
@@ -178,7 +181,7 @@
     /* SOBRE O PROJETO */
 
     .about-section {
-      margin-bottom: 120px;
+      margin-bottom: 100px;
     }
 
     .section-title {
@@ -213,19 +216,18 @@
 
     /* PÁGINAS DO PROJETO */
 
-    .editorial-section {
-      margin-top: 40px;
+    .pages-section {
       margin-bottom: 130px;
     }
 
-    .editorial-pages {
+    .pages {
       display: flex;
       flex-direction: column;
 
       gap: 20px;
     }
 
-    .editorial-row {
+    .page-row {
       display: grid;
 
       grid-template-columns: 1fr 1fr;
@@ -235,7 +237,7 @@
       align-items: start;
     }
 
-    .editorial-row img {
+    .page-row img {
       width: 100%;
       height: auto;
 
@@ -492,10 +494,12 @@
       }
 
       .project-title-image {
-        width: 82vw;
-        max-width: 350px;
+        width: 76vw;
+        max-width: 390px;
 
         margin: 0;
+
+        transform: translateX(-18px);
       }
 
       .subtitle {
@@ -525,7 +529,7 @@
       /* SOBRE */
 
       .about-section {
-        margin-bottom: 85px;
+        margin-bottom: 70px;
       }
 
       .section-title {
@@ -546,15 +550,15 @@
 
       /* PÁGINAS */
 
-      .editorial-section {
+      .pages-section {
         margin-bottom: 90px;
       }
 
-      .editorial-pages {
+      .pages {
         gap: 10px;
       }
 
-      .editorial-row {
+      .page-row {
         grid-template-columns: 1fr 1fr;
 
         gap: 10px;
@@ -740,9 +744,10 @@
             </p>
 
             <p>
-              O projeto explora a relação entre texto e imagem
-              através da composição, da diagramação e da construção
-              de uma linguagem visual própria ao longo da publicação.
+              O projeto explora composição, direção visual,
+              diagramação e a relação entre texto e imagem,
+              construindo uma narrativa editorial própria a
+              partir da obra original.
             </p>
 
           </div>
@@ -756,19 +761,19 @@
 
     <!-- PÁGINAS -->
 
-    <section class="editorial-section">
+    <section class="pages-section">
 
       <div class="section-title">
         ✷ páginas
       </div>
 
 
-      <div class="editorial-pages">
+      <div class="pages">
 
 
         <!-- 1 + 2 -->
 
-        <div class="editorial-row">
+        <div class="page-row">
 
           <img
             class="zoomable"
@@ -785,9 +790,15 @@
         </div>
 
 
-        <!-- 4 + 5 -->
+        <!-- 3 + 4 -->
 
-        <div class="editorial-row">
+        <div class="page-row">
+
+          <img
+            class="zoomable"
+            src="Untitled design - 3.PNG"
+            alt="Tudo Sobre o Amor — página 3"
+          >
 
           <img
             class="zoomable"
@@ -795,18 +806,18 @@
             alt="Tudo Sobre o Amor — página 4"
           >
 
+        </div>
+
+
+        <!-- 5 + 6 -->
+
+        <div class="page-row">
+
           <img
             class="zoomable"
             src="Untitled design - 5.PNG"
             alt="Tudo Sobre o Amor — página 5"
           >
-
-        </div>
-
-
-        <!-- 6 + 7 -->
-
-        <div class="editorial-row">
 
           <img
             class="zoomable"
@@ -814,24 +825,31 @@
             alt="Tudo Sobre o Amor — página 6"
           >
 
+        </div>
+
+
+        <!-- 7 + 8 -->
+
+        <div class="page-row">
+
           <img
             class="zoomable"
             src="Untitled design - 7.PNG"
             alt="Tudo Sobre o Amor — página 7"
           >
 
-        </div>
-
-
-        <!-- 8 + 9 -->
-
-        <div class="editorial-row">
-
           <img
             class="zoomable"
             src="Untitled design - 8.PNG"
             alt="Tudo Sobre o Amor — página 8"
           >
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="page-row">
 
           <img
             class="zoomable"
@@ -840,7 +858,6 @@
           >
 
         </div>
-
 
       </div>
 
@@ -976,8 +993,6 @@
 
     const zoomLevel = 2.4;
 
-
-    /* SWIPE */
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1242,7 +1257,7 @@
     );
 
 
-    /* ARRASTAR NO SEGUNDO ZOOM */
+    /* ARRASTAR NO ZOOM */
 
     lightboxImage.addEventListener(
       "pointerdown",
