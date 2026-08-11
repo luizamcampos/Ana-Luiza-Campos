@@ -55,6 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       margin-bottom: 90px;
     }
 
@@ -74,7 +75,9 @@
     .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 40px;
+
       margin-bottom: 90px;
     }
 
@@ -82,6 +85,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
       width: 100%;
     }
 
@@ -221,36 +225,29 @@
       display: flex;
       flex-direction: column;
 
-      gap: 36px;
+      gap: 60px;
     }
 
-    .drawings img {
+
+    /* PRANCHAS */
+
+    .drawing-wrap {
       width: 100%;
+
+      display: flex;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .drawing-wrap img {
+      width: 88%;
+      max-width: 1200px;
       height: auto;
 
       display: block;
-    }
 
-
-    /* PDF */
-
-    .pdf-wrap {
-      width: 100%;
-
-      overflow: hidden;
-
-      background: #ffffff;
-    }
-
-    .pdf-frame {
-      width: 100%;
-      height: 900px;
-
-      display: block;
-
-      border: 0;
-
-      background: #ffffff;
+      object-fit: contain;
     }
 
 
@@ -476,6 +473,9 @@
         padding: 22px 18px 50px;
       }
 
+
+      /* TOPO */
+
       .top {
         margin-bottom: 70px;
       }
@@ -557,14 +557,21 @@
       }
 
       .drawings {
-        gap: 20px;
+        gap: 45px;
       }
 
+      .drawing-wrap {
+        width: 100%;
 
-      /* PDF */
+        overflow: visible;
+      }
 
-      .pdf-frame {
-        height: 560px;
+      .drawing-wrap img {
+        width: 92%;
+        max-width: none;
+        height: auto;
+
+        object-fit: contain;
       }
 
 
@@ -783,26 +790,30 @@
       <div class="drawings">
 
 
-        <!-- PRANCHA / CARIMBO -->
+        <!-- PRANCHA 1 -->
 
-        <div class="pdf-wrap">
+        <div class="drawing-wrap">
 
-          <iframe
-            class="pdf-frame"
-            src="CARIMBO ANA LUIZA E ISADORA TUDO.pdf#toolbar=0&navpanes=0&scrollbar=0"
-            title="Prancha do Conjunto Habitacional"
-          ></iframe>
+          <img
+            class="zoomable"
+            src="CARIMBO ANA LUIZA E ISADORA TUDO_page-0001.jpg"
+            alt="Prancha do Conjunto Habitacional"
+          >
 
         </div>
 
 
-        <!-- CORTE -->
+        <!-- PRANCHA 2 -->
 
-        <img
-          class="zoomable"
-          src="PRANCHA CORTE ANA LUIZA E ISADORA_page-0001 2.jpg"
-          alt="Corte do Conjunto Habitacional"
-        >
+        <div class="drawing-wrap">
+
+          <img
+            class="zoomable"
+            src="PRANCHA CORTE ANA LUIZA E ISADORA_page-0001 2.jpg"
+            alt="Corte do Conjunto Habitacional"
+          >
+
+        </div>
 
       </div>
 
@@ -926,11 +937,8 @@
 
 
     let currentIndex = 0;
-
     let zoomed = false;
-
     let isDragging = false;
-
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -941,8 +949,6 @@
 
     const zoomLevel = 2.4;
 
-
-    /* SWIPE */
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1148,7 +1154,6 @@
 
         }
 
-
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
@@ -1156,7 +1161,6 @@
           return;
 
         }
-
 
         toggleSecondZoom();
 
@@ -1209,8 +1213,6 @@
     );
 
 
-    /* ARRASTAR NO SEGUNDO ZOOM */
-
     lightboxImage.addEventListener(
       "pointerdown",
       (event) => {
@@ -1220,7 +1222,6 @@
         }
 
         isDragging = true;
-
         movedWhileDragging = false;
 
         startX =
@@ -1276,7 +1277,6 @@
         }
 
         translateX = newX;
-
         translateY = newY;
 
         updateImageTransform();
@@ -1317,8 +1317,6 @@
       }
     );
 
-
-    /* SWIPE NO CELULAR */
 
     lightboxImageWrap.addEventListener(
       "touchstart",
@@ -1417,8 +1415,6 @@
       }
     );
 
-
-    /* TECLADO */
 
     document.addEventListener(
       "keydown",
