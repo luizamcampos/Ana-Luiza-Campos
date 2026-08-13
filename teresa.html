@@ -77,21 +77,29 @@
 
     .title-block {
       width: 100%;
-      margin-bottom: 55px;
 
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
+
+      margin-bottom: 55px;
+
+      overflow: visible;
     }
 
     .project-title-image {
       width: clamp(360px, 39vw, 570px);
       max-width: 70vw;
       height: auto;
+
       display: block;
 
-      /* ajuste visual para alinhar o desenho do PNG */
-      margin-left: -18px;
+      /*
+        O PNG POSSUI ESPAÇO TRANSPARENTE INTERNO.
+        ESTA MARGEM COMPENSA ESSE ESPAÇO PARA
+        O DESENHO COMEÇAR NO MESMO EIXO DOS TEXTOS.
+      */
+      margin-left: -46px;
     }
 
     .intro-details {
@@ -520,8 +528,10 @@
         max-width: 430px;
         height: auto;
 
-        /* compensa o espaço transparente interno do PNG */
-        margin-left: -12px;
+        /*
+          COMPENSAÇÃO ESPECÍFICA PARA CELULAR
+        */
+        margin-left: -30px;
       }
 
       .intro-details {
@@ -763,12 +773,14 @@
         <p>
           Durante minha experiência no escritório Teresa Barra,
           participei do desenvolvimento de projetos de interiores
-          em diferentes etapas, desde levantamentos e estudos
-          preliminares até a elaboração de desenhos executivos.
-          Também desenvolvi moodboards e pesquisas de referências
-          para definição de materiais, mobiliário, cores e atmosfera
-          dos projetos, além de trabalhar com AutoCAD como apoio ao
-          desenvolvimento das propostas.
+          em diferentes etapas, desde levantamentos e medições em obra
+          até estudos preliminares e elaboração de desenhos executivos.
+          Também desenvolvi moodboards e pesquisas de referências para
+          definição de materiais, mobiliário, cores e atmosfera dos projetos,
+          além de trabalhar com AutoCAD e SketchUp, realizando a modelagem
+          de projetos e mobiliários. Paralelamente, fui responsável pela
+          criação e organização do Pinterest do escritório, estruturando
+          pastas e publicações dos projetos e referências.
         </p>
 
       </div>
