@@ -78,17 +78,32 @@
 
     .title-block {
       width: 100%;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
       margin-bottom: 55px;
+
+      overflow: visible;
     }
 
-    .project-title {
-      font-size: clamp(50px, 7vw, 105px);
+    .project-title-image {
+      width: clamp(250px, 27vw, 390px);
+      max-width: 100%;
+      height: auto;
 
-      font-weight: 400;
+      display: block;
 
-      line-height: 0.95;
+      object-fit: contain;
+      object-position: left center;
 
-      letter-spacing: -0.05em;
+      /*
+        COMPENSA A MARGEM TRANSPARENTE
+        DO PNG PARA ALINHAR AS LETRAS
+        COM O RESTANTE DA PÁGINA
+      */
+      transform: translateX(-22px);
     }
 
     .intro-details {
@@ -525,8 +540,11 @@
         margin-bottom: 45px;
       }
 
-      .project-title {
-        font-size: 13vw;
+      .project-title-image {
+        width: 64vw;
+        max-width: 280px;
+
+        transform: translateX(-12px);
       }
 
       .intro-details {
@@ -600,7 +618,7 @@
       }
 
 
-      /* GARANTE QUE NÃO TENHA FUNDO NEM BORDA */
+      /* SEM FUNDO / SEM BORDAS */
 
       .project-photos .image-wrap,
       .technical-grid .image-wrap,
@@ -710,9 +728,11 @@
 
       <div class="title-block">
 
-        <h1 class="project-title">
-          Teresa Barra
-        </h1>
+        <img
+          class="project-title-image"
+          src="titulo teresa.PNG"
+          alt="Teresa Barra"
+        >
 
       </div>
 
@@ -795,8 +815,6 @@
       </h2>
 
 
-      <!-- PRIMEIRA DUPLA -->
-
       <div class="two-grid project-photos">
 
         <div class="image-wrap">
@@ -822,8 +840,6 @@
 
       </div>
 
-
-      <!-- SEGUNDA DUPLA -->
 
       <div class="two-grid project-photos">
 
@@ -862,8 +878,6 @@
       </h2>
 
 
-      <!-- EXECUTIVO PRINCIPAL -->
-
       <div class="technical-main">
 
         <img
@@ -874,8 +888,6 @@
 
       </div>
 
-
-      <!-- PRIMEIRA DUPLA -->
 
       <div class="two-grid technical-grid">
 
@@ -894,7 +906,7 @@
 
           <img
             class="zoomable"
-            src="Levantamento 3_page-0001.jpg"
+            src="Levantamento 3_page-0001.jpg?v=2"
             alt="Levantamento"
           >
 
@@ -902,8 +914,6 @@
 
       </div>
 
-
-      <!-- SEGUNDA DUPLA -->
 
       <div class="two-grid technical-grid">
 
@@ -922,7 +932,7 @@
 
           <img
             class="zoomable"
-            src="Estudo preliminar 1_page-0001.jpg"
+            src="Estudo preliminar 1_page-0001.jpg?v=2"
             alt="Estudo preliminar"
           >
 
@@ -942,8 +952,6 @@
       </h2>
 
 
-      <!-- PRIMEIRA DUPLA -->
-
       <div class="two-grid moodboard-grid">
 
         <div class="image-wrap">
@@ -961,7 +969,7 @@
 
           <img
             class="zoomable"
-            src="Mood board 6.JPG"
+            src="Mood board 6 .JPG?v=2"
             alt="Moodboard"
           >
 
@@ -970,15 +978,13 @@
       </div>
 
 
-      <!-- SEGUNDA DUPLA -->
-
       <div class="two-grid moodboard-grid">
 
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Mood board 7.JPG"
+            src="Mood board 7 .JPG?v=2"
             alt="Moodboard"
           >
 
