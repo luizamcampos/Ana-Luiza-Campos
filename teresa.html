@@ -55,7 +55,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       margin-bottom: 90px;
     }
 
@@ -78,41 +77,25 @@
 
     .title-block {
       width: 100%;
-
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-
       margin-bottom: 55px;
-
-      overflow: visible;
     }
 
     .project-title-image {
-      width: clamp(250px, 27vw, 390px);
+      width: clamp(240px, 28vw, 400px);
       max-width: 100%;
       height: auto;
-
       display: block;
-
       object-fit: contain;
       object-position: left center;
-
-      /*
-        COMPENSA A MARGEM TRANSPARENTE
-        DO PNG PARA ALINHAR AS LETRAS
-        COM O RESTANTE DA PÁGINA
-      */
-      transform: translateX(-22px);
     }
 
     .intro-details {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 40px;
-
       align-items: end;
     }
 
@@ -131,7 +114,6 @@
     .intro-label {
       font-size: 16px;
       line-height: 1.4;
-
       margin-bottom: 18px;
     }
 
@@ -148,18 +130,14 @@
 
     .section-title {
       color: var(--azul);
-
       font-size: 16px;
-
       margin-bottom: 30px;
     }
 
     .about-text {
       max-width: 1000px;
-
       font-size: 17px;
       line-height: 1.45;
-
       letter-spacing: -0.015em;
     }
 
@@ -172,13 +150,9 @@
 
     .work-title {
       font-size: 30px;
-
       font-weight: 400;
-
       line-height: 1;
-
       letter-spacing: -0.025em;
-
       margin-bottom: 30px;
     }
 
@@ -187,22 +161,21 @@
 
     .image-wrap {
       width: 100%;
-
       overflow: hidden;
+      background: transparent;
+      border: none;
     }
 
     .image-wrap img {
       width: 100%;
       height: auto;
-
       display: block;
+      border: none;
     }
 
     .zoomable {
       cursor: zoom-in;
-
       transition: transform 0.35s ease;
-
       transform-origin: center;
     }
 
@@ -219,11 +192,8 @@
 
     .two-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 20px;
-
       align-items: start;
     }
 
@@ -236,15 +206,16 @@
 
     .project-photos .image-wrap {
       width: 100%;
-
       overflow: hidden;
+      background: transparent;
+      border: none;
     }
 
     .project-photos img {
       width: 100%;
       height: auto;
-
       display: block;
+      border: none;
     }
 
 
@@ -252,30 +223,31 @@
 
     .technical-main {
       width: 100%;
-
       margin-bottom: 20px;
-
       overflow: hidden;
+      background: transparent;
+      border: none;
     }
 
     .technical-main img {
       width: 100%;
       height: auto;
-
       display: block;
+      border: none;
     }
 
     .technical-grid .image-wrap {
       width: 100%;
-
       overflow: hidden;
+      background: transparent;
+      border: none;
     }
 
     .technical-grid img {
       width: 100%;
       height: auto;
-
       display: block;
+      border: none;
     }
 
 
@@ -283,15 +255,16 @@
 
     .moodboard-grid .image-wrap {
       width: 100%;
-
       overflow: hidden;
+      background: transparent;
+      border: none;
     }
 
     .moodboard-grid img {
       width: 100%;
       height: auto;
-
       display: block;
+      border: none;
     }
 
 
@@ -300,7 +273,6 @@
     .lightbox {
       position: fixed;
       inset: 0;
-
       z-index: 9999;
 
       display: flex;
@@ -335,7 +307,6 @@
       align-items: center;
 
       overflow: hidden;
-
       cursor: zoom-in;
     }
 
@@ -354,7 +325,6 @@
       -webkit-user-drag: none;
 
       touch-action: none;
-
       cursor: zoom-in;
     }
 
@@ -375,23 +345,18 @@
 
     .lightbox-close {
       position: absolute;
-
       top: 24px;
       right: 28px;
-
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 34px;
       font-weight: 400;
 
@@ -403,9 +368,7 @@
 
     .lightbox-arrow {
       position: absolute;
-
       top: 50%;
-
       z-index: 30;
 
       transform: translateY(-50%);
@@ -414,17 +377,13 @@
       height: 80px;
 
       border: 0;
-
       background: transparent;
-
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
-
       font-size: 46px;
 
       cursor: pointer;
-
       opacity: 0.8;
 
       transition:
@@ -465,16 +424,13 @@
 
     .lightbox-counter {
       position: absolute;
-
       bottom: 22px;
       left: 50%;
-
       z-index: 30;
 
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
-
       font-size: 12px;
     }
 
@@ -500,11 +456,8 @@
 
     .copyright {
       margin-top: 34px;
-
       text-align: center;
-
       font-size: 11px;
-
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -541,17 +494,15 @@
       }
 
       .project-title-image {
-        width: 64vw;
-        max-width: 280px;
-
-        transform: translateX(-12px);
+        width: 58vw;
+        max-width: 300px;
+        height: auto;
+        display: block;
       }
 
       .intro-details {
         grid-template-columns: 1fr 1fr;
-
         gap: 18px;
-
         align-items: end;
       }
 
@@ -591,7 +542,6 @@
 
       .work-title {
         font-size: 25px;
-
         margin-bottom: 24px;
       }
 
@@ -600,9 +550,7 @@
 
       .two-grid {
         grid-template-columns: 1fr 1fr;
-
         gap: 10px;
-
         align-items: start;
       }
 
@@ -618,16 +566,14 @@
       }
 
 
-      /* SEM FUNDO / SEM BORDAS */
+      /* IMAGENS */
 
       .project-photos .image-wrap,
       .technical-grid .image-wrap,
       .moodboard-grid .image-wrap,
       .technical-main {
         background: transparent;
-
         border: none;
-
         aspect-ratio: auto;
       }
 
@@ -636,10 +582,9 @@
       .moodboard-grid img,
       .technical-main img {
         width: 100%;
-
         height: auto;
-
         object-fit: initial;
+        border: none;
       }
 
 
@@ -651,7 +596,6 @@
 
       .copyright {
         margin-top: 28px;
-
         font-size: 10px;
       }
 
@@ -675,7 +619,6 @@
       .lightbox-arrow {
         width: 42px;
         height: 60px;
-
         font-size: 34px;
       }
 
@@ -689,7 +632,6 @@
 
       .lightbox-counter {
         bottom: 14px;
-
         font-size: 11px;
       }
 
@@ -730,7 +672,7 @@
 
         <img
           class="project-title-image"
-          src="titulo teresa.PNG"
+          src="titulo terresaa.PNG"
           alt="Teresa Barra"
         >
 
@@ -738,7 +680,6 @@
 
 
       <div class="intro-details">
-
 
         <div class="intro-left">
 
@@ -773,7 +714,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -786,7 +726,6 @@
       <div class="section-title">
         ✷ sobre a experiência
       </div>
-
 
       <div class="about-text">
 
@@ -827,7 +766,6 @@
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
@@ -852,7 +790,6 @@
           >
 
         </div>
-
 
         <div class="image-wrap">
 
@@ -901,12 +838,11 @@
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Levantamento 3_page-0001.jpg?v=2"
+            src="Levantamento 3 _page-0001.jpg"
             alt="Levantamento"
           >
 
@@ -927,12 +863,11 @@
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Estudo preliminar 1_page-0001.jpg?v=2"
+            src="Estudo preliminar 1 _page-0001.jpg"
             alt="Estudo preliminar"
           >
 
@@ -964,12 +899,11 @@
 
         </div>
 
-
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Mood board 6 .JPG?v=2"
+            src="Mood board 6 .JPG"
             alt="Moodboard"
           >
 
@@ -984,12 +918,11 @@
 
           <img
             class="zoomable"
-            src="Mood board 7 .JPG?v=2"
+            src="Mood board 7 .JPG"
             alt="Moodboard"
           >
 
         </div>
-
 
         <div class="image-wrap">
 
@@ -1025,7 +958,6 @@
 
       </div>
 
-
       <div class="copyright">
         Ana Luiza Campos ©️ 2026
       </div>
@@ -1050,7 +982,6 @@
       ×
     </button>
 
-
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -1058,7 +989,6 @@
     >
       ‹
     </button>
-
 
     <div
       class="lightbox-image-wrap"
@@ -1074,7 +1004,6 @@
 
     </div>
 
-
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -1082,7 +1011,6 @@
     >
       ›
     </button>
-
 
     <div
       class="lightbox-counter"
@@ -1122,11 +1050,8 @@
 
 
     let currentIndex = 0;
-
     let zoomed = false;
-
     let isDragging = false;
-
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1136,7 +1061,6 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
-
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1177,13 +1101,10 @@
     function resetZoom() {
 
       zoomed = false;
-
       isDragging = false;
-
       movedWhileDragging = false;
 
       translateX = 0;
-
       translateY = 0;
 
       lightbox.classList.remove("zoomed");
@@ -1278,7 +1199,6 @@
       zoomed = !zoomed;
 
       translateX = 0;
-
       translateY = 0;
 
       lightbox.classList.toggle(
@@ -1340,7 +1260,6 @@
         if (swipedRecently) {
 
           swipedRecently = false;
-
           return;
 
         }
@@ -1348,7 +1267,6 @@
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
-
           return;
 
         }
@@ -1375,12 +1293,8 @@
       "click",
       (event) => {
 
-        if (
-          event.target === lightbox
-        ) {
-
+        if (event.target === lightbox) {
           closeLightbox();
-
         }
 
       }
@@ -1413,7 +1327,6 @@
         }
 
         isDragging = true;
-
         movedWhileDragging = false;
 
         startX =
@@ -1467,7 +1380,6 @@
         }
 
         translateX = newX;
-
         translateY = newY;
 
         updateImageTransform();
@@ -1623,28 +1535,16 @@
           return;
         }
 
-        if (
-          event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
           closeLightbox();
-
         }
 
-        if (
-          event.key === "ArrowRight"
-        ) {
-
+        if (event.key === "ArrowRight") {
           showNextImage();
-
         }
 
-        if (
-          event.key === "ArrowLeft"
-        ) {
-
+        if (event.key === "ArrowLeft") {
           showPreviousImage();
-
         }
 
       }
