@@ -62,6 +62,7 @@
       margin: auto 0;
     }
 
+
     /* CADEIRA */
 
     .chair {
@@ -74,6 +75,9 @@
       margin-bottom: 18px;
     }
 
+
+    /* NOME */
+
     .name-image {
       width: 430px;
       max-width: 78vw;
@@ -84,9 +88,13 @@
       margin-bottom: 32px;
     }
 
+
+    /* MENU */
+
     .menu {
       display: flex;
       flex-direction: column;
+
       gap: 22px;
 
       align-items: flex-start;
@@ -94,15 +102,19 @@
 
     .menu-item {
       display: grid;
+
       grid-template-columns: 34px auto;
+
       align-items: center;
 
       text-decoration: none;
       color: var(--preto);
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 22px;
       font-weight: 400;
+
       letter-spacing: -0.02em;
 
       transition: opacity 0.2s ease;
@@ -116,6 +128,7 @@
       color: var(--azul);
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 20px;
       font-weight: 400;
 
@@ -126,12 +139,20 @@
       align-items: center;
     }
 
-    .social {
-      display: flex;
-      align-items: center;
-      gap: 30px;
 
-      margin-top: 42px;
+    /* CONTATOS */
+
+    .social {
+      width: 430px;
+      max-width: 78vw;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr;
+
+      align-items: center;
+
+      margin-top: 62px;
       padding-bottom: 2px;
     }
 
@@ -141,8 +162,29 @@
       text-decoration: none;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 17px;
       font-weight: 400;
+
+      line-height: 1;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .social a:hover {
+      opacity: 0.55;
+    }
+
+    .linkedin {
+      justify-self: start;
+    }
+
+    .email {
+      justify-self: center;
+    }
+
+    .phone {
+      justify-self: end;
     }
 
 
@@ -152,6 +194,7 @@
 
       .home {
         min-height: 100svh;
+
         padding: 44px 22px 52px;
       }
 
@@ -179,6 +222,7 @@
 
       .menu-item {
         grid-template-columns: 34px auto;
+
         font-size: 20px;
       }
 
@@ -186,9 +230,14 @@
         font-size: 19px;
       }
 
+
+      /* CONTATOS CELULAR */
+
       .social {
-        margin-top: 40px;
-        gap: 30px;
+        width: 390px;
+        max-width: 74vw;
+
+        margin-top: 64px;
       }
 
       .social a {
@@ -231,6 +280,7 @@
 
       .menu-item {
         font-size: 16px;
+
         grid-template-columns: 28px auto;
       }
 
@@ -238,8 +288,14 @@
         font-size: 16px;
       }
 
+
+      /* CONTATOS COMPUTADOR */
+
       .social {
-        margin-top: 26px;
+        width: 360px;
+        max-width: 32vw;
+
+        margin-top: 48px;
       }
 
       .social a {
@@ -251,55 +307,116 @@
   </style>
 </head>
 
+
 <body>
 
   <main class="home">
 
     <section class="main-content">
 
+
       <!-- CADEIRA -->
+
       <img
         class="chair"
         src="2A5B9B10-F496-40D4-8B24-48520B840813.png"
         alt=""
       >
 
+
       <!-- NOME -->
+
       <img
         class="name-image"
         src="9DE4427F-D7A4-45B2-A785-B64790E32DC7.png"
         alt="Ana Luiza Campos"
       >
 
+
       <!-- MENU -->
+
       <nav class="menu">
 
-        <a class="menu-item" href="arquitetura.html">
-          <span class="symbol">✷</span>
-          <span>arquitetura</span>
+        <a
+          class="menu-item"
+          href="arquitetura.html"
+        >
+
+          <span class="symbol">
+            ✷
+          </span>
+
+          <span>
+            arquitetura
+          </span>
+
         </a>
 
-        <a class="menu-item" href="#social-media">
-          <span class="symbol">✷</span>
-          <span>social media</span>
+
+        <a
+          class="menu-item"
+          href="#social-media"
+        >
+
+          <span class="symbol">
+            ✷
+          </span>
+
+          <span>
+            social media
+          </span>
+
         </a>
 
-        <a class="menu-item" href="#curriculo">
-          <span class="symbol">✷</span>
-          <span>currículo</span>
-        </a>
 
-        <a class="menu-item" href="#contato">
-          <span class="symbol">✷</span>
-          <span>contato</span>
+        <a
+          class="menu-item"
+          href="#curriculo"
+        >
+
+          <span class="symbol">
+            ✷
+          </span>
+
+          <span>
+            currículo
+          </span>
+
         </a>
 
       </nav>
 
-      <!-- REDES -->
+
+      <!-- CONTATOS -->
+
       <div class="social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="mailto:seuemail@email.com" aria-label="E-mail">@</a>
+
+        <a
+          class="linkedin"
+          href="#"
+          aria-label="LinkedIn"
+        >
+          in
+        </a>
+
+
+        <a
+          class="email"
+          href="mailto:seuemail@email.com"
+          aria-label="E-mail"
+        >
+          @
+        </a>
+
+
+        <a
+          class="phone"
+          href="#"
+          aria-label="Telefone"
+        >
+          ☎
+        </a>
+
       </div>
 
     </section>
