@@ -55,6 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       margin-bottom: 90px;
     }
 
@@ -82,15 +83,21 @@
 
     .project-title {
       font-size: clamp(50px, 7vw, 105px);
+
       font-weight: 400;
+
       line-height: 0.95;
+
       letter-spacing: -0.05em;
     }
 
     .intro-details {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 40px;
+
       align-items: end;
     }
 
@@ -109,6 +116,7 @@
     .intro-label {
       font-size: 16px;
       line-height: 1.4;
+
       margin-bottom: 18px;
     }
 
@@ -125,14 +133,18 @@
 
     .section-title {
       color: var(--azul);
+
       font-size: 16px;
+
       margin-bottom: 30px;
     }
 
     .about-text {
       max-width: 1000px;
+
       font-size: 17px;
       line-height: 1.45;
+
       letter-spacing: -0.015em;
     }
 
@@ -145,52 +157,58 @@
 
     .work-title {
       font-size: 30px;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -0.025em;
-      margin-bottom: 30px;
-    }
 
-    .work-description {
-      max-width: 760px;
-      font-size: 17px;
-      line-height: 1.45;
-      letter-spacing: -0.015em;
-      margin-bottom: 35px;
+      font-weight: 400;
+
+      line-height: 1;
+
+      letter-spacing: -0.025em;
+
+      margin-bottom: 30px;
     }
 
 
     /* IMAGENS */
 
     .image-wrap {
+      width: 100%;
+
       overflow: hidden;
     }
 
     .image-wrap img {
       width: 100%;
       height: auto;
+
       display: block;
     }
 
     .zoomable {
       cursor: zoom-in;
+
       transition: transform 0.35s ease;
+
       transform-origin: center;
     }
 
     @media (hover: hover) {
+
       .zoomable:hover {
         transform: scale(1.018);
       }
+
     }
 
 
-    /* GRID 2 + 2 */
+    /* GRID 2 EM 2 */
 
     .two-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 20px;
+
       align-items: start;
     }
 
@@ -199,21 +217,19 @@
     }
 
 
-    /* PROJETOS TERESA */
+    /* PROJETOS DO ESCRITÓRIO */
 
     .project-photos .image-wrap {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f7f7f7;
+
+      overflow: hidden;
     }
 
     .project-photos img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+
+      display: block;
     }
 
 
@@ -221,30 +237,30 @@
 
     .technical-main {
       width: 100%;
+
       margin-bottom: 20px;
-      background: #f7f7f7;
+
+      overflow: hidden;
     }
 
     .technical-main img {
       width: 100%;
       height: auto;
+
       display: block;
-      object-fit: contain;
     }
 
     .technical-grid .image-wrap {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f7f7f7;
+
+      overflow: hidden;
     }
 
     .technical-grid img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
+
+      display: block;
     }
 
 
@@ -252,17 +268,15 @@
 
     .moodboard-grid .image-wrap {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f7f7f7;
+
+      overflow: hidden;
     }
 
     .moodboard-grid img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
+
+      display: block;
     }
 
 
@@ -271,6 +285,7 @@
     .lightbox {
       position: fixed;
       inset: 0;
+
       z-index: 9999;
 
       display: flex;
@@ -305,6 +320,7 @@
       align-items: center;
 
       overflow: hidden;
+
       cursor: zoom-in;
     }
 
@@ -323,6 +339,7 @@
       -webkit-user-drag: none;
 
       touch-action: none;
+
       cursor: zoom-in;
     }
 
@@ -343,18 +360,23 @@
 
     .lightbox-close {
       position: absolute;
+
       top: 24px;
       right: 28px;
+
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
+
       background: transparent;
+
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 34px;
       font-weight: 400;
 
@@ -366,7 +388,9 @@
 
     .lightbox-arrow {
       position: absolute;
+
       top: 50%;
+
       z-index: 30;
 
       transform: translateY(-50%);
@@ -375,13 +399,17 @@
       height: 80px;
 
       border: 0;
+
       background: transparent;
+
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 46px;
 
       cursor: pointer;
+
       opacity: 0.8;
 
       transition:
@@ -422,13 +450,16 @@
 
     .lightbox-counter {
       position: absolute;
+
       bottom: 22px;
       left: 50%;
+
       z-index: 30;
 
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
+
       font-size: 12px;
     }
 
@@ -454,8 +485,11 @@
 
     .copyright {
       margin-top: 34px;
+
       text-align: center;
+
       font-size: 11px;
+
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -468,10 +502,14 @@
         padding: 22px 18px 50px;
       }
 
+
+      /* TOPO */
+
       .top {
         margin-bottom: 70px;
       }
 
+      .back,
       .top-name {
         font-size: 15px;
       }
@@ -493,7 +531,9 @@
 
       .intro-details {
         grid-template-columns: 1fr 1fr;
+
         gap: 18px;
+
         align-items: end;
       }
 
@@ -533,29 +573,55 @@
 
       .work-title {
         font-size: 25px;
+
         margin-bottom: 24px;
       }
 
-      .work-description {
-        font-size: 16px;
-        line-height: 1.42;
-        margin-bottom: 25px;
-      }
 
-
-      /* GRIDS */
+      /* GRID 2 EM 2 */
 
       .two-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 10px;
+
+        align-items: start;
       }
 
       .two-grid + .two-grid {
         margin-top: 10px;
       }
 
+
+      /* DESENHO PRINCIPAL */
+
       .technical-main {
         margin-bottom: 10px;
+      }
+
+
+      /* GARANTE QUE NÃO TENHA FUNDO NEM BORDA */
+
+      .project-photos .image-wrap,
+      .technical-grid .image-wrap,
+      .moodboard-grid .image-wrap,
+      .technical-main {
+        background: transparent;
+
+        border: none;
+
+        aspect-ratio: auto;
+      }
+
+      .project-photos img,
+      .technical-grid img,
+      .moodboard-grid img,
+      .technical-main img {
+        width: 100%;
+
+        height: auto;
+
+        object-fit: initial;
       }
 
 
@@ -567,6 +633,7 @@
 
       .copyright {
         margin-top: 28px;
+
         font-size: 10px;
       }
 
@@ -590,6 +657,7 @@
       .lightbox-arrow {
         width: 42px;
         height: 60px;
+
         font-size: 34px;
       }
 
@@ -603,6 +671,7 @@
 
       .lightbox-counter {
         bottom: 14px;
+
         font-size: 11px;
       }
 
@@ -650,6 +719,7 @@
 
       <div class="intro-details">
 
+
         <div class="intro-left">
 
           <p>
@@ -657,7 +727,7 @@
           </p>
 
           <p>
-            2025
+            set. 2025 — jan. 2026
           </p>
 
         </div>
@@ -683,6 +753,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -695,6 +766,7 @@
       <div class="section-title">
         ✷ sobre a experiência
       </div>
+
 
       <div class="about-text">
 
@@ -792,7 +864,7 @@
 
       <!-- EXECUTIVO PRINCIPAL -->
 
-      <div class="technical-main image-wrap">
+      <div class="technical-main">
 
         <img
           class="zoomable"
@@ -1044,8 +1116,11 @@
 
 
     let currentIndex = 0;
+
     let zoomed = false;
+
     let isDragging = false;
+
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1055,6 +1130,7 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
+
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1095,10 +1171,13 @@
     function resetZoom() {
 
       zoomed = false;
+
       isDragging = false;
+
       movedWhileDragging = false;
 
       translateX = 0;
+
       translateY = 0;
 
       lightbox.classList.remove("zoomed");
@@ -1193,6 +1272,7 @@
       zoomed = !zoomed;
 
       translateX = 0;
+
       translateY = 0;
 
       lightbox.classList.toggle(
@@ -1254,6 +1334,7 @@
         if (swipedRecently) {
 
           swipedRecently = false;
+
           return;
 
         }
@@ -1261,6 +1342,7 @@
         if (movedWhileDragging) {
 
           movedWhileDragging = false;
+
           return;
 
         }
@@ -1287,8 +1369,12 @@
       "click",
       (event) => {
 
-        if (event.target === lightbox) {
+        if (
+          event.target === lightbox
+        ) {
+
           closeLightbox();
+
         }
 
       }
@@ -1321,6 +1407,7 @@
         }
 
         isDragging = true;
+
         movedWhileDragging = false;
 
         startX =
@@ -1374,6 +1461,7 @@
         }
 
         translateX = newX;
+
         translateY = newY;
 
         updateImageTransform();
@@ -1439,7 +1527,9 @@
           touchStartY;
 
       },
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
@@ -1461,7 +1551,9 @@
           touch.screenY;
 
       },
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
@@ -1525,16 +1617,28 @@
           return;
         }
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
+
           closeLightbox();
+
         }
 
-        if (event.key === "ArrowRight") {
+        if (
+          event.key === "ArrowRight"
+        ) {
+
           showNextImage();
+
         }
 
-        if (event.key === "ArrowLeft") {
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
           showPreviousImage();
+
         }
 
       }
