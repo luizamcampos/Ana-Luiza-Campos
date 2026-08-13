@@ -77,19 +77,21 @@
 
     .title-block {
       width: 100%;
+      margin-bottom: 55px;
+
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-      margin-bottom: 55px;
     }
 
     .project-title-image {
-      width: clamp(240px, 28vw, 400px);
-      max-width: 100%;
+      width: clamp(360px, 39vw, 570px);
+      max-width: 70vw;
       height: auto;
       display: block;
-      object-fit: contain;
-      object-position: left center;
+
+      /* ajuste visual para alinhar o desenho do PNG */
+      margin-left: -18px;
     }
 
     .intro-details {
@@ -162,8 +164,8 @@
     .image-wrap {
       width: 100%;
       overflow: hidden;
-      background: transparent;
       border: none;
+      background: transparent;
     }
 
     .image-wrap img {
@@ -207,8 +209,8 @@
     .project-photos .image-wrap {
       width: 100%;
       overflow: hidden;
-      background: transparent;
       border: none;
+      background: transparent;
     }
 
     .project-photos img {
@@ -225,8 +227,8 @@
       width: 100%;
       margin-bottom: 20px;
       overflow: hidden;
-      background: transparent;
       border: none;
+      background: transparent;
     }
 
     .technical-main img {
@@ -239,8 +241,8 @@
     .technical-grid .image-wrap {
       width: 100%;
       overflow: hidden;
-      background: transparent;
       border: none;
+      background: transparent;
     }
 
     .technical-grid img {
@@ -256,8 +258,8 @@
     .moodboard-grid .image-wrap {
       width: 100%;
       overflow: hidden;
-      background: transparent;
       border: none;
+      background: transparent;
     }
 
     .moodboard-grid img {
@@ -307,6 +309,7 @@
       align-items: center;
 
       overflow: hidden;
+
       cursor: zoom-in;
     }
 
@@ -325,6 +328,7 @@
       -webkit-user-drag: none;
 
       touch-action: none;
+
       cursor: zoom-in;
     }
 
@@ -345,18 +349,23 @@
 
     .lightbox-close {
       position: absolute;
+
       top: 24px;
       right: 28px;
+
       z-index: 30;
 
       width: 45px;
       height: 45px;
 
       border: 0;
+
       background: transparent;
+
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 34px;
       font-weight: 400;
 
@@ -368,7 +377,9 @@
 
     .lightbox-arrow {
       position: absolute;
+
       top: 50%;
+
       z-index: 30;
 
       transform: translateY(-50%);
@@ -377,13 +388,17 @@
       height: 80px;
 
       border: 0;
+
       background: transparent;
+
       color: #ffffff;
 
       font-family: "Neue Montreal", sans-serif;
+
       font-size: 46px;
 
       cursor: pointer;
+
       opacity: 0.8;
 
       transition:
@@ -424,13 +439,16 @@
 
     .lightbox-counter {
       position: absolute;
+
       bottom: 22px;
       left: 50%;
+
       z-index: 30;
 
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
+
       font-size: 12px;
     }
 
@@ -456,8 +474,11 @@
 
     .copyright {
       margin-top: 34px;
+
       text-align: center;
+
       font-size: 11px;
+
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -491,18 +512,23 @@
 
       .title-block {
         margin-bottom: 45px;
+        justify-content: flex-start;
       }
 
       .project-title-image {
-        width: 58vw;
-        max-width: 300px;
+        width: 62vw;
+        max-width: 430px;
         height: auto;
-        display: block;
+
+        /* compensa o espaço transparente interno do PNG */
+        margin-left: -12px;
       }
 
       .intro-details {
         grid-template-columns: 1fr 1fr;
+
         gap: 18px;
+
         align-items: end;
       }
 
@@ -550,7 +576,9 @@
 
       .two-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 10px;
+
         align-items: start;
       }
 
@@ -566,7 +594,7 @@
       }
 
 
-      /* IMAGENS */
+      /* SEM FUNDO / SEM BORDA */
 
       .project-photos .image-wrap,
       .technical-grid .image-wrap,
@@ -681,6 +709,7 @@
 
       <div class="intro-details">
 
+
         <div class="intro-left">
 
           <p>
@@ -714,6 +743,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -726,6 +756,7 @@
       <div class="section-title">
         ✷ sobre a experiência
       </div>
+
 
       <div class="about-text">
 
@@ -766,6 +797,7 @@
 
         </div>
 
+
         <div class="image-wrap">
 
           <img
@@ -790,6 +822,7 @@
           >
 
         </div>
+
 
         <div class="image-wrap">
 
@@ -838,11 +871,12 @@
 
         </div>
 
+
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Levantamento 3 _page-0001.jpg"
+            src="Levantamento 3_page-0001.jpg"
             alt="Levantamento"
           >
 
@@ -863,11 +897,12 @@
 
         </div>
 
+
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Estudo preliminar 1 _page-0001.jpg"
+            src="Estudo preliminar 1_page-0001.jpg"
             alt="Estudo preliminar"
           >
 
@@ -899,11 +934,12 @@
 
         </div>
 
+
         <div class="image-wrap">
 
           <img
             class="zoomable"
-            src="Mood board 6 .JPG"
+            src="Mood board 6.JPG"
             alt="Moodboard"
           >
 
@@ -918,11 +954,12 @@
 
           <img
             class="zoomable"
-            src="Mood board 7 .JPG"
+            src="Mood board 7.JPG"
             alt="Moodboard"
           >
 
         </div>
+
 
         <div class="image-wrap">
 
@@ -958,6 +995,7 @@
 
       </div>
 
+
       <div class="copyright">
         Ana Luiza Campos ©️ 2026
       </div>
@@ -982,6 +1020,7 @@
       ×
     </button>
 
+
     <button
       class="lightbox-arrow lightbox-prev"
       id="lightboxPrev"
@@ -989,6 +1028,7 @@
     >
       ‹
     </button>
+
 
     <div
       class="lightbox-image-wrap"
@@ -1004,6 +1044,7 @@
 
     </div>
 
+
     <button
       class="lightbox-arrow lightbox-next"
       id="lightboxNext"
@@ -1011,6 +1052,7 @@
     >
       ›
     </button>
+
 
     <div
       class="lightbox-counter"
@@ -1050,8 +1092,11 @@
 
 
     let currentIndex = 0;
+
     let zoomed = false;
+
     let isDragging = false;
+
     let movedWhileDragging = false;
 
     let startX = 0;
@@ -1061,6 +1106,7 @@
     let translateY = 0;
 
     const zoomLevel = 2.4;
+
 
     let touchStartX = 0;
     let touchStartY = 0;
@@ -1101,7 +1147,9 @@
     function resetZoom() {
 
       zoomed = false;
+
       isDragging = false;
+
       movedWhileDragging = false;
 
       translateX = 0;
@@ -1293,8 +1341,12 @@
       "click",
       (event) => {
 
-        if (event.target === lightbox) {
+        if (
+          event.target === lightbox
+        ) {
+
           closeLightbox();
+
         }
 
       }
@@ -1327,6 +1379,7 @@
         }
 
         isDragging = true;
+
         movedWhileDragging = false;
 
         startX =
@@ -1380,6 +1433,7 @@
         }
 
         translateX = newX;
+
         translateY = newY;
 
         updateImageTransform();
@@ -1535,16 +1589,28 @@
           return;
         }
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
+
           closeLightbox();
+
         }
 
-        if (event.key === "ArrowRight") {
+        if (
+          event.key === "ArrowRight"
+        ) {
+
           showNextImage();
+
         }
 
-        if (event.key === "ArrowLeft") {
+        if (
+          event.key === "ArrowLeft"
+        ) {
+
           showPreviousImage();
+
         }
 
       }
