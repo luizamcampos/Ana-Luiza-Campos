@@ -78,8 +78,8 @@
     }
 
     .curriculo-title {
-      width: 260px;
-      max-width: 55vw;
+      width: 150px;
+      max-width: 42vw;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -118,12 +118,8 @@
       letter-spacing: -0.01em;
     }
 
-    .profile-text p + p {
-      margin-top: 18px;
-    }
 
-
-    /* SUBTÍTULOS */
+    /* CATEGORIAS */
 
     .category-title {
       color: var(--azul);
@@ -140,17 +136,13 @@
 
     .experience {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 150px 1fr;
       gap: 28px;
 
       padding-bottom: 34px;
       margin-bottom: 34px;
 
       border-bottom: 1px solid var(--linha);
-    }
-
-    .experience:last-child {
-      margin-bottom: 0;
     }
 
     .date {
@@ -179,22 +171,26 @@
       letter-spacing: -0.01em;
     }
 
+    .description ul {
+      padding-left: 18px;
+    }
+
+    .description li {
+      margin-bottom: 4px;
+    }
+
 
     /* FORMAÇÃO */
 
     .education-item {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 150px 1fr;
       gap: 28px;
 
       padding-bottom: 30px;
       margin-bottom: 30px;
 
       border-bottom: 1px solid var(--linha);
-    }
-
-    .education-item:last-child {
-      margin-bottom: 0;
     }
 
     .education-info h3 {
@@ -259,6 +255,21 @@
       color: var(--azul);
     }
 
+    .english-training {
+      margin-top: 32px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .english-training-title {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .english-training ul {
+      padding-left: 18px;
+    }
+
 
     /* FINAL */
 
@@ -285,11 +296,8 @@
 
     .copyright {
       margin-top: 34px;
-
       text-align: center;
-
       font-size: 11px;
-
       color: rgba(17, 17, 17, 0.32);
     }
 
@@ -319,8 +327,8 @@
       }
 
       .curriculo-title {
-        width: 210px;
-        max-width: 58vw;
+        width: 140px;
+        max-width: 45vw;
       }
 
 
@@ -339,14 +347,12 @@
 
       .profile-text {
         font-size: 16px;
-        line-height: 1.45;
       }
 
 
       /* EXPERIÊNCIAS */
 
       .category-title {
-        font-size: 15px;
         margin-bottom: 28px;
       }
 
@@ -442,10 +448,7 @@
 
     <header class="top">
 
-      <a
-        class="back"
-        href="index.html"
-      >
+      <a class="back" href="index.html">
         ← voltar
       </a>
 
@@ -479,17 +482,14 @@
 
       <div class="section-content profile-text">
 
-        <p>
-          Estudante de Arquitetura e Urbanismo na Escola da Cidade,
-          com experiência profissional em arquitetura, interiores,
-          comunicação e social media.
-        </p>
-
-        <p>
-          Minha trajetória combina repertório visual, pensamento espacial,
-          criação de conteúdo e desenvolvimento de projetos em diferentes
-          escalas e linguagens.
-        </p>
+        Estudante do 8º semestre de Arquitetura e Urbanismo na Escola
+        da Cidade, em São Paulo, com experiência em acompanhamento
+        de obras, arquitetura de interiores e desenvolvimento de projetos.
+        Ao longo da minha trajetória, também desenvolvi habilidades em
+        comunicação e criação de conteúdo, ampliando meu olhar para
+        estética, planejamento e relacionamento com clientes. Busco uma
+        oportunidade para aprofundar minha experiência contribuindo
+        com dedicação, criatividade e atenção aos detalhes.
 
       </div>
 
@@ -515,57 +515,33 @@
         </div>
 
 
-        <!-- ACMR -->
-
-        <div class="experience">
-
-          <div class="date">
-            2023 — 2025
-          </div>
-
-          <div class="experience-info">
-
-            <h3>
-              Construtora ACMR
-            </h3>
-
-            <div class="role">
-              Estágio em Arquitetura
-            </div>
-
-            <div class="description">
-              Desenvolvimento e acompanhamento de projetos,
-              desenhos técnicos, modelagem e suporte às diferentes
-              etapas de projeto e obra.
-            </div>
-
-          </div>
-
-        </div>
-
-
         <!-- TERESA BARRA -->
 
         <div class="experience">
 
           <div class="date">
-            2025
+            Setembro de 2025 — Janeiro de 2026
           </div>
 
           <div class="experience-info">
 
             <h3>
-              Teresa Barra
+              Teresa Barra Arquitetura
             </h3>
 
             <div class="role">
-              Estágio em Arquitetura
+              Estagiária de Arquitetura de Interiores
             </div>
 
             <div class="description">
-              Participação no desenvolvimento de projetos arquitetônicos,
-              produção de desenhos e apoio às etapas de concepção
-              e detalhamento.
+
+              <ul>
+                <li>Realização de levantamentos e medições em obras.</li>
+                <li>Desenvolvimento de projetos executivos.</li>
+                <li>Modelagem base de projetos em SketchUp a partir de arquivos em AutoCAD.</li>
+                <li>Gestão de referências e curadoria de conteúdo no Pinterest.</li>
+              </ul>
+
             </div>
 
           </div>
@@ -573,33 +549,36 @@
         </div>
 
 
-        <!-- INTERIORES -->
+        <!-- ACMR -->
 
         <div class="experience">
 
           <div class="date">
-            2025 — 2026
+            Agosto de 2023 — Janeiro de 2025
           </div>
 
           <div class="experience-info">
 
             <h3>
-              Arquitetura de Interiores
+              ACMR Construtora
             </h3>
 
             <div class="role">
-              Estágio
+              Estagiária de Acompanhamento de Obras
             </div>
 
             <div class="description">
-              Desenvolvimento e acompanhamento de projetos de interiores,
-              produção de desenhos, modelagem e detalhamentos.
+
+              <ul>
+                <li>Acompanhamento da execução de obras e apoio à equipe técnica.</li>
+                <li>Elaboração de relatórios e registros de obra.</li>
+              </ul>
+
             </div>
 
           </div>
 
         </div>
-
 
 
         <!-- SOCIAL MEDIA -->
@@ -614,13 +593,13 @@
         <div class="experience">
 
           <div class="date">
-            2025 — atual
+            Setembro de 2025 — Atual
           </div>
 
           <div class="experience-info">
 
             <h3>
-              Dr. Gabriel Beigin
+              Dr. Gabriel Beigin – Urologista
             </h3>
 
             <div class="role">
@@ -628,9 +607,16 @@
             </div>
 
             <div class="description">
-              Planejamento de conteúdo, desenvolvimento de identidade
-              visual para redes sociais, criação de peças, roteiros,
-              edição de vídeos e acompanhamento da comunicação digital.
+
+              <ul>
+                <li>Planejamento estratégico de conteúdo para redes sociais.</li>
+                <li>Criação de roteiros para vídeos e conteúdos educativos.</li>
+                <li>Edição de vídeos para Instagram e TikTok.</li>
+                <li>Desenvolvimento de carrosséis e peças visuais.</li>
+                <li>Pesquisa de tendências, referências e novas ideias de conteúdo.</li>
+                <li>Organização do calendário editorial e planejamento semanal de publicações.</li>
+              </ul>
+
             </div>
 
           </div>
@@ -638,28 +624,34 @@
         </div>
 
 
-        <!-- VELAS -->
+        <!-- ANÁ VELAS -->
 
         <div class="experience">
 
           <div class="date">
-            2024 — atual
+            Novembro de 2024 — Atual
           </div>
 
           <div class="experience-info">
 
             <h3>
-              Marca de velas
+              Aná Velas Artesanais Aromáticas
             </h3>
 
             <div class="role">
-              Co-gestão e criação de conteúdo
+              Co-fundadora | Marketing e Comercial
             </div>
 
             <div class="description">
-              Participação na gestão da marca, direção visual,
-              criação de conteúdo, desenvolvimento de peças
-              e comunicação para redes sociais.
+
+              <ul>
+                <li>Gestão das redes sociais e da identidade visual da marca.</li>
+                <li>Planejamento de estratégias de comunicação e vendas.</li>
+                <li>Atendimento ao cliente e gestão comercial.</li>
+                <li>Organização e participação em eventos e feiras.</li>
+                <li>Desenvolvimento de campanhas e fortalecimento da presença digital da marca.</li>
+              </ul>
+
             </div>
 
           </div>
@@ -672,7 +664,7 @@
         <div class="experience">
 
           <div class="date">
-            2025
+            Janeiro de 2025 — Setembro de 2025
           </div>
 
           <div class="experience-info">
@@ -686,15 +678,20 @@
             </div>
 
             <div class="description">
-              Criação e planejamento de conteúdo para redes sociais,
-              desenvolvimento de peças gráficas, edição de vídeos
-              e apoio à comunicação digital da marca.
+
+              <ul>
+                <li>Planejamento e produção de conteúdo para redes sociais.</li>
+                <li>Criação de fotos e vídeos para campanhas da marca.</li>
+                <li>Participação como modelo em conteúdos digitais.</li>
+                <li>Atendimento ao cliente, vendas e expedição de pedidos.</li>
+                <li>Participação na organização e operação de feiras e eventos.</li>
+              </ul>
+
             </div>
 
           </div>
 
         </div>
-
 
       </div>
 
@@ -713,20 +710,22 @@
       <div class="section-content">
 
 
+        <!-- ESCOLA DA CIDADE -->
+
         <div class="education-item">
 
           <div class="date">
-            2023 — 2029
+            2023 — 2028
           </div>
 
           <div class="education-info">
 
             <h3>
-              Escola da Cidade
+              Escola da Cidade — São Paulo/SP
             </h3>
 
             <p>
-              Arquitetura e Urbanismo
+              Bacharelado em Arquitetura e Urbanismo
             </p>
 
           </div>
@@ -734,16 +733,18 @@
         </div>
 
 
+        <!-- PIO XII -->
+
         <div class="education-item">
 
           <div class="date">
-            até 2021
+            Conclusão em 2021
           </div>
 
           <div class="education-info">
 
             <h3>
-              Colégio Franciscano Pio XII
+              Colégio Franciscano Pio XII — São Paulo/SP
             </h3>
 
             <p>
@@ -753,7 +754,6 @@
           </div>
 
         </div>
-
 
       </div>
 
@@ -773,35 +773,42 @@
 
         <div class="skills">
 
+
           <div class="skill">
             <span>AutoCAD</span>
             <span class="skill-level">avançado</span>
           </div>
+
 
           <div class="skill">
             <span>SketchUp</span>
             <span class="skill-level">intermediário</span>
           </div>
 
+
           <div class="skill">
             <span>Archicad</span>
             <span class="skill-level">iniciante</span>
           </div>
+
 
           <div class="skill">
             <span>Canva</span>
             <span class="skill-level">avançado</span>
           </div>
 
+
           <div class="skill">
             <span>CapCut</span>
             <span class="skill-level">avançado</span>
           </div>
 
+
           <div class="skill">
             <span>Microsoft Office</span>
             <span class="skill-level">avançado</span>
           </div>
+
 
         </div>
 
@@ -821,7 +828,9 @@
 
       <div class="section-content">
 
+
         <div class="languages">
+
 
           <div class="language">
 
@@ -848,7 +857,38 @@
 
           </div>
 
+
+          <div class="language">
+
+            <span>
+              Espanhol
+            </span>
+
+            <span class="language-level">
+              básico
+            </span>
+
+          </div>
+
+
         </div>
+
+
+        <!-- FORMAÇÃO EM INGLÊS -->
+
+        <div class="english-training">
+
+          <div class="english-training-title">
+            formação em inglês
+          </div>
+
+          <ul>
+            <li>Red Balloon English School (2015 – 2018)</li>
+            <li>Certificações Cambridge English obtidas em 2018, 2019 e 2020.</li>
+          </ul>
+
+        </div>
+
 
       </div>
 
