@@ -21,6 +21,8 @@
       --fundo: #ffffff;
       --preto: #111111;
       --azul: #2455ff;
+      --cinza: #777777;
+      --linha: rgba(17, 17, 17, 0.22);
     }
 
     * {
@@ -39,12 +41,9 @@
       font-family: "Neue Montreal", sans-serif;
     }
 
-
-    /* PÁGINA */
-
     .page {
       width: 100%;
-      padding: 28px 28px 70px;
+      padding: 28px 28px 60px;
     }
 
 
@@ -54,6 +53,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 95px;
     }
 
     .back {
@@ -69,73 +69,70 @@
 
     /* TÍTULO */
 
-    .curriculo-title {
+    .title-area {
       width: 100%;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
-      padding: 72px 0 90px;
+      margin-bottom: 100px;
     }
 
-    .curriculo-title img {
-      width: clamp(340px, 41vw, 570px);
-      max-width: 84vw;
-
+    .curriculo-title {
+      width: 260px;
+      max-width: 55vw;
       height: auto;
       display: block;
-    }
-
-
-    /* CONTEÚDO */
-
-    .content {
-      width: 100%;
-      max-width: 1180px;
-
       margin: 0 auto;
+      object-fit: contain;
     }
 
 
-    /* BLOCO */
+    /* ESTRUTURA DAS SEÇÕES */
 
     .section {
       display: grid;
-
-      grid-template-columns:
-        minmax(180px, 0.7fr)
-        minmax(0, 1.8fr);
-
+      grid-template-columns: 0.65fr 1.35fr;
       gap: 70px;
 
-      padding: 34px 0 48px;
+      padding: 28px 0 42px;
 
       border-top: 1px solid var(--preto);
     }
 
-
-    /* TÍTULO DAS SEÇÕES */
-
-    .section-title {
+    .section-label {
       color: var(--azul);
-
       font-size: 16px;
-      font-weight: 400;
+      line-height: 1.4;
     }
-
-
-    /* TEXTO */
 
     .section-content {
       max-width: 760px;
-
-      font-size: 16px;
-      line-height: 1.45;
     }
 
-    .section-content p + p {
-      margin-top: 16px;
+
+    /* PERFIL */
+
+    .profile-text {
+      font-size: 16px;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-text p + p {
+      margin-top: 18px;
+    }
+
+
+    /* SUBTÍTULOS */
+
+    .category-title {
+      color: var(--azul);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-title:not(:first-child) {
+      margin-top: 55px;
     }
 
 
@@ -143,86 +140,70 @@
 
     .experience {
       display: grid;
-
-      grid-template-columns:
-        150px
-        1fr;
-
-      gap: 30px;
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
 
       padding-bottom: 34px;
+      margin-bottom: 34px;
+
+      border-bottom: 1px solid var(--linha);
     }
 
-    .experience + .experience {
-      padding-top: 34px;
-
-      border-top: 1px solid rgba(17, 17, 17, 0.15);
+    .experience:last-child {
+      margin-bottom: 0;
     }
 
-    .experience-date {
-      font-size: 14px;
-      line-height: 1.4;
-
-      color: rgba(17, 17, 17, 0.58);
-    }
-
-    .experience-title {
-      font-size: 18px;
-      line-height: 1.3;
-
-      margin-bottom: 5px;
-    }
-
-    .experience-role {
-      color: var(--azul);
-
+    .date {
+      color: var(--cinza);
       font-size: 15px;
-
-      margin-bottom: 12px;
+      line-height: 1.4;
     }
 
-    .experience-description {
+    .experience-info h3 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 7px;
+    }
+
+    .role {
+      color: var(--azul);
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .description {
       font-size: 15px;
       line-height: 1.45;
-
-      max-width: 620px;
+      letter-spacing: -0.01em;
     }
 
 
     /* FORMAÇÃO */
 
-    .education {
+    .education-item {
       display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
 
-      grid-template-columns:
-        150px
-        1fr;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
 
-      gap: 30px;
-
-      padding-bottom: 28px;
+      border-bottom: 1px solid var(--linha);
     }
 
-    .education + .education {
-      padding-top: 28px;
-
-      border-top: 1px solid rgba(17, 17, 17, 0.15);
+    .education-item:last-child {
+      margin-bottom: 0;
     }
 
-    .education-date {
-      font-size: 14px;
-      line-height: 1.4;
-
-      color: rgba(17, 17, 17, 0.58);
+    .education-info h3 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 7px;
     }
 
-    .education-title {
-      font-size: 17px;
-
-      margin-bottom: 5px;
-    }
-
-    .education-info {
+    .education-info p {
       font-size: 15px;
       line-height: 1.45;
     }
@@ -232,76 +213,73 @@
 
     .skills {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      column-gap: 70px;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+      row-gap: 20px;
     }
 
     .skill {
       display: flex;
-
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
 
-      gap: 25px;
+      padding-bottom: 10px;
 
-      padding: 12px 0;
+      border-bottom: 1px solid var(--linha);
 
-      border-bottom: 1px solid rgba(17, 17, 17, 0.15);
-    }
-
-    .skill-name {
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .skill-level {
       color: var(--azul);
-
       font-size: 14px;
     }
 
 
     /* IDIOMAS */
 
+    .languages {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     .language {
       display: flex;
-
       justify-content: space-between;
 
-      padding: 12px 0;
+      padding-bottom: 10px;
 
-      border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+      border-bottom: 1px solid var(--linha);
+
+      font-size: 15px;
     }
 
     .language-level {
       color: var(--azul);
-
-      font-size: 14px;
     }
 
 
     /* FINAL */
 
     .footer {
-      max-width: 1180px;
+      margin-top: 90px;
+    }
 
-      margin: 80px auto 0;
-
-      padding-top: 24px;
+    .next {
+      padding-top: 25px;
 
       border-top: 1px solid var(--preto);
 
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       font-size: 16px;
     }
 
-    .footer a {
+    .back-to-top {
       color: var(--azul);
-
       text-decoration: none;
     }
 
@@ -321,11 +299,12 @@
     @media (max-width: 700px) {
 
       .page {
-        padding: 22px 18px 50px;
+        padding: 22px 18px 45px;
       }
 
-
-      /* TOPO */
+      .top {
+        margin-bottom: 70px;
+      }
 
       .back,
       .top-name {
@@ -335,13 +314,13 @@
 
       /* TÍTULO */
 
-      .curriculo-title {
-        padding: 68px 0 70px;
+      .title-area {
+        margin-bottom: 70px;
       }
 
-      .curriculo-title img {
-        width: 78vw;
-        max-width: 390px;
+      .curriculo-title {
+        width: 210px;
+        max-width: 58vw;
       }
 
 
@@ -349,50 +328,62 @@
 
       .section {
         grid-template-columns: 1fr;
+        gap: 30px;
 
-        gap: 28px;
-
-        padding: 28px 0 42px;
+        padding: 26px 0 45px;
       }
 
-      .section-title {
+      .section-label {
         font-size: 15px;
       }
 
-      .section-content {
-        font-size: 15px;
+      .profile-text {
+        font-size: 16px;
+        line-height: 1.45;
       }
 
 
       /* EXPERIÊNCIAS */
 
+      .category-title {
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+
+      .category-title:not(:first-child) {
+        margin-top: 48px;
+      }
+
       .experience {
         grid-template-columns: 1fr;
-
         gap: 10px;
 
-        padding-bottom: 28px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
       }
 
-      .experience + .experience {
-        padding-top: 28px;
+      .date {
+        font-size: 14px;
       }
 
-      .experience-title {
-        font-size: 17px;
+      .experience-info h3 {
+        font-size: 18px;
       }
 
-      .experience-description {
+      .role {
+        font-size: 15px;
+      }
+
+      .description {
         font-size: 15px;
       }
 
 
       /* FORMAÇÃO */
 
-      .education {
+      .education-item {
         grid-template-columns: 1fr;
-
-        gap: 8px;
+        gap: 10px;
       }
 
 
@@ -400,21 +391,39 @@
 
       .skills {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
 
       /* FINAL */
 
       .footer {
-        margin-top: 60px;
+        margin-top: 65px;
+      }
 
+      .next {
         font-size: 15px;
       }
 
       .copyright {
         margin-top: 28px;
-
         font-size: 10px;
+      }
+
+    }
+
+
+    /* COMPUTADOR */
+
+    @media (min-width: 900px) {
+
+      .page {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .section {
+        grid-template-columns: 0.55fr 1.45fr;
       }
 
     }
@@ -449,352 +458,370 @@
 
     <!-- TÍTULO -->
 
-    <div class="curriculo-title">
+    <section class="title-area">
 
       <img
+        class="curriculo-title"
         src="titulo curriculo.PNG"
         alt="Currículo"
       >
 
-    </div>
+    </section>
 
 
-    <!-- CONTEÚDO -->
+    <!-- PERFIL -->
 
-    <div class="content">
+    <section class="section">
 
+      <div class="section-label">
+        ✷ perfil
+      </div>
 
-      <!-- SOBRE -->
+      <div class="section-content profile-text">
 
-      <section class="section">
+        <p>
+          Estudante de Arquitetura e Urbanismo na Escola da Cidade,
+          com experiência profissional em arquitetura, interiores,
+          comunicação e social media.
+        </p>
 
-        <div class="section-title">
-          ✷ perfil
-        </div>
+        <p>
+          Minha trajetória combina repertório visual, pensamento espacial,
+          criação de conteúdo e desenvolvimento de projetos em diferentes
+          escalas e linguagens.
+        </p>
 
-        <div class="section-content">
+      </div>
 
-          <p>
-            Estudante de Arquitetura e Urbanismo na Escola da Cidade,
-            com experiência profissional em arquitetura, interiores,
-            comunicação e social media.
-          </p>
+    </section>
 
-          <p>
-            Minha trajetória combina repertório visual, pensamento
-            espacial, criação de conteúdo e desenvolvimento de projetos
-            em diferentes escalas e linguagens.
-          </p>
 
-        </div>
+    <!-- EXPERIÊNCIA -->
 
-      </section>
+    <section class="section">
 
+      <div class="section-label">
+        ✷ experiência
+      </div>
 
-      <!-- EXPERIÊNCIA -->
 
-      <section class="section">
+      <div class="section-content">
 
-        <div class="section-title">
-          ✷ experiência
-        </div>
 
+        <!-- ARQUITETURA -->
 
-        <div class="section-content">
-
-
-          <!-- FIZZ -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2026 — atual
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                Fizz
-              </div>
-
-              <div class="experience-role">
-                Analista de Planejamento Júnior
-              </div>
-
-              <div class="experience-description">
-                Planejamento de campanhas, pesquisa, desenvolvimento
-                de conceitos, apresentações e estratégias de comunicação.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- POP -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2026
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                Agência POP
-              </div>
-
-              <div class="experience-role">
-                Planejamento
-              </div>
-
-              <div class="experience-description">
-                Experiência em planejamento e desenvolvimento de
-                projetos de comunicação e conteúdo.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- INTERIORES -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2025 — 2026
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                Arquitetura de Interiores
-              </div>
-
-              <div class="experience-role">
-                Estágio
-              </div>
-
-              <div class="experience-description">
-                Desenvolvimento e acompanhamento de projetos de
-                interiores, desenhos e detalhamentos.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- TERESA BARRA -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2025
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                Teresa Barra
-              </div>
-
-              <div class="experience-role">
-                Estágio em Arquitetura
-              </div>
-
-              <div class="experience-description">
-                Participação no desenvolvimento de projetos
-                arquitetônicos e produção de desenhos.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- ACMR -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2023 — 2025
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                ACMR
-              </div>
-
-              <div class="experience-role">
-                Estágio
-              </div>
-
-              <div class="experience-description">
-                Experiência em projetos, desenhos técnicos,
-                acompanhamento e desenvolvimento de soluções
-                arquitetônicas.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- SOCIAL MEDIA -->
-
-          <div class="experience">
-
-            <div class="experience-date">
-              2025 — atual
-            </div>
-
-            <div>
-
-              <div class="experience-title">
-                Social Media
-              </div>
-
-              <div class="experience-role">
-                Criação de conteúdo e gestão de redes sociais
-              </div>
-
-              <div class="experience-description">
-                Planejamento editorial, criação de conteúdo,
-                direção visual, edição de vídeos e desenvolvimento
-                de peças para redes sociais.
-              </div>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- FORMAÇÃO -->
-
-      <section class="section">
-
-        <div class="section-title">
-          ✷ formação
+        <div class="category-title">
+          arquitetura
         </div>
 
 
-        <div class="section-content">
+        <!-- ACMR -->
 
-          <div class="education">
+        <div class="experience">
 
-            <div class="education-date">
-              2023 — 2029
-            </div>
-
-            <div>
-
-              <div class="education-title">
-                Escola da Cidade
-              </div>
-
-              <div class="education-info">
-                Arquitetura e Urbanismo
-              </div>
-
-            </div>
-
+          <div class="date">
+            2023 — 2025
           </div>
 
+          <div class="experience-info">
 
-          <div class="education">
+            <h3>
+              Construtora ACMR
+            </h3>
 
-            <div class="education-date">
-              2021
+            <div class="role">
+              Estágio em Arquitetura
             </div>
 
-            <div>
-
-              <div class="education-title">
-                Colégio Franciscano Pio XII
-              </div>
-
-              <div class="education-info">
-                Ensino Médio
-              </div>
-
+            <div class="description">
+              Desenvolvimento e acompanhamento de projetos,
+              desenhos técnicos, modelagem e suporte às diferentes
+              etapas de projeto e obra.
             </div>
 
           </div>
 
         </div>
 
-      </section>
 
+        <!-- TERESA BARRA -->
 
-      <!-- FERRAMENTAS -->
+        <div class="experience">
 
-      <section class="section">
+          <div class="date">
+            2025
+          </div>
 
-        <div class="section-title">
-          ✷ ferramentas e competências
-        </div>
+          <div class="experience-info">
 
+            <h3>
+              Teresa Barra
+            </h3>
 
-        <div class="section-content">
-
-          <div class="skills">
-
-            <div class="skill">
-              <span class="skill-name">AutoCAD</span>
-              <span class="skill-level">Avançado</span>
+            <div class="role">
+              Estágio em Arquitetura
             </div>
 
-            <div class="skill">
-              <span class="skill-name">SketchUp</span>
-              <span class="skill-level">Intermediário</span>
-            </div>
-
-            <div class="skill">
-              <span class="skill-name">ArchiCAD</span>
-              <span class="skill-level">Iniciante</span>
-            </div>
-
-            <div class="skill">
-              <span class="skill-name">Canva</span>
-              <span class="skill-level">Avançado</span>
-            </div>
-
-            <div class="skill">
-              <span class="skill-name">CapCut</span>
-              <span class="skill-level">Avançado</span>
-            </div>
-
-            <div class="skill">
-              <span class="skill-name">Microsoft Office</span>
-              <span class="skill-level">Avançado</span>
+            <div class="description">
+              Participação no desenvolvimento de projetos arquitetônicos,
+              produção de desenhos e apoio às etapas de concepção
+              e detalhamento.
             </div>
 
           </div>
 
         </div>
 
-      </section>
 
+        <!-- INTERIORES -->
 
-      <!-- IDIOMAS -->
+        <div class="experience">
 
-      <section class="section">
+          <div class="date">
+            2025 — 2026
+          </div>
 
-        <div class="section-title">
-          ✷ idiomas
+          <div class="experience-info">
+
+            <h3>
+              Arquitetura de Interiores
+            </h3>
+
+            <div class="role">
+              Estágio
+            </div>
+
+            <div class="description">
+              Desenvolvimento e acompanhamento de projetos de interiores,
+              produção de desenhos, modelagem e detalhamentos.
+            </div>
+
+          </div>
+
         </div>
 
 
-        <div class="section-content">
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="category-title">
+          social media & comunicação
+        </div>
+
+
+        <!-- DR GABRIEL -->
+
+        <div class="experience">
+
+          <div class="date">
+            2025 — atual
+          </div>
+
+          <div class="experience-info">
+
+            <h3>
+              Dr. Gabriel Beigin
+            </h3>
+
+            <div class="role">
+              Social Media
+            </div>
+
+            <div class="description">
+              Planejamento de conteúdo, desenvolvimento de identidade
+              visual para redes sociais, criação de peças, roteiros,
+              edição de vídeos e acompanhamento da comunicação digital.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- VELAS -->
+
+        <div class="experience">
+
+          <div class="date">
+            2024 — atual
+          </div>
+
+          <div class="experience-info">
+
+            <h3>
+              Marca de velas
+            </h3>
+
+            <div class="role">
+              Co-gestão e criação de conteúdo
+            </div>
+
+            <div class="description">
+              Participação na gestão da marca, direção visual,
+              criação de conteúdo, desenvolvimento de peças
+              e comunicação para redes sociais.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PALERMO -->
+
+        <div class="experience">
+
+          <div class="date">
+            2025
+          </div>
+
+          <div class="experience-info">
+
+            <h3>
+              Palermo
+            </h3>
+
+            <div class="role">
+              Social Media
+            </div>
+
+            <div class="description">
+              Criação e planejamento de conteúdo para redes sociais,
+              desenvolvimento de peças gráficas, edição de vídeos
+              e apoio à comunicação digital da marca.
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- FORMAÇÃO -->
+
+    <section class="section">
+
+      <div class="section-label">
+        ✷ formação
+      </div>
+
+
+      <div class="section-content">
+
+
+        <div class="education-item">
+
+          <div class="date">
+            2023 — 2029
+          </div>
+
+          <div class="education-info">
+
+            <h3>
+              Escola da Cidade
+            </h3>
+
+            <p>
+              Arquitetura e Urbanismo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+          <div class="date">
+            até 2021
+          </div>
+
+          <div class="education-info">
+
+            <h3>
+              Colégio Franciscano Pio XII
+            </h3>
+
+            <p>
+              Ensino Médio
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- FERRAMENTAS -->
+
+    <section class="section">
+
+      <div class="section-label">
+        ✷ ferramentas & competências
+      </div>
+
+
+      <div class="section-content">
+
+        <div class="skills">
+
+          <div class="skill">
+            <span>AutoCAD</span>
+            <span class="skill-level">avançado</span>
+          </div>
+
+          <div class="skill">
+            <span>SketchUp</span>
+            <span class="skill-level">intermediário</span>
+          </div>
+
+          <div class="skill">
+            <span>Archicad</span>
+            <span class="skill-level">iniciante</span>
+          </div>
+
+          <div class="skill">
+            <span>Canva</span>
+            <span class="skill-level">avançado</span>
+          </div>
+
+          <div class="skill">
+            <span>CapCut</span>
+            <span class="skill-level">avançado</span>
+          </div>
+
+          <div class="skill">
+            <span>Microsoft Office</span>
+            <span class="skill-level">avançado</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IDIOMAS -->
+
+    <section class="section">
+
+      <div class="section-label">
+        ✷ idiomas
+      </div>
+
+
+      <div class="section-content">
+
+        <div class="languages">
 
           <div class="language">
 
@@ -803,7 +830,7 @@
             </span>
 
             <span class="language-level">
-              Nativo
+              nativo
             </span>
 
           </div>
@@ -816,30 +843,32 @@
             </span>
 
             <span class="language-level">
-              Avançado / Fluente
+              avançado / fluente
             </span>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
-
-    </div>
+    </section>
 
 
     <!-- FINAL -->
 
-    <footer>
+    <footer class="footer">
 
-      <div class="footer">
+      <div class="next">
 
         <span>
           Currículo
         </span>
 
-        <a href="#top">
+        <a
+          class="back-to-top"
+          href="#top"
+        >
           Back to top ↑
         </a>
 
