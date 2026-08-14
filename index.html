@@ -146,29 +146,17 @@
     /* CONTATOS */
 
     .social {
-
-      /*
-        Largura menor que a imagem do título,
-        porque o PNG possui margens transparentes.
-
-        Assim os ícones acompanham visualmente
-        o começo e o fim do nome.
-      */
-
       width: 330px;
       max-width: 64vw;
 
       display: grid;
-
       grid-template-columns: 1fr 1fr 1fr;
 
       align-items: center;
 
-      /*
-        Mais espaço abaixo do menu.
-      */
-
       margin-top: 78px;
+
+      position: relative;
     }
 
 
@@ -196,6 +184,9 @@
       line-height: 1;
 
       background: transparent;
+      border: 0;
+
+      cursor: pointer;
 
       transition:
         background-color 0.22s ease,
@@ -214,12 +205,14 @@
       justify-self: center;
     }
 
-    .phone {
+    .phone-wrapper {
       justify-self: end;
+
+      position: relative;
     }
 
 
-    /* SVG DO TELEFONE */
+    /* TELEFONE */
 
     .phone svg {
       width: 18px;
@@ -236,7 +229,7 @@
     }
 
 
-    /* HOVER DOS CONTATOS */
+    /* HOVER */
 
     @media (hover: hover) {
 
@@ -245,6 +238,77 @@
         color: #ffffff;
 
         transform: scale(1.06);
+      }
+
+    }
+
+
+    /* MENU TELEFONE */
+
+    .phone-menu {
+      position: absolute;
+
+      right: 0;
+      bottom: 50px;
+
+      min-width: 135px;
+
+      display: flex;
+      flex-direction: column;
+
+      background: #ffffff;
+
+      border: 1px solid rgba(17, 17, 17, 0.16);
+
+      padding: 6px;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(8px);
+
+      transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+
+      z-index: 20;
+    }
+
+    .phone-wrapper.active .phone-menu {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+
+    /* OPÇÕES */
+
+    .phone-option {
+      display: block;
+
+      padding: 10px 12px;
+
+      color: var(--preto);
+
+      text-decoration: none;
+
+      font-family: "Neue Montreal", sans-serif;
+      font-size: 14px;
+
+      white-space: nowrap;
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+
+      .phone-option:hover {
+        background: var(--azul);
+        color: #ffffff;
       }
 
     }
@@ -323,6 +387,21 @@
         height: 19px;
       }
 
+
+      /* MENU DO TELEFONE */
+
+      .phone-menu {
+        bottom: 52px;
+
+        min-width: 140px;
+      }
+
+      .phone-option {
+        padding: 11px 12px;
+
+        font-size: 15px;
+      }
+
     }
 
 
@@ -398,6 +477,10 @@
         height: 16px;
       }
 
+      .phone-menu {
+        bottom: 46px;
+      }
+
     }
 
   </style>
@@ -467,7 +550,7 @@
 
         <a
           class="menu-item"
-          href="#curriculo"
+          href="curriculo.html"
         >
 
           <span class="symbol">
@@ -492,7 +575,9 @@
 
         <a
           class="social-link linkedin"
-          href="#"
+          href="https://www.linkedin.com/in/ana-luiza-campos-b55429319"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
           in
@@ -503,45 +588,80 @@
 
         <a
           class="social-link email"
-          href="mailto:seuemail@email.com"
-          aria-label="E-mail"
+          href="mailto:Analuizacamposarq@outlook.com"
+          aria-label="Enviar e-mail"
         >
           @
         </a>
 
 
-        <!-- TELEFONE -->
+        <!-- TELEFONE / WHATSAPP -->
 
-        <a
-          class="social-link phone"
-          href="#"
-          aria-label="Telefone"
+        <div
+          class="phone-wrapper"
+          id="phoneWrapper"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+          <button
+            class="social-link phone"
+            id="phoneButton"
+            type="button"
+            aria-label="Contato por telefone ou WhatsApp"
+            aria-expanded="false"
           >
 
-            <path
-              d="M7.2 3.5
-                 L9.4 8.2
-                 C9.7 8.8 9.5 9.5 9 9.9
-                 L7.7 11
-                 C8.8 13.2 10.8 15.2 13 16.3
-                 L14.1 15
-                 C14.5 14.5 15.2 14.3 15.8 14.6
-                 L20.5 16.8
-                 C21.2 17.1 21.5 17.8 21.3 18.5
-                 C20.8 20.2 19.2 21.2 17.4 21
-                 C9.7 20.1 3.9 14.3 3 6.6
-                 C2.8 4.8 3.8 3.2 5.5 2.7
-                 C6.2 2.5 6.9 2.8 7.2 3.5Z"
-            />
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
 
-          </svg>
+              <path
+                d="M7.2 3.5
+                   L9.4 8.2
+                   C9.7 8.8 9.5 9.5 9 9.9
+                   L7.7 11
+                   C8.8 13.2 10.8 15.2 13 16.3
+                   L14.1 15
+                   C14.5 14.5 15.2 14.3 15.8 14.6
+                   L20.5 16.8
+                   C21.2 17.1 21.5 17.8 21.3 18.5
+                   C20.8 20.2 19.2 21.2 17.4 21
+                   C9.7 20.1 3.9 14.3 3 6.6
+                   C2.8 4.8 3.8 3.2 5.5 2.7
+                   C6.2 2.5 6.9 2.8 7.2 3.5Z"
+              />
 
-        </a>
+            </svg>
+
+          </button>
+
+
+          <!-- ESCOLHA DE CONTATO -->
+
+          <div
+            class="phone-menu"
+            id="phoneMenu"
+          >
+
+            <a
+              class="phone-option"
+              href="tel:+5511981279814"
+            >
+              Ligar
+            </a>
+
+            <a
+              class="phone-option"
+              href="https://wa.me/5511981279814"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+
+          </div>
+
+        </div>
 
 
       </div>
@@ -549,6 +669,87 @@
     </section>
 
   </main>
+
+
+  <!-- TELEFONE MENU -->
+
+  <script>
+
+    const phoneWrapper =
+      document.getElementById("phoneWrapper");
+
+    const phoneButton =
+      document.getElementById("phoneButton");
+
+
+    phoneButton.addEventListener(
+      "click",
+      function(event) {
+
+        event.stopPropagation();
+
+        const isActive =
+          phoneWrapper.classList.toggle(
+            "active"
+          );
+
+        phoneButton.setAttribute(
+          "aria-expanded",
+          isActive
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !phoneWrapper.contains(
+            event.target
+          )
+        ) {
+
+          phoneWrapper.classList.remove(
+            "active"
+          );
+
+          phoneButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          phoneWrapper.classList.remove(
+            "active"
+          );
+
+          phoneButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 
